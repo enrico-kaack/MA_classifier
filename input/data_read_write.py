@@ -3,7 +3,7 @@ import pickle
 import argparse
 import sys
 
-class AllFileReader():
+class DataReaderAndWriter():
     def __init__(self):
         super().__init__()
         self.data = []

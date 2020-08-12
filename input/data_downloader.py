@@ -2,7 +2,7 @@ import logging
 from zipfile import ZipFile
 import os
 import wget
-from tqdm import tqdm
+from tqdm.autonotebook import tqdm
 import argparse
 import sys
 
