@@ -5,7 +5,6 @@ import logging
 def run_rules_on_dataset(dataset):
     rules = [ReturnNoneRule()]
     processed_data = []
-    print()
     for data in tqdm(dataset):
         problems = []
         for rule in rules:
