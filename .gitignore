@@ -167,3 +167,4 @@ dmypy.json
 raw_data
 *.pkl
 *.joblib
+data/
