@@ -25,40 +25,29 @@ class TaskPrepareXY(d6tflow.tasks.TaskPickle):
         self.save((x,y))
 
 
+from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 
 @d6tflow.inherits(TaskPrepareXY)
-class TaskOversamplingData(d6tflow.tasks.TaskPickle):
+class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
+    test_split_percentage = luigi.FloatParameter(default=0.25)
     oversampling_enabled = luigi.BoolParameter(default=True)
     ratio_after_oversampling = luigi.FloatParameter(default=0.5)
+
+    persist=['X_train','y_train', "X_test", "y_test"]
 
     def requires(self):
         return self.clone(TaskPrepareXY)
 
     def run(self):
-        x, y = self.input().load()
-
-        if self.oversampling_enabled:
-            oversample = RandomOverSampler(sampling_strategy=self.ratio_after_oversampling, random_state=1)
-            x, y = oversample.fit_resample(x, y)
-
-        self.save((x,y))
-
-
-from sklearn.model_selection import train_test_split
-
-@d6tflow.inherits(TaskOversamplingData)
-class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
-    test_split_percentage = luigi.FloatParameter(default=0.25)
-    persist=['X_train','y_train', "X_test", "y_test"]
-
-    def requires(self):
-        return self.clone(TaskOversamplingData)
-
-    def run(self):
         x,y = self.input().load()
 
         X_train, X_test, y_train, y_test  = train_test_split(x, y, test_size=self.test_split_percentage, random_state=1)
+
+        if self.oversampling_enabled:
+            oversample = RandomOverSampler(sampling_strategy=self.ratio_after_oversampling, random_state=1)
+            X_train, y_train = oversample.fit_resample(X_train, y_train)
+
         logging.info(f"Length Train: {len(X_train)}, length Test {len(X_test)}")
         self.save({
             "X_train": X_train,
@@ -66,7 +55,6 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
             "X_test": X_test,
             "y_test": y_test
         })
-
 
 from sklearn.ensemble import RandomForestClassifier
 from collections import Counter
