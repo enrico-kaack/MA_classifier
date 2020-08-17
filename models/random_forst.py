@@ -1,5 +1,5 @@
 from io import BytesIO
-from tokenize import tokenize
+from tokenize import tokenize, tok_name
 import more_itertools
 from tqdm.autonotebook import tqdm
 import logging
@@ -27,6 +27,22 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
 
     return x,y
 
+def decode_vector(tokens, reverse_vocab):
+    decoded = []
+    for index, token in enumerate(tokens):
+        if index % 2 == 0:
+            # token type
+            if token == 257: # unknown
+                decoded.append(">UNKNOWN>")
+            else:
+                decoded.append(tok_name[token])
+        else:
+            # token value, reverse dict search
+            token_value = reverse_vocab.get(token, None)
+            if token_value is None:
+                token_value = "<UNKNOWN>"
+            decoded.append(token_value)
+    return decoded
 
 def _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers):
     #for every problem line, get start and end token (for that line)
@@ -53,7 +69,7 @@ def _encode(token, vocab):
     if token is None:
         return 257, len(vocab)+1
     token_type_encoded = token[1]
-    token_value_encoding = vocab.get(token[2], len(vocab)+1)
+    token_value_encoding = vocab.get(token[2].lower(), len(vocab)+1)
     return token_type_encoded, token_value_encoding
 
 def _encode_input_vector(windowed_tokens, vocab):
