@@ -2,13 +2,14 @@ import d6tflow, luigi
 from  tasks.preprocessing import TaskRuleProcessor, TaskVocabCreator, TaskPrepareXY, TaskTrainTestSplit
 import logging
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
 from collections import Counter
 
 @d6tflow.inherits(TaskTrainTestSplit)
-class TaskTrainRandomForest(d6tflow.tasks.TaskPickle):
-    n_trees_in_forest = luigi.IntParameter(default=100)
-    max_features = luigi.Parameter(default="sqrt")
+class TaskTrainSVM(d6tflow.tasks.TaskPickle):
+    svm_kernel = luigi.Parameter(default="rbf")
+    svm_predict_probability = luigi.BoolParameter(default=False)
+    svm_class_weight = luigi.Parameter(default=None)
 
     def requires(self):
         return self.clone(TaskTrainTestSplit)
@@ -25,10 +26,7 @@ class TaskTrainRandomForest(d6tflow.tasks.TaskPickle):
         test_counter = Counter(y_test)
         print(f"Feature Distribution: Train: {train_counter[1] *100/ len(y_train)}%, Test: {test_counter[1] *100/ len(y_test)}%")
 
-        model = RandomForestClassifier(n_estimators=self.n_trees_in_forest, 
-                                    random_state=1, 
-                                    max_features = self.max_features,
-                                    n_jobs=-1, verbose = True)
+        model = SVC(kernel=self.svm_kernel, verbose=True, random_state=1, probability=self.svm_predict_probability, class_weight=self.svm_class_weight)
 
         model.fit(X_train, y_train)
         self.save(model)
@@ -41,11 +39,11 @@ from utils.plotter import plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
-@d6tflow.inherits(TaskTrainRandomForest, TaskTrainTestSplit)
-class TaskEvaluateRandomForest(d6tflow.tasks.TaskPickle):
+@d6tflow.inherits(TaskTrainSVM, TaskTrainTestSplit)
+class TaskEvaluateSVM(d6tflow.tasks.TaskPickle):
 
     def requires(self):
-        return{"model": self.clone(TaskTrainRandomForest), "data": self.clone(TaskTrainTestSplit)}
+        return{"model": self.clone(TaskTrainSVM), "data": self.clone(TaskTrainTestSplit)}
 
     def run(self):
         print(f"###Running {type(self).__name__}")
@@ -65,18 +63,6 @@ class TaskEvaluateRandomForest(d6tflow.tasks.TaskPickle):
         # Testing predictions (to determine performance)
         rf_predictions = model.predict(X_test)
         rf_probs = model.predict_proba(X_test)[:, 1]
-
-
-        n_nodes = []
-        max_depths = []
-
-        # Stats about the trees in random forest
-        for ind_tree in model.estimators_:
-            n_nodes.append(ind_tree.tree_.node_count)
-            max_depths.append(ind_tree.tree_.max_depth)
-            
-        print(f'Average number of nodes {int(np.mean(n_nodes))}')
-        print(f'Average maximum depth {int(np.mean(max_depths))}')
 
 
 

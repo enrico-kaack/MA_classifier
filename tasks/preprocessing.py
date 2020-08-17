@@ -82,8 +82,8 @@ class TaskVocabCreator(d6tflow.tasks.TaskPickle):
         all_tokens = c.most_common()
         common_tokens = all_tokens[:self.max_vocab_size]
         non_common_tokens = all_tokens[self.max_vocab_size+1:]
-        count_common_tokens = reduce(lambda x,y: x[1]+y[1], common_tokens)
-        count_uncommon_tokens = reduce(lambda x,y: x[1]+y[1], non_common_tokens)
+        count_common_tokens = sum(j for i, j in common_tokens)
+        count_uncommon_tokens = sum(j for i, j in non_common_tokens)
         print(f"Unknown Token Frequency: {count_uncommon_tokens*100/(count_common_tokens+count_uncommon_tokens)}%")
 
         self.save(vocab_dict)
