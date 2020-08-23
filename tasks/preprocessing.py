@@ -2,8 +2,14 @@ import d6tflow
 import luigi
 import os
 from rules.return_none import ReturnNoneRule
+from rules.condition_with_comparison import ConditionComparison
 from tqdm.autonotebook import tqdm
 import logging
+
+import enum
+class ProblemType(enum.Enum):
+    RETURN_NONE = "RETURN_NULL"
+    CONDITION_COMPARISON = "CONDITION_COMPARISON"
 
 class TaskSourceFileToDataStructure(d6tflow.tasks.TaskPickle):
     input_src_path = luigi.Parameter(default="raw_data")
@@ -36,7 +42,7 @@ class TaskRuleProcessor(d6tflow.tasks.TaskPickle):
         print(f"###Running {type(self).__name__}")
 
         dataset = self.input().load()
-        rules = [ReturnNoneRule()]
+        rules = [ReturnNoneRule(), ConditionComparison()]
         processed_data = []
         for data in tqdm(dataset):
             problems = []
@@ -87,10 +93,6 @@ class TaskVocabCreator(d6tflow.tasks.TaskPickle):
         print(f"Unknown Token Frequency: {count_uncommon_tokens*100/(count_common_tokens+count_uncommon_tokens)}%")
 
         self.save(vocab_dict)
-
-import enum
-class ProblemType(enum.Enum):
-    RETURN_NONE = "RETURN_NULL"
 
 
 from models.random_forst import process_general_data
