@@ -9,6 +9,7 @@ from collections import Counter
 class TaskTrainGradientBoostingClassifier(d6tflow.tasks.TaskPickle):
     n_estimators = luigi.IntParameter(default=100)
     learning_rate = luigi.FloatParameter(default=0.1)
+    subsample = luigi.FloatParameter(default=1.0)
 
     def requires(self):
         return self.clone(TaskTrainTestSplit)
