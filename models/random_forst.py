@@ -5,7 +5,7 @@ from tqdm.autonotebook import tqdm
 import logging
 
 
-def process_general_data(data, vocab, window_size=20, step_size=3, problem_type="RETURN_NULL"):
+def process_general_data(data, vocab, window_size=20, step_size=3, problem_type="RETURN_NULL", encode_type=True):
     x = []
     y = []
     for d in tqdm(data):
@@ -18,7 +18,7 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
         windowed_tokens = list(more_itertools.windowed(token_list, n=window_size, step=step_size))
 
         y_single = _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers)
-        x_single = _encode_input_vector(windowed_tokens, vocab)
+        x_single = _encode_input_vector(windowed_tokens, vocab, encode_type)
         if (len(x_single) != len(y_single)):
             logging.warning(f"x and y size not same for file{d['file_path']}")
             continue
@@ -27,10 +27,10 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
 
     return x,y
 
-def decode_vector(tokens, reverse_vocab):
+def decode_vector(tokens, reverse_vocab, encode_type=True):
     decoded = []
     for index, token in enumerate(tokens):
-        if index % 2 == 0:
+        if index % 2 == 0 and encode_type:
             # token type
             if token == 257: # unknown
                 decoded.append(">UNKNOWN>")
@@ -65,19 +65,30 @@ def _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers
         y.append(y_single)
     return y
 
-def _encode(token, vocab):
-    if token is None:
-        return 257, len(vocab)+1
-    token_type_encoded = token[1]
-    token_value_encoding = vocab.get(token[2].lower(), len(vocab)+1)
-    return token_type_encoded, token_value_encoding
+def _encode(token, vocab, encode_type=True):
+    if encode_type:
+        if token is None:
+            return 257, len(vocab)+1
+        token_type_encoded = token[1]
+        token_value_encoding = vocab.get(token[2].lower(), len(vocab)+1)
+        return token_type_encoded, token_value_encoding
+    else:
+        if token is None:
+            return len(vocab)+1
+        token_value_encoding = vocab.get(token[2].lower(), len(vocab)+1)
+        return token_value_encoding
 
-def _encode_input_vector(windowed_tokens, vocab):
+
+def _encode_input_vector(windowed_tokens, vocab, encode_type=True):
     x = []
     for window in windowed_tokens:
         window_x = []
         for token in window:
-            type_encoded, value_encoded = _encode(token, vocab)
-            window_x.extend([type_encoded, value_encoded])
+            if encode_type:
+                type_encoded, value_encoded = _encode(token, vocab, encode_type)
+                window_x.extend([type_encoded, value_encoded])
+            else:
+                value_encoded = _encode(token, vocab, encode_type)
+                window_x.extend([value_encoded])
         x.append(window_x)
     return x

@@ -102,6 +102,7 @@ class TaskPrepareXY(d6tflow.tasks.TaskPickle):
     problem_type = luigi.EnumParameter(enum=ProblemType)
     window_size = luigi.IntParameter(default=20)
     step_size = luigi.IntParameter(default=3)
+    encode_type = luigi.BoolParameter(default=True)
 
     def requires(self):
         return {"data": self.clone(TaskRuleProcessor), "vocab": self.clone(TaskVocabCreator)}
@@ -111,7 +112,7 @@ class TaskPrepareXY(d6tflow.tasks.TaskPickle):
 
         data, vocab = self.inputLoad()
 
-        x,y = process_general_data(data, vocab, window_size=self.window_size, step_size=self.step_size, problem_type=self.problem_type.value)
+        x,y = process_general_data(data, vocab, window_size=self.window_size, step_size=self.step_size, problem_type=self.problem_type.value, encode_type=self.encode_type)
 
         self.save((x,y))
 
