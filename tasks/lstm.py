@@ -4,10 +4,10 @@ import logging
 
 from keras.models import Sequential, Model, load_model, save_model
 from keras.layers import Dense
-from keras.layers import LSTM
+from keras.layers import LSTM, Dropout
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
-from keras.metrics import Recall
+from keras.metrics import Recall, Precision
 from collections import Counter
 
 #Workaround for keras objects being not pickable
@@ -43,6 +43,10 @@ class TaskTrainLstm(d6tflow.tasks.TaskPickle):
     embedding_vecor_length = luigi.IntParameter(default=32)
     epochs = luigi.IntParameter(default=3)
     batch_size = luigi.IntParameter(default=64)
+    num_lstm_cells = luigi.IntParameter(default=100)
+    dropout_emb_lstm = luigi.FloatParameter(default=0.0)
+    dropout_lstm_dense = luigi.FloatParameter(default=0.0)
+
 
     def requires(self):
         return self.clone(TaskTrainTestSplit)
@@ -72,9 +76,11 @@ class TaskTrainLstm(d6tflow.tasks.TaskPickle):
         recall_metric = Recall()
         model = Sequential()
         model.add(Embedding(num_top_words, self.embedding_vecor_length, input_length=max_length))
-        model.add(LSTM(100))
+        model.add(Dropout(self.dropout_emb_lstm))
+        model.add(LSTM(self.num_lstm_cells))
+        model.add(Dropout(self.dropout_lstm_dense))
         model.add(Dense(1, activation='sigmoid'))
-        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', recall_metric])
+        model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', recall_metric, Precision()])
         print(model.summary())
         model.fit(X_train, y_train, epochs=self.epochs, batch_size=self.batch_size)
 
@@ -106,12 +112,12 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
         print(f"Length Train: {len(X_train)}, length Test {len(X_test)}")
 
         # Training predictions (to demonstrate overfitting)
-        train_rf_predictions = model.predict_classes(X_train)
-        train_rf_probs = model.predict(X_train)[:, 1]
+        train_rf_predictions = (model.predict(X_train) > 0.5).astype("int32")
+        train_rf_probs = model.predict(X_train)
 
         # Testing predictions (to determine performance)
-        rf_predictions = model.predict_classes(X_test)
-        rf_probs = model.predict(X_test)[:, 1]
+        rf_predictions = (model.predict(X_test) > 0.5).astype("int32")
+        rf_probs = model.predict(X_test)
 
         # Plot formatting
         plt.style.use('fivethirtyeight')
