@@ -78,5 +78,5 @@ class TaskEvaluateGradientBoostingClassifier(d6tflow.tasks.TaskPqPandas):
                             title = 'Confusion Matrix', normalize=True)
         
         # save test result
-        evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions), columns=["x", "ground_truth", "predicted"])
+        evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])
         self.save(evaluation_results)

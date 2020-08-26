@@ -40,7 +40,7 @@ from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 
 @d6tflow.inherits(TaskTrainSVM, TaskTrainTestSplit)
-class TaskEvaluateSVM(d6tflow.tasks.TaskPickle):
+class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
 
     def requires(self):
         return{"model": self.clone(TaskTrainSVM), "data": self.clone(TaskTrainTestSplit)}
@@ -78,3 +78,8 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPickle):
         cm = confusion_matrix(y_test, rf_predictions)
         plot_confusion_matrix(cm, classes = ['0', '1'],
                             title = 'Confusion Matrix', normalize=True)
+
+
+        # save test result
+        evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])
+        self.save(evaluation_results)
