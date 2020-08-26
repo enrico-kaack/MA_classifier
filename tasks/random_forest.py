@@ -40,6 +40,7 @@ from utils.plotter import confusion_matrix, evaluate_model
 from utils.plotter import plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
+import pandas as pd
 
 @d6tflow.inherits(TaskTrainRandomForest, TaskTrainTestSplit)
 class TaskEvaluateRandomForest(d6tflow.tasks.TaskPqPandas):
