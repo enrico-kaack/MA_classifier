@@ -2,9 +2,9 @@ from sklearn.metrics import confusion_matrix
 import itertools
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.metrics import precision_score, recall_score, roc_auc_score, roc_curve, accuracy_score
+from sklearn.metrics import precision_score, recall_score, roc_auc_score, roc_curve, accuracy_score, f1_score
 
-def plot_confusion_matrix(cm, classes,
+def plot_confusion_matrix(task_id, cm, classes,
                           normalize=False,
                           title='Confusion matrix',
                           cmap=plt.cm.Oranges):
@@ -14,11 +14,13 @@ def plot_confusion_matrix(cm, classes,
     Source: http://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html
     """
     cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-
     print("Normalized confusion matrix")
     print(cm_normalized)
     print('Confusion matrix, without normalization')
     print(cm)
+    results = {"cm": cm, "cm_normalized": cm_normalized}
+
+
 
     if normalize:
         cm = cm_normalized
@@ -42,15 +44,25 @@ def plot_confusion_matrix(cm, classes,
                  horizontalalignment="center",
                  color="white" if cm[i, j] > thresh else "black")
         
-    plt.grid(None)
-    plt.tight_layout()
     plt.ylabel('True label', size = 18)
     plt.xlabel('Predicted label', size = 18)
+    plt.savefig(f"results/plots/CM_{task_id}.svg")
+    return results
 
 
-def evaluate_model(predictions, probs, test_labels, train_predictions, train_probs, train_labels):
+def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels):
     """Compare machine learning model to baseline performance.
     Computes statistics and shows ROC curve."""
+
+    
+    results = {}
+    
+    results['recall'] = recall_score(test_labels, predictions)
+    results['precision'] = precision_score(test_labels, predictions)
+    results['roc'] = roc_auc_score(test_labels, probs)
+    results['f1'] = f1_score(test_labels, predictions)
+
+    print("Test Accuracy",  accuracy_score(test_labels, predictions))
     
     baseline = {}
     
@@ -59,15 +71,7 @@ def evaluate_model(predictions, probs, test_labels, train_predictions, train_pro
     baseline['precision'] = precision_score(test_labels, 
                                       [1 for _ in range(len(test_labels))])
     baseline['roc'] = 0.5
-    
-    results = {}
-    
-    results['recall'] = recall_score(test_labels, predictions)
-    results['precision'] = precision_score(test_labels, predictions)
-    results['roc'] = roc_auc_score(test_labels, probs)
 
-    print("Test Accuracy",  accuracy_score(test_labels, predictions))
-    
     train_results = {}
     train_results['recall'] = recall_score(train_labels, train_predictions)
     train_results['precision'] = precision_score(train_labels, train_predictions)
@@ -88,6 +92,9 @@ def evaluate_model(predictions, probs, test_labels, train_predictions, train_pro
     plt.plot(base_fpr, base_tpr, 'b', label = 'baseline')
     plt.plot(model_fpr, model_tpr, 'r', label = 'model')
     plt.legend();
+    #plt.tight_layout(rect=(0.05, 0.05, 1, 0.95))
     plt.xlabel('False Positive Rate'); 
     plt.ylabel('True Positive Rate'); plt.title('ROC Curves');
-    plt.show();
+    plt.savefig(f"results/plots/ROC_{task_id}.svg");
+
+    return results

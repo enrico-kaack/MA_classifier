@@ -38,6 +38,7 @@ from utils.plotter import plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
 import pandas as pd
+from utils.data_dumper import dump_json
 
 @d6tflow.inherits(TaskTrainGradientBoostingClassifier, TaskTrainTestSplit)
 class TaskEvaluateGradientBoostingClassifier(d6tflow.tasks.TaskPqPandas):
@@ -65,18 +66,23 @@ class TaskEvaluateGradientBoostingClassifier(d6tflow.tasks.TaskPqPandas):
         rf_probs = model.predict_proba(X_test)[:, 1]
 
         # Plot formatting
-        plt.style.use('fivethirtyeight')
+        #plt.style.use('fivethirtyeight')
         plt.rcParams['font.size'] = 18
 
 
-        evaluate_model(rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train)
+        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train)
 
 
         # Confusion matrix
         cm = confusion_matrix(y_test, rf_predictions)
-        plot_confusion_matrix(cm, classes = ['0', '1'],
+        cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
                             title = 'Confusion Matrix', normalize=True)
-        
+
+        #Write to file
+        results = {**metrics, **cm_values}
+        dump_json(self.task_id, self.__dict__["param_kwargs"],  results)
+
+
         # save test result
         evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])
         self.save(evaluation_results)

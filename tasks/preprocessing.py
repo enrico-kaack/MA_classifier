@@ -7,7 +7,7 @@ from tqdm.autonotebook import tqdm
 import logging
 
 import enum
-class ProblemType(enum.Enum):
+class ProblemType(str, enum.Enum):
     RETURN_NONE = "RETURN_NULL"
     CONDITION_COMPARISON = "CONDITION_COMPARISON"
 
