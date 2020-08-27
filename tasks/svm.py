@@ -83,7 +83,7 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
 
         #Write to file
         results = {**metrics, **cm_values}
-        dump_json(self.task_id, results)
+        dump_json(self.task_id, self.__dict__["param_kwargs"], results)
 
         # save test result
         evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])

@@ -21,7 +21,6 @@ class ConditionComparison():
         if isinstance(node, ast.BoolOp):
             violated = False
             for n in node.values:
-                print("nodes", n)
                 if self._check_if_direct_comparison(n):
                     violated = True
             return violated

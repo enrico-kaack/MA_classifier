@@ -135,7 +135,7 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
 
         #Write to file
         results = {**metrics, **cm_values}
-        dump_json(self.task_id, results)
+        dump_json(self.task_id, self.__dict__["param_kwargs"], results)
 
 
         # save test result
