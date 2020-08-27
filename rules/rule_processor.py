@@ -1,10 +1,11 @@
 from rules.return_none import ReturnNoneRule
 from rules.condition_with_comparison import ConditionComparison
+from rules.condition_comparison_simple import ConditionComparisonSimple
 from tqdm.autonotebook import tqdm
 import logging
 
 def run_rules_on_dataset(dataset):
-    rules = [ReturnNoneRule(), ConditionComparison()]
+    rules = [ReturnNoneRule(), ConditionComparison(), ConditionComparisonSimple()]
     processed_data = []
     for data in tqdm(dataset):
         problems = []

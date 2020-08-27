@@ -10,6 +10,7 @@ import enum
 class ProblemType(str, enum.Enum):
     RETURN_NONE = "RETURN_NULL"
     CONDITION_COMPARISON = "CONDITION_COMPARISON"
+    CONDITION_COMPARISON_SIMPLE = "CONDITION_COMPARISON_SIMPLE"
 
 class TaskSourceFileToDataStructure(d6tflow.tasks.TaskPickle):
     input_src_path = luigi.Parameter(default="raw_data")
