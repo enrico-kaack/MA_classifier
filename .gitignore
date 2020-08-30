@@ -169,3 +169,4 @@ second_large_dataset
 *.pkl
 *.joblib
 data/
+*.DS_Store
