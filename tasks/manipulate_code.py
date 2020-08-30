@@ -31,9 +31,10 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
                 code_string = d["src"]
                 lines = code_string.splitlines(keepends=False)
                 for i in problem_line_numbers:
-                    line = lines[i]
+                    print("PROBLEM PARSING: ",d["file_path"],  i, problem_line_numbers, len(lines))
+                    line = lines[i-1] #-1 since line numbers are indexed from 1, the array from 0
                     new_line = re.sub("return None", callback, line)
-                    lines[i] = new_line
+                    lines[i-1] = new_line
                 code_string = "\n".join(lines)
                 data[index]["src"] = code_string
         
@@ -43,4 +44,49 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
 
         
         self.save(data)
+
+from models.random_forst import process_general_data
+from utils.data_dumper import dump_json
+from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix
+from sklearn.metrics import confusion_matrix
+from tasks.preprocessing import TaskVocabCreator
+
+@d6tflow.inherits(TaskCodeManipulator)
+class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
+    model  = luigi.Parameter()
+    window_size = luigi.IntParameter(default=20)
+    step_size = luigi.IntParameter(default=3)
+    encode_type = luigi.BoolParameter(default=True)
+    vocab_input_directory = luigi.Parameter(default="second_large_dataset")
+    max_vocab_size = luigi.IntParameter(default=100000)
+
+
+    def requires(self):
+        return {"data": self.clone(TaskCodeManipulator), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
+
+    def run(self):
+        data = self.input()["data"].load()
+        vocab = self.input()["vocab"].load()
+
+        # prepare XY
+        x,y = process_general_data(data, vocab, window_size=self.window_size, step_size=self.step_size, problem_type=self.problem_type.value, encode_type=self.encode_type)
+        print(f"Length dataset: {len(x)}")
+
+        #predict
+        rf_predictions = self.model.predict(x)
+        rf_probs = self.model.predict_proba(x)[:, 1]
+
+        #evaluate
+        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [], only_test=True)
+
+
+        # Confusion matrix
+        cm = confusion_matrix(y, rf_predictions)
+        cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
+                            title = 'Confusion Matrix', normalize=True)
+
+        #Write to file
+        results = {**metrics, **cm_values}
+        parameter_dict = {k:v for (k,v) in self.__dict__["param_kwargs"].items() if k != "model"}
+        dump_json(self.task_id, parameter_dict, results)
 

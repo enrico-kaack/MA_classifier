@@ -50,7 +50,7 @@ def plot_confusion_matrix(task_id, cm, classes,
     return results
 
 
-def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels):
+def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels, only_test=False):
     """Compare machine learning model to baseline performance.
     Computes statistics and shows ROC curve."""
 
@@ -72,14 +72,19 @@ def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, 
                                       [1 for _ in range(len(test_labels))])
     baseline['roc'] = 0.5
 
-    train_results = {}
-    train_results['recall'] = recall_score(train_labels, train_predictions)
-    train_results['precision'] = precision_score(train_labels, train_predictions)
-    train_results['roc'] = roc_auc_score(train_labels, train_probs)
+    if not only_test:
+
+        train_results = {}
+        train_results['recall'] = recall_score(train_labels, train_predictions)
+        train_results['precision'] = precision_score(train_labels, train_predictions)
+        train_results['roc'] = roc_auc_score(train_labels, train_probs)
 
     
-    for metric in ['recall', 'precision', 'roc']:
-        print(f'{metric.capitalize()} Baseline: {round(baseline[metric], 2)} Test: {round(results[metric], 2)} Train: {round(train_results[metric], 2)}')
+        for metric in ['recall', 'precision', 'roc']:
+            print(f'{metric.capitalize()} Baseline: {round(baseline[metric], 2)} Test: {round(results[metric], 2)} Train: {round(train_results[metric], 2)}')
+    else:
+        for metric in ['recall', 'precision', 'roc']:
+            print(f'{metric.capitalize()} Baseline: {round(baseline[metric], 2)} Test: {round(results[metric], 2)}')
     
     # Calculate false positive rates and true positive rates
     base_fpr, base_tpr, _ = roc_curve(test_labels, [1 for _ in range(len(test_labels))])

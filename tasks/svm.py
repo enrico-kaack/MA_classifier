@@ -69,7 +69,7 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
 
 
         # Plot formatting
-        plt.style.use('fivethirtyeight')
+        #plt.style.use('fivethirtyeight')
         plt.rcParams['font.size'] = 18
 
 

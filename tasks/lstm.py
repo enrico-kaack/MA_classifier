@@ -121,7 +121,7 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
         rf_probs = model.predict(X_test)
 
         # Plot formatting
-        plt.style.use('fivethirtyeight')
+        #plt.style.use('fivethirtyeight')
         plt.rcParams['font.size'] = 18
 
 
