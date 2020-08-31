@@ -36,12 +36,26 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
                     lines[i-1] = new_line
                 code_string = "\n".join(lines)
                 data[index]["src"] = code_string
+
+         if self.problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
+            replacements = ["if a<b or b<a:", "if is_smaller(a,b) and b < c:", "if not a < b:"]
+            def callback(matchobj):
+                return random.choice(replacements)
+            for index, d in enumerate(data):
+                problem_line_numbers = [l['line_number'] for l in d['problems'] if l['type'] == self.problem_type]
+
+                code_string = d["src"]
+                lines = code_string.splitlines(keepends=False)
+                for i in problem_line_numbers:
+                    line = lines[i-1] #-1 since line numbers are indexed from 1, the array from 0
+                    new_line = re.sub("if .*:", callback, line)
+                    lines[i-1] = new_line
+                code_string = "\n".join(lines)
+                data[index]["src"] = code_string
         
         else:
             raise NotImplementedError("Only return none implemented right now")
 
-
-        
         self.save(data)
 
 

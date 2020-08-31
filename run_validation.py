@@ -8,9 +8,44 @@ import d6tflow
 
 d6tflow.settings.log_level = 'DEBUG' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
 
-model = TaskTrainLstm(max_vocab_size=100000, input_src_path="second_large_dataset", problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2).outputLoad()
+train_source = "second_large_dataset"
+validation_source = "validation"
+models_ensemble = [
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=1.0),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.1, n_estimators=100),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=100),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.01, n_estimators=1000),
 
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=1.0),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.1, n_estimators=100),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=100),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.01, n_estimators=1000),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5, encode_type=False),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=1.0, encode_type=False),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, encode_type=False),
+]
 
+models_keras = [
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+        TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+]
 
-t = TaskEvalKeras(model=model, input_src_path="validation", problem_type=ProblemType.RETURN_NONE, vocab_input_directory="second_large_dataset", max_vocab_size=100000, encode_type=False)
-d6tflow.run(t)
+for model_task in models_keras:
+    model = model_task.outputLoad()
+    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=model_task.problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    d6tflow.run(t)
+
+for model_task in models_ensemble:
+    model = model_task.outputLoad()
+    t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=model_task.problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    d6tflow.run(t)
