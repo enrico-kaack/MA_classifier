@@ -3,6 +3,7 @@ import luigi
 import os
 from rules.return_none import ReturnNoneRule
 from rules.condition_with_comparison import ConditionComparison
+from rules.condition_comparison_simple import ConditionComparisonSimple
 from tqdm.autonotebook import tqdm
 import logging
 
@@ -43,7 +44,7 @@ class TaskRuleProcessor(d6tflow.tasks.TaskPickle):
         print(f"###Running {type(self).__name__}")
 
         dataset = self.input().load()
-        rules = [ReturnNoneRule(), ConditionComparison()]
+        rules = [ReturnNoneRule(), ConditionComparison(), ConditionComparisonSimple()]
         processed_data = []
         for data in tqdm(dataset):
             problems = []
