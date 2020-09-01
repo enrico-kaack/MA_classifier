@@ -11,7 +11,7 @@ class ReturnNoneRule():
         for node in ast.walk(a):
             if isinstance(node, ast.Return):
                 return_value = node.value
-                if isinstance(return_value, ast.Constant):
+                if isinstance(return_value, ast.Constant) or isinstance(return_value, ast.NameConstant): #necessary, since NameConstant is used in older versions
                     if return_value.value == None:
                         problems.append({"type": "RETURN_NULL", "line_number":  node.lineno, "col_offset": node.col_offset})
         return problems
