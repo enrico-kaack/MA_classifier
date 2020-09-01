@@ -12,6 +12,6 @@ class ConditionComparisonSimple():
             #for all if
             if isinstance(node, ast.If):
                 testNode = node.test
-                if  not isinstance(testNode, ast.Call):
+                if isinstance(testNode, ast.Compare):
                     problems.append({"type": "CONDITION_COMPARISON_SIMPLE", "line_number":  testNode.lineno, "col_offset": testNode.col_offset})
         return problems
