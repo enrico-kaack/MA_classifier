@@ -33,7 +33,7 @@ def decode_vector(tokens, reverse_vocab, encode_type=True):
         if index % 2 == 0 and encode_type:
             # token type
             if token == 257: # unknown
-                decoded.append(">UNKNOWN>")
+                decoded.append("<UNKNOWN>")
             else:
                 decoded.append(tok_name[token])
         else:
