@@ -6,7 +6,7 @@ from tasks.random_forest import TaskTrainRandomForest
 from tasks.manipulate_code import TaskEvalEnsemble, TaskEvalKeras
 import d6tflow
 
-d6tflow.settings.log_level = 'DEBUG' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
+d6tflow.settings.log_level = 'INFO' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
 
 train_source = "second_large_dataset"
 validation_source = "validation"
