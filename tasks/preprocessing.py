@@ -139,9 +139,12 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
         print(f"###Running {type(self).__name__}")
 
         x,y = self.input().load()
-
+        c1 = Counter()
+        c1.update(y)
         X_train, X_test, y_train, y_test  = train_test_split(x, y, test_size=self.test_split_percentage, random_state=1)
-
+        c2 = Counter()
+        c2.update(y_train)
+        print("Before", c1.most_common(), "After", c2.most_common())
         if self.oversampling_enabled:
             oversample = RandomOverSampler(sampling_strategy=self.ratio_after_oversampling, random_state=1)
             X_train, y_train = oversample.fit_resample(X_train, y_train)
