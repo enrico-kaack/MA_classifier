@@ -18,6 +18,9 @@ models_ensemble = [
         TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.1, n_estimators=100),
         TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=100),
         TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.01, n_estimators=1000),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, encode_type=False),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=1.0, encode_type=False),
+        TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, encode_type=False),
 
         TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5),
         TaskTrainRandomForest(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=1.0),
@@ -42,10 +45,17 @@ models_keras = [
 
 for model_task in models_keras:
     model = model_task.outputLoad()
-    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=model_task.problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    problem_type = model_task.problem_type
+    if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
+            problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
+
+    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
     d6tflow.run(t)
 
 for model_task in models_ensemble:
     model = model_task.outputLoad()
-    t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=model_task.problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    problem_type = model_task.problem_type
+    if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
+            problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
+    t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
     d6tflow.run(t)

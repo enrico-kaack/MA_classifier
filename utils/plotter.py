@@ -3,6 +3,7 @@ import itertools
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import precision_score, recall_score, roc_auc_score, roc_curve, accuracy_score, f1_score
+import os
 
 def plot_confusion_matrix(task_id, cm, classes,
                           normalize=False,
@@ -46,6 +47,9 @@ def plot_confusion_matrix(task_id, cm, classes,
         
     plt.ylabel('True label', size = 18)
     plt.xlabel('Predicted label', size = 18)
+
+    #check if path exists, otherwise create
+    os.makedirs("results/plots", exist_ok=True)
     plt.savefig(f"results/plots/CM_{task_id}.svg")
     return results
 

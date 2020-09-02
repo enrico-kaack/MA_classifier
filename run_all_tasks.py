@@ -66,6 +66,7 @@ def run_all_tasks(source):
         # TaskEvaluateRandomForest(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=1.0, encode_type=False),
         # TaskEvaluateRandomForest(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, encode_type=False),
 
+        ## SVM, long runtime
         # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True),
         # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1, svm_kernel="rbf", svm_predict_probability=True),
         # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced"),
