@@ -42,15 +42,6 @@ models_keras = [
         TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
         TaskTrainLstm(max_vocab_size=100000, input_src_path=train_source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
 ]
-run_tasks = []
-for model_task in models_keras:
-    model = model_task.outputLoad()
-    problem_type = model_task.problem_type
-    if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
-            problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-
-    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
-    run_tasks.append(t)
 
 for model_task in models_ensemble:
     model = model_task.outputLoad()
@@ -58,6 +49,16 @@ for model_task in models_ensemble:
     if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
     t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
-    run_tasks.append(t)
+    d6tflow.run(t, workers=2)
 
-d6tflow.run(run_tasks, workers=2)
+for model_task in models_keras:
+    model = model_task.outputLoad()
+    problem_type = model_task.problem_type
+    if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
+            problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
+    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    d6tflow.run(t, workers=2)
+
+
+
+
