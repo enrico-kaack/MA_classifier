@@ -60,4 +60,4 @@ for model_task in models_ensemble:
     t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
     run_tasks.append(t)
 
-d6tflow.run(t, workers=2)
+d6tflow.run(run_tasks, workers=2)
