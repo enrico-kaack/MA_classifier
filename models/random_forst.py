@@ -1,5 +1,5 @@
 from io import BytesIO
-from tokenize import tokenize, tok_name
+from tokenize import tokenize, tok_name, TokenError
 import more_itertools
 from tqdm.autonotebook import tqdm
 import logging
@@ -10,21 +10,23 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
     y = []
     for d in tqdm(data):
         problem_line_numbers = [l['line_number'] for l in d['problems'] if l['type'] == problem_type]
-        tokens= tokenize(BytesIO(d['src'].encode('utf-8')).readline)
-        token_list = []
-        for index, (token_type, token_string, start, end, source_line) in enumerate(tokens):
-            token_list.append((index, token_type, token_string, start, end, source_line))
+        try:
+            tokens= tokenize(BytesIO(d['src'].encode('utf-8')).readline)
+            token_list = []
+            for index, (token_type, token_string, start, end, source_line) in enumerate(tokens):
+                token_list.append((index, token_type, token_string, start, end, source_line))
 
-        windowed_tokens = list(more_itertools.windowed(token_list, n=window_size, step=step_size))
+            windowed_tokens = list(more_itertools.windowed(token_list, n=window_size, step=step_size))
 
-        y_single = _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers)
-        x_single = _encode_input_vector(windowed_tokens, vocab, encode_type)
-        if (len(x_single) != len(y_single)):
-            logging.warning(f"x and y size not same for file{d['file_path']}")
-            continue
-        x.extend(x_single)
-        y.extend(y_single)
-
+            y_single = _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers)
+            x_single = _encode_input_vector(windowed_tokens, vocab, encode_type)
+            if (len(x_single) != len(y_single)):
+                logging.warning(f"x and y size not same for file{d['file_path']}")
+                continue
+            x.extend(x_single)
+            y.extend(y_single)
+        except TokenError:
+            logging.error(f"FAILED parsing for content: {d['src']}")
     return x,y
 
 def decode_vector(tokens, reverse_vocab, encode_type=True):
