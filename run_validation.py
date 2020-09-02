@@ -50,7 +50,7 @@ for model_task in models_keras:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
 
     t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
-    d6tflow.run(t)
+    d6tflow.run(t, workers=2)
 
 for model_task in models_ensemble:
     model = model_task.outputLoad()
@@ -58,4 +58,4 @@ for model_task in models_ensemble:
     if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
     t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
-    d6tflow.run(t)
+    d6tflow.run(t, workers=2)
