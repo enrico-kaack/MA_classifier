@@ -54,7 +54,7 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
                 data[index]["src"] = code_string
         
         else:
-            raise NotImplementedError("Only return none implemented right now")
+            raise NotImplementedError("Return none and condition simple implemented")
 
         self.save(data)
 

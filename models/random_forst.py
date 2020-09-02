@@ -26,7 +26,9 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
             x.extend(x_single)
             y.extend(y_single)
         except TokenError:
-            logging.error(f"FAILED parsing for content: {d['src']}")
+            logging.error(f"FAILED parsing for content with token error: {d['file_path']}")
+        except:
+            logging.error(f"FAILED parsing for content with unknown error: {d['file_path']}")
     return x,y
 
 def decode_vector(tokens, reverse_vocab, encode_type=True):
