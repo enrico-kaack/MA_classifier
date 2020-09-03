@@ -123,10 +123,16 @@ class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
 from utils.data_dumper import dump_json
 from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
+from imblearn.under_sampling import RandomUnderSampler
+
 
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalKeras(d6tflow.tasks.TaskPickle):
     model  = luigi.Parameter()
+    undersampling_enabled = luigi.BoolParameter(default=False)
+    undersampling_ratio = luigi.FloatParameter(default=0.5)
+    
+
 
     def requires(self):
         return self.clone(TaskPrepareXYValidation)
@@ -135,6 +141,11 @@ class TaskEvalKeras(d6tflow.tasks.TaskPickle):
         print(f"###Running {type(self).__name__}")
 
         x,y = self.input().load()
+
+        #undersample
+        if self.undersampling_enabled:
+            undersample = RandomUnderSampler(sampling_strategy=self.undersampling_ratio, random_state=1)
+            x, y = undersample.fit_resample(x, y)
 
         #predict
         rf_predictions = (self.model.predict(x) > 0.5).astype("int32")
