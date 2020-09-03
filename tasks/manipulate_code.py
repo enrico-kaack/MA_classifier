@@ -61,6 +61,7 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
 
 from models.random_forst import process_general_data
 from tasks.preprocessing import TaskVocabCreator
+from imblearn.under_sampling import RandomUnderSampler
 
 @d6tflow.inherits(TaskCodeManipulator)
 class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
@@ -69,6 +70,10 @@ class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
     encode_type = luigi.BoolParameter(default=True)
     vocab_input_directory = luigi.Parameter(default="second_large_dataset")
     max_vocab_size = luigi.IntParameter(default=100000)
+
+    undersampling_enabled = luigi.BoolParameter(default=False)
+    undersampling_ratio = luigi.FloatParameter(default=0.5)
+
 
     def requires(self):
         return {"data": self.clone(TaskCodeManipulator), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
@@ -82,6 +87,11 @@ class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
 
         # prepare XY
         x,y = process_general_data(data, vocab, window_size=self.window_size, step_size=self.step_size, problem_type=self.problem_type.value, encode_type=self.encode_type)
+
+                #undersample
+        if self.undersampling_enabled:
+            undersample = RandomUnderSampler(sampling_strategy=self.undersampling_ratio, random_state=1)
+            x, y = undersample.fit_resample(x, y)
         print(f"Length dataset: {len(x)}")
 
         self.save((x,y))
@@ -123,16 +133,10 @@ class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
 from utils.data_dumper import dump_json
 from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
-from imblearn.under_sampling import RandomUnderSampler
-
 
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalKeras(d6tflow.tasks.TaskPickle):
-    model  = luigi.Parameter()
-    undersampling_enabled = luigi.BoolParameter(default=False)
-    undersampling_ratio = luigi.FloatParameter(default=0.5)
-    
-
+    model  = luigi.Parameter()    
 
     def requires(self):
         return self.clone(TaskPrepareXYValidation)
@@ -142,10 +146,6 @@ class TaskEvalKeras(d6tflow.tasks.TaskPickle):
 
         x,y = self.input().load()
 
-        #undersample
-        if self.undersampling_enabled:
-            undersample = RandomUnderSampler(sampling_strategy=self.undersampling_ratio, random_state=1)
-            x, y = undersample.fit_resample(x, y)
 
         #predict
         rf_predictions = (self.model.predict(x) > 0.5).astype("int32")
