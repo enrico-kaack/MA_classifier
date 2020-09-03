@@ -58,7 +58,7 @@ for model_task in models_keras:
     problem_type = model_task.problem_type
     if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type)
+    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type, undersampling_enabled=True, undersampling_ratio=0.5)
     d6tflow.run(t, workers=1)
 
 
