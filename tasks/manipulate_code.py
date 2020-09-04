@@ -103,6 +103,8 @@ from sklearn.metrics import confusion_matrix
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
     model  = luigi.Parameter()
+    training_parameter = luigi.Parameter()
+
 
     def requires(self):
         return self.clone(TaskPrepareXYValidation)
@@ -136,7 +138,8 @@ from sklearn.metrics import confusion_matrix
 
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalKeras(d6tflow.tasks.TaskPickle):
-    model  = luigi.Parameter()    
+    model  = luigi.Parameter()
+    training_parameter = luigi.Parameter()
 
     def requires(self):
         return self.clone(TaskPrepareXYValidation)

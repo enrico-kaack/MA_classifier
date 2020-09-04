@@ -54,7 +54,7 @@ for model_task in models_ensemble:
     problem_type = model_task.problem_type
     if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-    t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type, undersampling_enabled=True, undersampling_ratio=0.1)
+    t = TaskEvalEnsemble(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type, undersampling_enabled=True, undersampling_ratio=0.1, training_parameter=model_task.__dict__["param_kwargs"])
     d6tflow.run(t, workers=2)
 
 for model_task in models_keras:
@@ -62,7 +62,7 @@ for model_task in models_keras:
     problem_type = model_task.problem_type
     if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
             problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type, undersampling_enabled=True, undersampling_ratio=0.1)
+    t = TaskEvalKeras(model=model, input_src_path=validation_source, problem_type=problem_type, vocab_input_directory=train_source, max_vocab_size=100000, encode_type=model_task.encode_type, undersampling_enabled=True, undersampling_ratio=0.1, training_parameter=model_task.__dict__["param_kwargs"])
     d6tflow.run(t, workers=1)
 
 
