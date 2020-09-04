@@ -12,27 +12,32 @@ train_source = "second_large_dataset"
 validation_source = "validation"
 
 tasks_eval = []
+models_ensemble = []
+models_keras = []
+
 for problem_type in ProblemType:
     t =[ 
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.2),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.2),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.2),
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.2),
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
     ]
+
+    models_ensemble.extend([
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.2),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.2),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
+        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
+
+    ])
     tasks_eval.extend(t)
 d6tflow.run(tasks_eval, workers=2)
 
-models_ensemble = [        
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.2),
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.2),
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
-        TaskTrainGradientBoostingClassifier(max_vocab_size=100000, input_src_path=train_source, problem_type=problem_type.value, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
-]
-models_keras = []
+
 
 for model_task in models_ensemble:
     model = model_task.outputLoad()
