@@ -91,6 +91,8 @@ def run_all_tasks(source):
         # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.3, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced"),
 
     ]
+    for t in task_list:
+        t.invalidate(confirm=False)
     d6tflow.preview(task_list)
     d6tflow.run(task_list)
 
