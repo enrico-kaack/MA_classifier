@@ -66,6 +66,11 @@ def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, 
     results['roc'] = roc_auc_score(test_labels, probs)
     results['f1'] = f1_score(test_labels, predictions)
 
+    results['train_recall'] = recall_score(train_labels, train_predictions)
+    results['train_precision'] = precision_score(train_labels, train_predictions)
+    results['train_roc'] = roc_auc_score(train_labels, train_probs)
+    results['train_f1'] = f1_score(train_labels, train_predictions)
+
     print("Test Accuracy",  accuracy_score(test_labels, predictions))
     
     baseline = {}
