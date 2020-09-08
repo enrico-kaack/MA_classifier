@@ -39,7 +39,7 @@ def run_all_tasks(source):
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1),
 
 
 
@@ -61,7 +61,7 @@ def run_all_tasks(source):
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.2),
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 200, learning_rate=0.1),
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 300, learning_rate=0.1),
-        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1)
+        TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1),
 
 
         TaskEvaluateRandomForest(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5),
