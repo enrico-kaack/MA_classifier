@@ -57,13 +57,19 @@ class TaskEvaluateRandomForest(d6tflow.tasks.TaskPqPandas):
         model = self.input()["model"].load()
         X_train = self.input()["data"]["X_train"].load()
         y_train = self.input()["data"]["y_train"].load()
+        X_train_dev = self.input()["data"]["X_train_dev"].load()
+        y_train_dev = self.input()["data"]["y_train_dev"].load()
         X_test = self.input()["data"]["X_test"].load()
         y_test = self.input()["data"]["y_test"].load()
         print(f"Length Train: {len(X_train)}, length Test {len(X_test)}")
 
-        # Training predictions (to demonstrate overfitting)
+        # Training predictions
         train_rf_predictions = model.predict(X_train)
         train_rf_probs = model.predict_proba(X_train)[:, 1]
+
+        #Train dev predictions
+        train_dev_rf_predictions = model.predict(X_train_dev)
+        train_dev_rf_probs = model.predict_proba(X_train_dev)[:, 1]
 
         # Testing predictions (to determine performance)
         rf_predictions = model.predict(X_test)
@@ -88,7 +94,7 @@ class TaskEvaluateRandomForest(d6tflow.tasks.TaskPqPandas):
         plt.rcParams['font.size'] = 18
 
 
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train)
+        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train, train_dev_rf_predictions, train_dev_rf_probs, y_train_dev)
 
 
         # Confusion matrix

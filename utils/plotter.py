@@ -54,7 +54,7 @@ def plot_confusion_matrix(task_id, cm, classes,
     return results
 
 
-def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels, only_test=False):
+def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels, train_dev_predictions, train_dev_probs, train_dev_labels, only_test=False):
     """Compare machine learning model to baseline performance.
     Computes statistics and shows ROC curve."""
 
@@ -70,6 +70,11 @@ def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, 
     results['train_precision'] = precision_score(train_labels, train_predictions)
     results['train_roc'] = roc_auc_score(train_labels, train_probs)
     results['train_f1'] = f1_score(train_labels, train_predictions)
+
+    results['train_dev_recall'] = recall_score(train_dev_labels, train_dev_predictions)
+    results['train_dev_precision'] = precision_score(train_dev_labels, train_dev_predictions)
+    results['train_dev_roc'] = roc_auc_score(train_dev_labels, train_dev_probs)
+    results['train_dev_f1'] = f1_score(train_dev_labels, train_dev_predictions)
 
     print("Test Accuracy",  accuracy_score(test_labels, predictions))
     

@@ -155,7 +155,7 @@ class TaskEvalKeras(d6tflow.tasks.TaskPickle):
         rf_probs = self.model.predict(x)
 
         #evaluate
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [], only_test=True)
+        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [],[], [],only_test=True)
 
 
         # Confusion matrix
