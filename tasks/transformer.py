@@ -133,11 +133,11 @@ import pandas as pd
 from utils.data_dumper import dump_json
 
 
-@d6tflow.inherits(TaskTrainTransformer, TaskTrainTestSplit)
+@d6tflow.inherits(TaskTrainTransformer, TaskTrainTestSplitTransformer)
 class TaskEvaluateTransformer(d6tflow.tasks.TaskPqPandas):
 
     def requires(self):
-        return{"model": self.clone(TaskTrainTransformer), "data": self.clone(TaskTrainTestSplit)}
+        return{"model": self.clone(TaskTrainTransformer), "data": self.clone(TaskTrainTestSplitTransformer)}
 
     def run(self):
         print(f"###Running {type(self).__name__}")
