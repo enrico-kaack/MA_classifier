@@ -10,7 +10,7 @@ from tqdm.autonotebook import tqdm
 import logging
 
 @d6tflow.inherits(TaskRuleProcessor)
-class TaskPrepareXY(d6tflow.tasks.TaskPickle):
+class TaskPrepareXYTransformer(d6tflow.tasks.TaskPickle):
     problem_type = luigi.EnumParameter(enum=ProblemType)
     window_size = luigi.IntParameter(default=20)
     step_size = luigi.IntParameter(default=3)
@@ -31,8 +31,8 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
 
-@d6tflow.inherits(TaskPrepareXY)
-class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
+@d6tflow.inherits(TaskPrepareXYTransformer)
+class TaskTrainTestSplitTransformer(d6tflow.tasks.TaskPickle):
     test_split_percentage = luigi.FloatParameter(default=0.2)
     train_dev_split_percentage = luigi.FloatParameter(default=0.1)
     oversampling_enabled = luigi.BoolParameter(default=True)
@@ -43,7 +43,7 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
     persist=['X_train','y_train', "X_train_dev", "y_train_dev", "X_test", "y_test"]
 
     def requires(self):
-        return self.clone(TaskPrepareXY)
+        return self.clone(TaskPrepareXYTransformer)
 
     def run(self):
         print(f"###Running {type(self).__name__}")
@@ -88,7 +88,7 @@ from simpletransformers.classification import ClassificationModel, Classificatio
 from collections import Counter
 import pandas as pd
 
-@d6tflow.inherits(TaskTrainTestSplit)
+@d6tflow.inherits(TaskTrainTestSplitTransformer)
 class TaskTrainTransformer(d6tflow.tasks.TaskPickle):
     n_trees_in_forest = luigi.IntParameter(default=100)
     max_features = luigi.Parameter(default="sqrt")
@@ -96,7 +96,7 @@ class TaskTrainTransformer(d6tflow.tasks.TaskPickle):
     model_name = luigi.Parameter(default="huggingface/CodeBERTa-small-v1")
 
     def requires(self):
-        return self.clone(TaskTrainTestSplit)
+        return self.clone(TaskTrainTestSplitTransformer)
 
     def run(self):
         print(f"###Running {type(self).__name__}")
