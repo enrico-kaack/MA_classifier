@@ -95,3 +95,4 @@ wget == 3.2
 
 untokenize==0.1.1
 simpletransformers==0.48.3
+torch==1.6.0
