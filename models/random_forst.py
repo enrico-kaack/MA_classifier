@@ -1,11 +1,12 @@
 from io import BytesIO
 from tokenize import tokenize, tok_name, TokenError
+import untokenize
 import more_itertools
 from tqdm.autonotebook import tqdm
 import logging
+import sys
 
-
-def process_general_data(data, vocab, window_size=20, step_size=3, problem_type="RETURN_NULL", encode_type=True):
+def process_general_data(data, vocab, window_size=20, step_size=3, problem_type="RETURN_NULL", encode_type=True, dont_encode=False):
     x = []
     y = []
     for d in tqdm(data):
@@ -19,7 +20,25 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
             windowed_tokens = list(more_itertools.windowed(token_list, n=window_size, step=step_size))
 
             y_single = _extract_labels_for_window(windowed_tokens, token_list, problem_line_numbers)
-            x_single = _encode_input_vector(windowed_tokens, vocab, encode_type)
+            #print("ENCODE", dont_encode)
+
+            if dont_encode:
+                #print("DONT ENCODE")
+
+                x_single = []
+                for windowed_tokens_single in windowed_tokens:
+                    #print("WINDOWED TOKENS_SINGLE", windowed_tokens_single)
+                    single_tokens = [(token[1:]) for token in windowed_tokens_single if token is not None]
+                    #print("SINGLE TOKENS", single_tokens)
+
+                    untokenized = untokenize.untokenize(single_tokens)
+                    #print("UNTOKENIZE", untokenized, type(untokenized))
+                    if type(untokenized) is str: #sometimes, untokenized is of type string, sometimes (following documentation), it is of type bytes
+                        x_single.append(untokenized)
+                    else:
+                        x_single.append(untokenized.decode("utf-8"))
+            else:
+                x_single = _encode_input_vector(windowed_tokens, vocab, encode_type)
             if (len(x_single) != len(y_single)):
                 logging.warning(f"x and y size not same for file{d['file_path']}")
                 continue
@@ -28,7 +47,7 @@ def process_general_data(data, vocab, window_size=20, step_size=3, problem_type=
         except TokenError:
             logging.error(f"FAILED parsing for content with token error: {d['file_path']}")
         except:
-            logging.error(f"FAILED parsing for content with unknown error: {d['file_path']}")
+            logging.error(f"FAILED parsing for content with error {sys.exc_info()[0]}: {d['file_path']}")
     return x,y
 
 def decode_vector(tokens, reverse_vocab, encode_type=True):
