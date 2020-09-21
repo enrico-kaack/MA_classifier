@@ -119,7 +119,7 @@ class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
         rf_probs = self.model.predict_proba(x)[:, 1]
 
         #evaluate
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [],[], [], [], only_test=True)
+        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [],[], [],only_test=True)
 
 
         # Confusion matrix
