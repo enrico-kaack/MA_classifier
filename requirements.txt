@@ -91,3 +91,7 @@ tqdm == 4.48.2
 # MA_classifier/get_repository_code.ipynb: 1
 # MA_classifier/input/data_downloader.py: 4
 wget == 3.2
+
+
+untokenize==0.1.1
+simpletransformers==0.48.3
