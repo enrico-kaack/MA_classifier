@@ -170,3 +170,6 @@ second_large_dataset/
 *.joblib
 data/
 *.DS_Store
+
+cache_dir
+runs
