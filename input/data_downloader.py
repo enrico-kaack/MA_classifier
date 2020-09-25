@@ -15,10 +15,10 @@ class DataDownloader():
     def download_repos_in_org_repo_list(self, repos):
         logging.info(f"Downloading {len(repos)} repositories...")
         for entry in tqdm(repos):
-            org, repo, branch = self._split_file_line(entry)
+            org, repo, branch, sha = self._split_file_line(entry)
 
             logging.debug(f"Downloading {org}/{repo}/{branch}")
-            zip_file = self.download_repository(org, repo, branch)
+            zip_file = self.download_repository(org, repo, branch, sha)
             extracted_path = self.extract_repository(zip_file, org, repo, branch)
             os.remove(zip_file)
 
@@ -32,11 +32,11 @@ class DataDownloader():
         splitted = line.split("/")
         return tuple(splitted)
 
-    def url_constructor(self, org, repo, branch):
-        return f"https://github.com/{org}/{repo}/archive/{branch}.zip"
+    def url_constructor(self, org, repo, branch, sha):
+        return f"https://github.com/{org}/{repo}/archive/{sha}.zip"
 
-    def download_repository(self, org, repo, branch):
-        git_url = self.url_constructor(org, repo, branch)
+    def download_repository(self, org, repo, branch, sha):
+        git_url = self.url_constructor(org, repo, branch, sha)
         filename = wget.download(git_url, bar=None)
         return filename
 
@@ -72,7 +72,7 @@ logging.basicConfig(level=logging.INFO)
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='data_downlaoder.py', description="Downlaods repositories from github and removes non-python files")
     parser.add_argument("repo_list", help="File with a list of repos to download", metavar="REPO_LIST")
-    parser.add_argument("-o", "--output_dir", help="File with a list of repos to download", metavar="OUTPUT_DIR")
+    parser.add_argument("-o", "--output_dir", help="Output dir of extracted files", metavar="OUTPUT_DIR")
     parser.add_argument("-l", "--log_level", help="Log level (DEBUG, INFO, ERROR)", metavar="LOG_LEVEL")
 
     if len(sys.argv)==1:

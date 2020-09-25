@@ -166,6 +166,7 @@ dmypy.json
 
 raw_data
 second_large_dataset/
+final_dataset
 *.pkl
 *.joblib
 data/
