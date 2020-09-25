@@ -37,7 +37,7 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
                 code_string = "\n".join(lines)
                 data[index]["src"] = code_string
 
-        elif self.problem_type == ProblemType.CONDITION_COMPARISON: #trained on normal, validated on simple, therefore normal condition here 
+        elif self.problem_type == ProblemType.CONDITION_COMPARISON: #trained on simple (see run_validation), but we want to replace all the complicated conditions we did not train on 
             replacements = ["if a<b or b<a:", "if is_smaller(a,b) and b < c:", "if not a < b:"]
             def callback(matchobj):
                 return random.choice(replacements)
