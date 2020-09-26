@@ -9,6 +9,7 @@ from collections import Counter
 class TaskTrainRandomForest(d6tflow.tasks.TaskPickle):
     n_trees_in_forest = luigi.IntParameter(default=100)
     max_features = luigi.Parameter(default="sqrt")
+    class_weight = luigi.Parameter(default=None)
 
     def requires(self):
         return self.clone(TaskTrainTestSplit)
@@ -28,7 +29,7 @@ class TaskTrainRandomForest(d6tflow.tasks.TaskPickle):
         model = RandomForestClassifier(n_estimators=self.n_trees_in_forest, 
                                     random_state=1, 
                                     max_features = self.max_features,
-                                    n_jobs=-1, verbose = True)
+                                    n_jobs=-1, verbose = True, class_weight=self.class_weight)
 
         model.fit(X_train, y_train)
         self.save(model)
