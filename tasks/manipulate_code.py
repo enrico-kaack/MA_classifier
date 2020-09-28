@@ -63,7 +63,7 @@ from models.random_forst import process_general_data
 from tasks.preprocessing import TaskVocabCreator
 from imblearn.under_sampling import RandomUnderSampler
 
-@d6tflow.inherits(TaskCodeManipulator)
+@d6tflow.inherits(TaskCodeManipulator, TaskVocabCreator)
 class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
     window_size = luigi.IntParameter(default=20)
     step_size = luigi.IntParameter(default=3)
