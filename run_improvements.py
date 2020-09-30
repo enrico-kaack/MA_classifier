@@ -6,7 +6,7 @@ from tasks.random_forest import TaskTrainRandomForest, TaskEvaluateRandomForest
 from tasks.manipulate_code import TaskEvalEnsemble, TaskEvalKeras, TaskPrepareXYValidation
 import d6tflow
 
-source = "second_large_dataset"
+source = "final_dataset"
 for problem_type in ProblemType:
     t =[ 
         TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.2, n_estimators=200, subsample=1.0),
