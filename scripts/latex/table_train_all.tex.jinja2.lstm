@@ -12,6 +12,6 @@ over-\newline sampling                                                       & u
                                                                     &                                                                     &                                                           &    & \textit{Precision} &                                                      & \VAR{d.train_precision_RF | round(4)} & \VAR{d.train_dev_precision_RF | round(4)} & \VAR{d.precision_RF | round(4)} & \VAR{d.train_precision_CCS | round(4)} & \VAR{d.train_dev_precision_CCS | round(4)} & \VAR{d.precision_CCS | round(4)} & \VAR{d.train_precision_CCS | round(4)} & \VAR{d.train_dev_precision_CCS | round(4)} & \VAR{d.precision_CCS | round(4)} \\ \midrule
 \BLOCK{ endfor }
 \end{tabularx}
-\caption{\VAR{ model}
+\caption{\VAR{ model}}
 \label{tab:all_results_\VAR{ model | replace(" ", "_")}}
 \end{table}
