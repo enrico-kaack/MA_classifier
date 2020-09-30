@@ -16,7 +16,7 @@ latex_jinja_env = jinja2.Environment(
     trim_blocks=True,
     autoescape=False)
 
-def process_data(results):
+def process_data(results, model):
     results["ratio_after_oversampling"][results.oversampling_enabled == False] = "-"
     results["ratio_after_undersampling"][results.undersampling_enabled == False] = "-"
 
@@ -24,20 +24,29 @@ def process_data(results):
     results = results[results["max_vocab_size"] == 100000]
     results = results[results["input_src_path"] == "final_dataset"]
 
-    merge_columns = ['window_size', 'step_size', 'encode_type','oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling', 'n_trees_in_forest', 'max_features', 'class_weight']
+    all_merge_columns = {"random forest": ['window_size', 'step_size', 'encode_type','oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling', 'n_trees_in_forest', 'max_features', 'class_weight', 'encode_type'],
 
-    random_forest_RN = results[(results["problem_type"] == "RETURN_NULL")  & (results["n_trees_in_forest"].notnull())]
+    "gradient boosting classifier": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling', 'n_estimators', 'learning_rate', 'subsample', 'encode_type'],
+
+    "lstm": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling','embedding_vecor_length', 'epochs', 'batch_size', 'num_lstm_cells', 'dropout_emb_lstm', 'dropout_lstm_dense', 'encode_type']
+    }
+    merge_columns = all_merge_columns[model]
+
+    all_filter = {"random forest": "n_trees_in_forest", "gradient boosting classifier": "n_estimators", "lstm": "embedding_vecor_length"}
+    model_filter = all_filter[model]
+
+    random_forest_RN = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
     random_forest_RN.columns = random_forest_RN.columns.map(lambda a: a + "_RF" if a not in merge_columns else a)
 
-    random_forest_CC = results[(results["problem_type"] == "RETURN_NULL")  & (results["n_trees_in_forest"].notnull())]
+    random_forest_CC = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
     random_forest_CC.columns = random_forest_CC.columns.map(lambda a: a + "_CC" if a not in merge_columns else a)
 
-    random_forest_CCS = results[(results["problem_type"] == "RETURN_NULL")  & (results["n_trees_in_forest"].notnull())]
+    random_forest_CCS = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
     random_forest_CCS.columns = random_forest_CCS.columns.map(lambda a: a + "_CCS" if a not in merge_columns else a)
 
 
     merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1")).merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"))
-    return merged
+    return (model, merged)
 
 def read_data(input_dir):
     frames = []
@@ -50,11 +59,13 @@ def read_data(input_dir):
     return results
 
 def print_data(data, output_file, template_file):
-    with open(template_file, "r") as f:
-        t = latex_jinja_env.from_string(f.read())
-        rendered = t.render(data=merged.T.to_dict().values())
+        rendered = []
+        for model, d in data:
+                with open(f"{template_file}.{model.replace(' ', '_')}", "r") as f:
+                    t = latex_jinja_env.from_string(f.read())
+                    rendered.append(t.render(data=d.T.to_dict().values(), model=model))
         with open(output_file, "w") as o:
-            o.write(rendered)
+            o.write("\n\n".join(rendered))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Write tex table for all train data')
@@ -64,5 +75,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     results = read_data(args.input)
-    merged = process_data(results)
-    print_data(merged, args.output, args.template)
+    data = []
+    for model in ["random forest", "gradient boosting classifier", "lstm"]:
+        data.append(process_data(results, model))
+    print_data(data, args.output, args.template)
