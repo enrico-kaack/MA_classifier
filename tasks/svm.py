@@ -4,12 +4,15 @@ import logging
 
 from sklearn.svm import SVC
 from collections import Counter
+import random
+
 
 @d6tflow.inherits(TaskTrainTestSplit)
 class TaskTrainSVM(d6tflow.tasks.TaskPickle):
     svm_kernel = luigi.Parameter(default="rbf")
     svm_predict_probability = luigi.BoolParameter(default=False)
     svm_class_weight = luigi.Parameter(default=None)
+    svm_subsample = luigi.FloatParameter(default=1.0)
 
     def requires(self):
         return self.clone(TaskTrainTestSplit)
@@ -25,6 +28,14 @@ class TaskTrainSVM(d6tflow.tasks.TaskPickle):
         train_counter = Counter(y_train)
         test_counter = Counter(y_test)
         print(f"Feature Distribution: Train: {train_counter[1] *100/ len(y_train)}%, Test: {test_counter[1] *100/ len(y_test)}%")
+
+        print("Length before subsampling", len(X_train), len(y_train))
+        #subsample
+        x_sample, y_sample = zip(*random.sample(list(zip(X_train, y_train)), int(self.svm_subsample * len(X_train))))
+        X_train = list(x_sample)
+        y_train = list(y_sample)
+        print("Length after subsampling", len(X_train), len(y_train))
+
 
         model = SVC(kernel=self.svm_kernel, verbose=True, random_state=1, probability=self.svm_predict_probability, class_weight=self.svm_class_weight)
 
