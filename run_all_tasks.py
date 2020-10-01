@@ -86,10 +86,20 @@ def run_all_tasks(source):
         # TaskEvaluateGradientBoostingClassifier(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5, n_estimators = 400, learning_rate=0.1),
 
         ## SVM, long runtime
-        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
-        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
-        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
-        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.3, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3)
+        # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
+        # TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.3, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
+
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.3, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
+        
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.1, svm_kernel="rbf", svm_predict_probability=True, svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3),
+        TaskEvaluateSVM(max_vocab_size=100000, input_src_path=source, problem_type=ProblemType.CONDITION_COMPARISON, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.3, svm_kernel="rbf", svm_predict_probability=True, svm_class_weight="balanced", svm_subsample=0.3)
 
     ]
     #for t in task_list:
