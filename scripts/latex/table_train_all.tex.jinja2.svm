@@ -4,9 +4,9 @@
 \begin{tabularx}{\textwidth}{XXXXXX|X|XXX|XXX|XXXX}
 \toprule
 \multicolumn{6}{c}{Parameter} & \multicolumn{3}{c}{RN} & \multicolumn{3}{c}{CCS} & \multicolumn{3}{c}{CC} \\ \midrule
-over-\newline samp. & under-\newline samp. & steps &learn-\newline rate & sub-\newline sample & encode\newline type & & Train & Train/\newline Test & Test & Train & Train/\newline Test & Test & Train & Train/\newline Test & Test \\ \midrule
+over-\newline samp. & under-\newline samp. & kernel &sub-\newline sample & class\newline weight & encode\newline type & & Train & Train/\newline Test & Test & Train & Train/\newline Test & Test & Train & Train/\newline Test & Test \\ \midrule
 \BLOCK{for d in data}
-\VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.n_estimators | int} & \VAR{d.learning_rate | round(2)} & \VAR{d.subsample | round(2)} &\VAR{d.encode_type} & & & & & & & & & \\
+\VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.svm_kernel} & \VAR{d.svm_subsample | round(2)} & \VAR{d.svm_class_weight} &\VAR{d.encode_type} & & & & & & & & & \\
 & & & & & & \textit{F1} & \VAR{d.train_f1_RF | round(4)} & \VAR{d.train_dev_f1_RF | round(4)} & \VAR{d.f1_RF | round(4)} & \VAR{d.train_f1_CCS | round(4)} & \VAR{d.train_dev_f1_CCS | round(4)}        & \VAR{d.f1_CCS | round(4)}        & \VAR{d.train_f1_CCS | round(4)}        & \VAR{d.train_dev_f1_CCS | round(4)}        & \VAR{d.f1_CCS | round(4)}        \\
 & & & & & & \textit{Rec}l & \VAR{d.train_recall_RF | round(4)} & \VAR{d.train_dev_recall_RF | round(4)} & \VAR{d.recall_RF | round(4)}    & \VAR{d.train_recall_CCS | round(4)} & \VAR{d.train_dev_recall_CCS | round(4)}    & \VAR{d.recall_CCS | round(4)}    & \VAR{d.train_recall_CCS | round(4)}    & \VAR{d.train_dev_recall_CCS | round(4)}    & \VAR{d.recall_CCS | round(4)}    \\
 & & & & & & \textit{Prec} & \VAR{d.train_precision_RF | round(4)} & \VAR{d.train_dev_precision_RF | round(4)} & \VAR{d.precision_RF | round(4)} & \VAR{d.train_precision_CCS | round(4)} & \VAR{d.train_dev_precision_CCS | round(4)} & \VAR{d.precision_CCS | round(4)} & \VAR{d.train_precision_CCS | round(4)} & \VAR{d.train_dev_precision_CCS | round(4)} & \VAR{d.precision_CCS | round(4)} \\ \midrule

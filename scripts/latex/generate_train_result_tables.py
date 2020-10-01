@@ -20,7 +20,7 @@ def process_data(results, model):
     results["ratio_after_oversampling"][results.oversampling_enabled == False] = "-"
     results["ratio_after_undersampling"][results.undersampling_enabled == False] = "-"
 
-    #important fix, check later if all experiments rerun
+    #check for right dataset run
     results = results[results["max_vocab_size"] == 100000]
     results = results[results["input_src_path"] == "final_dataset"]
 
@@ -28,11 +28,13 @@ def process_data(results, model):
 
     "gradient boosting classifier": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling', 'n_estimators', 'learning_rate', 'subsample', 'encode_type'],
 
-    "lstm": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling','embedding_vecor_length', 'epochs', 'batch_size', 'num_lstm_cells', 'dropout_emb_lstm', 'dropout_lstm_dense', 'encode_type']
+    "lstm": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling','embedding_vecor_length', 'epochs', 'batch_size', 'num_lstm_cells', 'dropout_emb_lstm', 'dropout_lstm_dense', 'encode_type'],
+
+    "svm": ['oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling','svm_kernel', 'svm_subsample', 'svm_class_weight', 'encode_type']
     }
     merge_columns = all_merge_columns[model]
 
-    all_filter = {"random forest": "n_trees_in_forest", "gradient boosting classifier": "n_estimators", "lstm": "embedding_vecor_length"}
+    all_filter = {"random forest": "n_trees_in_forest", "gradient boosting classifier": "n_estimators", "lstm": "embedding_vecor_length", "svm": "svm_kernel"}
     model_filter = all_filter[model]
 
     random_forest_RN = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
@@ -46,6 +48,7 @@ def process_data(results, model):
 
 
     merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1")).merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"))
+    #merged.sort_values(by="f1_RN", ascending=False)
     return (model, merged)
 
 def read_data(input_dir):
@@ -76,6 +79,6 @@ if __name__ == "__main__":
 
     results = read_data(args.input)
     data = []
-    for model in ["random forest", "gradient boosting classifier", "lstm"]:
+    for model in ["random forest", "gradient boosting classifier", "lstm", "svm"]:
         data.append(process_data(results, model))
     print_data(data, args.output, args.template)
