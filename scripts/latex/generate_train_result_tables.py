@@ -38,17 +38,18 @@ def process_data(results, model):
     model_filter = all_filter[model]
 
     random_forest_RN = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
-    random_forest_RN.columns = random_forest_RN.columns.map(lambda a: a + "_RF" if a not in merge_columns else a)
+    random_forest_RN.columns = random_forest_RN.columns.map(lambda a: a + "_RN" if a not in merge_columns else a)
 
-    random_forest_CC = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
+    random_forest_CC = results[(results["problem_type"] == "CONDITION_COMPARISON")  & (results[model_filter].notnull())]
     random_forest_CC.columns = random_forest_CC.columns.map(lambda a: a + "_CC" if a not in merge_columns else a)
 
-    random_forest_CCS = results[(results["problem_type"] == "RETURN_NULL")  & (results[model_filter].notnull())]
+    random_forest_CCS = results[(results["problem_type"] == "CONDITION_COMPARISON_SIMPLE")  & (results[model_filter].notnull())]
     random_forest_CCS.columns = random_forest_CCS.columns.map(lambda a: a + "_CCS" if a not in merge_columns else a)
 
 
     merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1")).merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"))
-    #merged.sort_values(by="f1_RN", ascending=False)
+
+    merged = merged.sort_values(by="f1_RN", ascending=False)
     return (model, merged)
 
 def read_data(input_dir):
