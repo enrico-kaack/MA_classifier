@@ -45,7 +45,7 @@ class TaskTrainSVM(d6tflow.tasks.TaskPickle):
 
 from sklearn.metrics import precision_score, recall_score, roc_auc_score, roc_curve, accuracy_score
 import numpy as np
-from utils.plotter import confusion_matrix, evaluate_model
+from utils.plotter import confusion_matrix, evaluate_model, evaluate_predictions
 from utils.plotter import plot_confusion_matrix
 from sklearn.metrics import confusion_matrix
 import matplotlib.pyplot as plt
@@ -76,8 +76,9 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
         train_rf_probs = model.predict_proba(X_train)[:, 1]
 
         #Train dev predictions
-        train_dev_rf_predictions = model.predict(X_train_dev)
-        train_dev_rf_probs = model.predict_proba(X_train_dev)[:, 1]
+        if len(X_train_dev) > 0:
+            train_dev_rf_predictions = model.predict(X_train_dev)
+            train_dev_rf_probs = model.predict_proba(X_train_dev)[:, 1]
 
         # Testing predictions (to determine performance)
         rf_predictions = model.predict(X_test)
@@ -85,22 +86,31 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
 
 
 
+
         # Plot formatting
         #plt.style.use('fivethirtyeight')
         plt.rcParams['font.size'] = 18
 
+        metrics = {}
+        metrics.update(evaluate_predictions("test", rf_predictions, rf_probs, y_test))
+        metrics.update(evaluate_predictions("train", train_rf_predictions, train_rf_probs, y_train))
+        if len(X_train_dev) > 0:
+            metrics.update(evaluate_predictions("train_dev", train_dev_rf_predictions, train_dev_rf_probs, y_train_dev))
 
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train, train_dev_rf_predictions, train_dev_rf_probs, y_train_dev)
+        #metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train, train_dev_rf_predictions, train_dev_rf_probs, y_train_dev)
 
 
         # Confusion matrix
         cm = confusion_matrix(y_test, rf_predictions)
-        cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
-                            title = 'Confusion Matrix', normalize=True)
+        cm_normalized = confusion_matrix(y_test, rf_predictions, normalize='all')
+
+        #cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
+        #                    title = 'Confusion Matrix', normalize=True)
 
         #Write to file
-        results = {**metrics, **cm_values}
+        results = {**metrics, "cm": cm, "cm_normalized": cm_normalized}
         dump_json(self.task_id, self.__dict__["param_kwargs"], results)
+
 
         # save test result
         evaluation_results = pd.DataFrame(zip(X_test, y_test, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])

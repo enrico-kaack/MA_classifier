@@ -53,11 +53,16 @@ def plot_confusion_matrix(task_id, cm, classes,
     plt.savefig(f"results/plots/CM_{task_id}.svg")
     return results
 
+def evaluate_predictions(metric_prefix, predictions, probabilities, labels):
+    results = {}
+    
+    results[metric_prefix + '_recall'] = recall_score(labels, predictions)
+    results[metric_prefix + '_precision'] = precision_score(labels, predictions)
+    results[metric_prefix + '_roc'] = roc_auc_score(labels, probabilities)
+    results[metric_prefix + '_f1'] = f1_score(labels, predictions)
+    return results
 
 def evaluate_model(task_id, predictions, probs, test_labels, train_predictions, train_probs, train_labels, train_dev_predictions, train_dev_probs, train_dev_labels, only_test=False):
-    """Compare machine learning model to baseline performance.
-    Computes statistics and shows ROC curve."""
-
     
     results = {}
     

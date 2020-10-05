@@ -143,12 +143,12 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
         x,y = self.input().load()
         c1 = Counter()
         c1.update(y)
-        X_train, X_test, y_train, y_test  = train_test_split(x, y, test_size=self.test_split_percentage, random_state=1)
+        X_train, X_test, y_train, y_test  = train_test_split(x, y, test_size=self.test_split_percentage, random_state=1, stratify=y)
         c2 = Counter()
         c2.update(y_train)
         print("Before", c1.most_common(), "After", c2.most_common())
 
-        print(f"BEFORE OVER/UNDERSAMPLING: Length Train: {len(X_train)}, length train_dev {len(X_train_dev)}, length Test {len(X_test)}")
+        print(f"BEFORE OVER/UNDERSAMPLING: Length Train: {len(X_train)}")
 
 
         if self.oversampling_enabled:
@@ -162,9 +162,12 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
 
         #split train into train and train_dev
         #calc the train_dev percentage of the train size
-        train_dev_percent = self.train_dev_split_percentage / (1 - self.test_split_percentage)
-        X_train, X_train_dev, y_train, y_train_dev  = train_test_split(X_train, y_train, test_size=train_dev_percent, random_state=1)
-        
+        if self.train_dev_split_percentage > 0.0:
+            train_dev_percent = self.train_dev_split_percentage / (1 - self.test_split_percentage)
+            X_train, X_train_dev, y_train, y_train_dev  = train_test_split(X_train, y_train, test_size=train_dev_percent, random_state=1, stratify=y_train)
+        else:
+            X_train_dev = []
+            y_train_dev = []
 
         print(f"AFTER OVER/UNDERSAMPLING: Length Train: {len(X_train)}, length train_dev {len(X_train_dev)}, length Test {len(X_test)}")
         self.save({
