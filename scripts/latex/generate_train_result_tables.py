@@ -47,7 +47,7 @@ def process_data(results, model):
     random_forest_CCS.columns = random_forest_CCS.columns.map(lambda a: a + "_CCS" if a not in merge_columns else a)
 
 
-    merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1")).merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"))
+    merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1"), how="outer").merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"), how="outer")
 
     merged = merged.sort_values(by="f1_RN", ascending=False)
     return (model, merged)
