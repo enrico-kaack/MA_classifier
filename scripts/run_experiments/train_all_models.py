@@ -81,4 +81,4 @@ if __name__ == "__main__":
     workers = args.n
     run_all_tasks(source, workers)
 
-#python -m scripts.run_experiments.train_all_models final_dataset 4
+#python -m scripts.run_experiments.train_all_models final_dataset -n 4
