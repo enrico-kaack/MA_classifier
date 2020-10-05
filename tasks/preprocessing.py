@@ -125,7 +125,7 @@ from imblearn.under_sampling import RandomUnderSampler
 @d6tflow.inherits(TaskPrepareXY)
 class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
     test_split_percentage = luigi.FloatParameter(default=0.2)
-    train_dev_split_percentage = luigi.FloatParameter(default=0.1)
+    train_dev_split_percentage = luigi.FloatParameter(default=0.0)
     oversampling_enabled = luigi.BoolParameter(default=True)
     ratio_after_oversampling = luigi.FloatParameter(default=0.5)
     undersampling_enabled = luigi.BoolParameter(default=False)
