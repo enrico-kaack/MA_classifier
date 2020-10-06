@@ -16,6 +16,8 @@ def print_dataset_class_distribution(problem_type, src_path):
     print(problem_type)
     print(f"Label 0: {label_0 / len(y) * 100}%")
     print(f"Label 1: {label_1 / len(y) * 100}%\n")
+    with open("results.txt", "a") as f:
+        f.write(f"{src_path}: {problem_type}: Label 0: {label_0 / len(y) * 100}%|Label 1: {label_1 / len(y) * 100}%\n")
 
 print("Not invalidating datasets, please delete data/TaskPrepareXY and data/TaskRuleProcessor and data/TaskSourceFileToDataStructure")
 print("rm -r data/TaskPrepareXY data/TaskRuleProcessor data/TaskSourceFileToDataStructure")
