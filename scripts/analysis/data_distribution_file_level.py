@@ -26,6 +26,7 @@ print("\nFiles per project")
 analyse_files_per_project(problems, 2)
 
 print("final_valdiation HOLDOUT")
+d6tflow.run(TaskRuleProcessor(input_src_path="final_validation"))
 problems = TaskRuleProcessor(input_src_path="final_validation").outputLoad()
 analyse_parsed_data(problems)
 print("\nTotal File Size")
