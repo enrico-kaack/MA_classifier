@@ -14,7 +14,7 @@ class ProblemType(str, enum.Enum):
     CONDITION_COMPARISON_SIMPLE = "CONDITION_COMPARISON_SIMPLE"
 
 class TaskSourceFileToDataStructure(d6tflow.tasks.TaskPickle):
-    input_src_path = luigi.Parameter(default="raw_data")
+    input_src_path = luigi.Parameter(default="final_dataset")
 
     def run(self):
         print(f"###Running {type(self).__name__}")
@@ -63,7 +63,7 @@ from functools import reduce
 
 @d6tflow.inherits(TaskSourceFileToDataStructure)
 class TaskVocabCreator(d6tflow.tasks.TaskPickle):
-    max_vocab_size = luigi.Parameter(default=1000)
+    max_vocab_size = luigi.Parameter(default=100000)
 
     def requires(self):
         return self.clone(TaskSourceFileToDataStructure)
@@ -122,31 +122,38 @@ from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
 
-@d6tflow.inherits(TaskPrepareXY)
 class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
     test_split_percentage = luigi.FloatParameter(default=0.2)
-    train_dev_split_percentage = luigi.FloatParameter(default=0.0)
+#    train_dev_split_percentage = luigi.FloatParameter(default=0.0)
     oversampling_enabled = luigi.BoolParameter(default=True)
     ratio_after_oversampling = luigi.FloatParameter(default=0.5)
     undersampling_enabled = luigi.BoolParameter(default=False)
     ratio_after_undersampling = luigi.FloatParameter(default=0.5)
 
-    persist=['X_train','y_train', "X_train_dev", "y_train_dev", "X_test", "y_test"]
+    train_dir = luigi.Parameter(default="final_dataset")
+    test_dir = luigi.Parameter(default="final_test")
+    problem_type = luigi.EnumParameter(enum=ProblemType)
+    window_size = luigi.IntParameter(default=20)
+    step_size = luigi.IntParameter(default=3)
+    encode_type = luigi.BoolParameter(default=True)
+    max_vocab_size = luigi.Parameter(default=100000)
+
+
+    persist=['X_train','y_train', "X_test", "y_test"]
 
     def requires(self):
-        return self.clone(TaskPrepareXY)
+        return {
+            "train": TaskPrepareXY(input_src_path=self.train_dir, problem_type=self.problem_type, window_size=self.window_size, step_size=self.step_size, encode_type=self.encode_type, max_vocab_size=self.max_vocab_size),
+            "test": TaskPrepareXY(input_src_path=self.test_dir, problem_type=self.problem_type, window_size=self.window_size, step_size=self.step_size, encode_type=self.encode_type, max_vocab_size=self.max_vocab_size)
+        }
 
     def run(self):
         print(f"###Running {type(self).__name__}")
 
         #train/test split
-        x,y = self.input().load()
-        c1 = Counter()
-        c1.update(y)
-        X_train, X_test, y_train, y_test  = train_test_split(x, y, test_size=self.test_split_percentage, random_state=1, stratify=y)
-        c2 = Counter()
-        c2.update(y_train)
-        print("Before", c1.most_common(), "After", c2.most_common())
+        X_train, y_train = self.input()["train"].load()
+        X_test, y_test = self.input()["test"].load()
+
 
         print(f"BEFORE OVER/UNDERSAMPLING: Length Train: {len(X_train)}")
 
@@ -160,21 +167,11 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
             X_train, y_train = undersample.fit_resample(X_train, y_train)
 
 
-        #split train into train and train_dev
-        #calc the train_dev percentage of the train size
-        if self.train_dev_split_percentage > 0.0:
-            train_dev_percent = self.train_dev_split_percentage / (1 - self.test_split_percentage)
-            X_train, X_train_dev, y_train, y_train_dev  = train_test_split(X_train, y_train, test_size=train_dev_percent, random_state=1, stratify=y_train)
-        else:
-            X_train_dev = []
-            y_train_dev = []
 
         print(f"AFTER OVER/UNDERSAMPLING: Length Train: {len(X_train)}, length train_dev {len(X_train_dev)}, length Test {len(X_test)}")
         self.save({
             "X_train": X_train,
             "y_train": y_train,
-            "X_train_dev": X_train_dev,
-            "y_train_dev": y_train_dev,
             "X_test": X_test,
             "y_test": y_test
         })

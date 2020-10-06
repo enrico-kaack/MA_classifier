@@ -118,10 +118,6 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
         train_rf_predictions = (model.predict(X_train) > 0.5).astype("int32")
         train_rf_probs = model.predict(X_train)
 
-        #Train dev predictions
-        if len(X_train_dev) > 0:
-            train_dev_rf_predictions = model.predict(X_train_dev)
-            train_dev_rf_probs = model.predict_proba(X_train_dev)[:, 1]
 
         # Testing predictions (to determine performance)
         rf_predictions = (model.predict(X_test) > 0.5).astype("int32")
@@ -135,8 +131,6 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
         metrics = {}
         metrics.update(evaluate_predictions("test", rf_predictions, rf_probs, y_test))
         metrics.update(evaluate_predictions("train", train_rf_predictions, train_rf_probs, y_train))
-        if len(X_train_dev) > 0:
-            metrics.update(evaluate_predictions("train_dev", train_dev_rf_predictions, train_dev_rf_probs, y_train_dev))
 
         #metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y_test,  train_rf_predictions, train_rf_probs, y_train, train_dev_rf_predictions, train_dev_rf_probs, y_train_dev)
 
