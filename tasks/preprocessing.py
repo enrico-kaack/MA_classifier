@@ -168,7 +168,7 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
 
 
 
-        print(f"AFTER OVER/UNDERSAMPLING: Length Train: {len(X_train)}, length train_dev {len(X_train_dev)}, length Test {len(X_test)}")
+        print(f"AFTER OVER/UNDERSAMPLING: Length Train: {len(X_train)}, length Test {len(X_test)}")
         self.save({
             "X_train": X_train,
             "y_train": y_train,
