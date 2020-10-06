@@ -1,0 +1,143 @@
+Welcome to d6tflow!
+final_dataset TRAIN
+Lines of Code: 2530455
+Total Files: 13330
+LOCs per file 189.83158289572393
+LOCs containing probem RETURN_NULL: 0.0007374167886802966
+Problems per file for RETURN_NULL: 0.13998499624906227
+LOCs containing probem CONDITION_COMPARISON_SIMPLE: 0.012863694473918722
+Problems per file for CONDITION_COMPARISON_SIMPLE: 2.4419354838709677
+LOCs containing probem CONDITION_COMPARISON: 0.023410414332600264
+Problems per file for CONDITION_COMPARISON: 4.44403600900225
+
+Total File Size
+Total File Size [MB] 86.47183895111084
+
+Problems per project
+ final_dataset/encode: {'CONDITION_COMPARISON': 571, 'CONDITION_COMPARISON_SIMPLE': 289, 'RETURN_NULL': 35}
+ final_dataset/docker: {'CONDITION_COMPARISON': 597, 'CONDITION_COMPARISON_SIMPLE': 299, 'RETURN_NULL': 19}
+ final_dataset/tiangolo: {'CONDITION_COMPARISON': 142, 'CONDITION_COMPARISON_SIMPLE': 49, 'RETURN_NULL': 12}
+ final_dataset/ansible: {'CONDITION_COMPARISON': 10699, 'CONDITION_COMPARISON_SIMPLE': 4959, 'RETURN_NULL': 171}
+ final_dataset/django: {'CONDITION_COMPARISON': 5234, 'CONDITION_COMPARISON_SIMPLE': 2316, 'RETURN_NULL': 154}
+ final_dataset/pallets: {'CONDITION_COMPARISON': 178, 'CONDITION_COMPARISON_SIMPLE': 117, 'RETURN_NULL': 3}
+ final_dataset/home-assistant: {'RETURN_NULL': 963, 'CONDITION_COMPARISON': 14203, 'CONDITION_COMPARISON_SIMPLE': 8733}
+ final_dataset/bokeh: {'RETURN_NULL': 53, 'CONDITION_COMPARISON': 1261, 'CONDITION_COMPARISON_SIMPLE': 727}
+ final_dataset/pandas-dev: {'RETURN_NULL': 88, 'CONDITION_COMPARISON': 6549, 'CONDITION_COMPARISON_SIMPLE': 3878}
+ final_dataset/certbot: {'CONDITION_COMPARISON': 1187, 'CONDITION_COMPARISON_SIMPLE': 580, 'RETURN_NULL': 36}
+ final_dataset/tornadoweb: {'CONDITION_COMPARISON': 1036, 'CONDITION_COMPARISON_SIMPLE': 600, 'RETURN_NULL': 39}
+ final_dataset/google: {'CONDITION_COMPARISON': 237, 'CONDITION_COMPARISON_SIMPLE': 115, 'RETURN_NULL': 9}
+ final_dataset/apache: {'CONDITION_COMPARISON': 3470, 'CONDITION_COMPARISON_SIMPLE': 1434, 'RETURN_NULL': 122}
+ final_dataset/explosion: {'CONDITION_COMPARISON': 987, 'CONDITION_COMPARISON_SIMPLE': 623, 'RETURN_NULL': 9}
+ final_dataset/scikit-learn: {'CONDITION_COMPARISON': 4247, 'CONDITION_COMPARISON_SIMPLE': 2675, 'RETURN_NULL': 37}
+ final_dataset/keras-team: {'CONDITION_COMPARISON': 264, 'CONDITION_COMPARISON_SIMPLE': 205, 'RETURN_NULL': 4}
+ final_dataset/jakubroztocil: {'CONDITION_COMPARISON': 92, 'CONDITION_COMPARISON_SIMPLE': 37}
+ final_dataset/pytorch: {'CONDITION_COMPARISON': 8285, 'CONDITION_COMPARISON_SIMPLE': 4915, 'RETURN_NULL': 112}
+
+Files per project
+ final_dataset/encode: 107, 0.008027006751687922
+ final_dataset/docker: 56, 0.0042010502625656415
+ final_dataset/tiangolo: 399, 0.029932483120780194
+ final_dataset/ansible: 1009, 0.07569392348087021
+ final_dataset/django: 1890, 0.1417854463615904
+ final_dataset/pallets: 46, 0.0034508627156789196
+ final_dataset/home-assistant: 3760, 0.2820705176294073
+ final_dataset/bokeh: 803, 0.06024006001500375
+ final_dataset/pandas-dev: 814, 0.061065266316579145
+ final_dataset/certbot: 266, 0.019954988747186795
+ final_dataset/tornadoweb: 82, 0.006151537884471118
+ final_dataset/google: 42, 0.003150787696924231
+ final_dataset/apache: 1741, 0.13060765191297824
+ final_dataset/explosion: 503, 0.0377344336084021
+ final_dataset/scikit-learn: 577, 0.04328582145536384
+ final_dataset/keras-team: 126, 0.009452363090772693
+ final_dataset/jakubroztocil: 42, 0.003150787696924231
+ final_dataset/pytorch: 1067, 0.0800450112528132
+final_test TEST
+Lines of Code: 246813
+Total Files: 1481
+LOCs per file 166.6529372045915
+LOCs containing probem RETURN_NULL: 0.0009156729993963041
+Problems per file for RETURN_NULL: 0.15259959486833222
+LOCs containing probem CONDITION_COMPARISON_SIMPLE: 0.012110383164582093
+Problems per file for CONDITION_COMPARISON_SIMPLE: 2.0182309250506414
+LOCs containing probem CONDITION_COMPARISON: 0.02310251080777755
+Problems per file for CONDITION_COMPARISON: 3.850101282916948
+
+Total File Size
+Total File Size [MB] 8.510643005371094
+
+Problems per project
+ final_test/final_dataset/encode: {'CONDITION_COMPARISON': 8, 'CONDITION_COMPARISON_SIMPLE': 3}
+ final_test/final_dataset/docker: {'CONDITION_COMPARISON': 26, 'CONDITION_COMPARISON_SIMPLE': 9, 'RETURN_NULL': 3}
+ final_test/final_dataset/tiangolo: {'CONDITION_COMPARISON': 12, 'CONDITION_COMPARISON_SIMPLE': 8, 'RETURN_NULL': 1}
+ final_test/final_dataset/ansible: {'CONDITION_COMPARISON': 940, 'CONDITION_COMPARISON_SIMPLE': 402, 'RETURN_NULL': 10}
+ final_test/final_dataset/django: {'CONDITION_COMPARISON': 549, 'CONDITION_COMPARISON_SIMPLE': 250, 'RETURN_NULL': 26}
+ final_test/final_dataset/pallets: {'RETURN_NULL': 4, 'CONDITION_COMPARISON': 14, 'CONDITION_COMPARISON_SIMPLE': 5}
+ final_test/final_dataset/home-assistant: {'CONDITION_COMPARISON': 1430, 'CONDITION_COMPARISON_SIMPLE': 827, 'RETURN_NULL': 113}
+ final_test/final_dataset/bokeh: {'RETURN_NULL': 11, 'CONDITION_COMPARISON': 149, 'CONDITION_COMPARISON_SIMPLE': 111}
+ final_test/final_dataset/pandas-dev: {'CONDITION_COMPARISON': 489, 'CONDITION_COMPARISON_SIMPLE': 277, 'RETURN_NULL': 18}
+ final_test/final_dataset/certbot: {'CONDITION_COMPARISON': 308, 'CONDITION_COMPARISON_SIMPLE': 126, 'RETURN_NULL': 26}
+ final_test/final_dataset/tornadoweb: {'CONDITION_COMPARISON': 47, 'CONDITION_COMPARISON_SIMPLE': 36}
+ final_test/final_dataset/google: {'CONDITION_COMPARISON': 5, 'CONDITION_COMPARISON_SIMPLE': 3}
+ final_test/final_dataset/apache: {'CONDITION_COMPARISON': 393, 'CONDITION_COMPARISON_SIMPLE': 183, 'RETURN_NULL': 9}
+ final_test/final_dataset/explosion: {'CONDITION_COMPARISON': 54, 'CONDITION_COMPARISON_SIMPLE': 30, 'RETURN_NULL': 1}
+ final_test/final_dataset/scikit-learn: {'CONDITION_COMPARISON': 285, 'CONDITION_COMPARISON_SIMPLE': 178}
+ final_test/final_dataset/keras-team: {'CONDITION_COMPARISON': 25, 'CONDITION_COMPARISON_SIMPLE': 22}
+ final_test/final_dataset/jakubroztocil: {'CONDITION_COMPARISON': 49, 'CONDITION_COMPARISON_SIMPLE': 10}
+ final_test/final_dataset/pytorch: {'CONDITION_COMPARISON': 919, 'CONDITION_COMPARISON_SIMPLE': 509, 'RETURN_NULL': 4}
+
+Files per project
+ final_test/final_dataset: 1481, 1.0
+final_valdiation HOLDOUT
+Lines of Code: 671554
+Total Files: 3702
+LOCs per file 181.40302539168016
+LOCs containing probem RETURN_NULL: 0.0007609216831408941
+Problems per file for RETURN_NULL: 0.13803349540788762
+LOCs containing probem CONDITION_COMPARISON_SIMPLE: 0.013246887070883354
+Problems per file for CONDITION_COMPARISON_SIMPLE: 2.4030253916801727
+LOCs containing probem CONDITION_COMPARISON: 0.02435991744520917
+Problems per file for CONDITION_COMPARISON: 4.418962722852513
+
+Total File Size
+Total File Size [MB] 23.063316345214844
+
+Problems per project
+ final_validation/extracted/final_dataset/encode: {'RETURN_NULL': 9, 'CONDITION_COMPARISON': 148, 'CONDITION_COMPARISON_SIMPLE': 69}
+ final_validation/extracted/final_dataset/docker: {'CONDITION_COMPARISON': 152, 'CONDITION_COMPARISON_SIMPLE': 78, 'RETURN_NULL': 10}
+ final_validation/extracted/final_dataset/tiangolo: {'RETURN_NULL': 8, 'CONDITION_COMPARISON': 146, 'CONDITION_COMPARISON_SIMPLE': 46}
+ final_validation/extracted/final_dataset/ansible: {'CONDITION_COMPARISON': 2634, 'CONDITION_COMPARISON_SIMPLE': 1287, 'RETURN_NULL': 51}
+ final_validation/extracted/final_dataset/django: {'CONDITION_COMPARISON': 1623, 'CONDITION_COMPARISON_SIMPLE': 689, 'RETURN_NULL': 54}
+ final_validation/extracted/final_dataset/pallets: {'CONDITION_COMPARISON': 153, 'CONDITION_COMPARISON_SIMPLE': 92}
+ final_validation/extracted/final_dataset/home-assistant: {'CONDITION_COMPARISON': 3568, 'CONDITION_COMPARISON_SIMPLE': 2192, 'RETURN_NULL': 221}
+ final_validation/extracted/final_dataset/bokeh: {'CONDITION_COMPARISON': 312, 'CONDITION_COMPARISON_SIMPLE': 189, 'RETURN_NULL': 12}
+ final_validation/extracted/final_dataset/pandas-dev: {'CONDITION_COMPARISON': 1738, 'CONDITION_COMPARISON_SIMPLE': 939, 'RETURN_NULL': 21}
+ final_validation/extracted/final_dataset/certbot: {'CONDITION_COMPARISON': 225, 'CONDITION_COMPARISON_SIMPLE': 118, 'RETURN_NULL': 8}
+ final_validation/extracted/final_dataset/tornadoweb: {'CONDITION_COMPARISON': 279, 'CONDITION_COMPARISON_SIMPLE': 146, 'RETURN_NULL': 41}
+ final_validation/extracted/final_dataset/google: {'CONDITION_COMPARISON': 139, 'RETURN_NULL': 20, 'CONDITION_COMPARISON_SIMPLE': 80}
+ final_validation/extracted/final_dataset/apache: {'CONDITION_COMPARISON': 1101, 'CONDITION_COMPARISON_SIMPLE': 498, 'RETURN_NULL': 20}
+ final_validation/extracted/final_dataset/explosion: {'CONDITION_COMPARISON': 301, 'CONDITION_COMPARISON_SIMPLE': 183, 'RETURN_NULL': 8}
+ final_validation/extracted/final_dataset/scikit-learn: {'CONDITION_COMPARISON': 1349, 'CONDITION_COMPARISON_SIMPLE': 807, 'RETURN_NULL': 4}
+ final_validation/extracted/final_dataset/keras-team: {'CONDITION_COMPARISON': 86, 'CONDITION_COMPARISON_SIMPLE': 73}
+ final_validation/extracted/final_dataset/jakubroztocil: {'CONDITION_COMPARISON': 69, 'CONDITION_COMPARISON_SIMPLE': 17}
+ final_validation/extracted/final_dataset/pytorch: {'CONDITION_COMPARISON': 2336, 'CONDITION_COMPARISON_SIMPLE': 1393, 'RETURN_NULL': 24}
+
+Files per project
+ final_validation/extracted/final_dataset/encode: 37, 0.009994597514856833
+ final_validation/extracted/final_dataset/docker: 19, 0.005132360886007563
+ final_validation/extracted/final_dataset/tiangolo: 97, 0.026202052944354404
+ final_validation/extracted/final_dataset/ansible: 276, 0.07455429497568881
+ final_validation/extracted/final_dataset/django: 538, 0.14532685035116152
+ final_validation/extracted/final_dataset/pallets: 19, 0.005132360886007563
+ final_validation/extracted/final_dataset/home-assistant: 1041, 0.28119935170178284
+ final_validation/extracted/final_dataset/bokeh: 219, 0.05915721231766612
+ final_validation/extracted/final_dataset/pandas-dev: 224, 0.06050783360345759
+ final_validation/extracted/final_dataset/certbot: 70, 0.0189086980010805
+ final_validation/extracted/final_dataset/tornadoweb: 21, 0.005672609400324149
+ final_validation/extracted/final_dataset/google: 16, 0.004321988114532685
+ final_validation/extracted/final_dataset/apache: 483, 0.13047001620745544
+ final_validation/extracted/final_dataset/explosion: 134, 0.036196650459211235
+ final_validation/extracted/final_dataset/scikit-learn: 160, 0.04321988114532685
+ final_validation/extracted/final_dataset/keras-team: 38, 0.010264721772015126
+ final_validation/extracted/final_dataset/jakubroztocil: 13, 0.0035116153430578066
+ final_validation/extracted/final_dataset/pytorch: 297, 0.08022690437601297
