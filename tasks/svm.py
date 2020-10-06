@@ -65,8 +65,6 @@ class TaskEvaluateSVM(d6tflow.tasks.TaskPqPandas):
         model = self.input()["model"].load()
         X_train = self.input()["data"]["X_train"].load()
         y_train = self.input()["data"]["y_train"].load()
-        X_train_dev = self.input()["data"]["X_train_dev"].load()
-        y_train_dev = self.input()["data"]["y_train_dev"].load()
         X_test = self.input()["data"]["X_test"].load()
         y_test = self.input()["data"]["y_test"].load()
         print(f"Length Train: {len(X_train)}, length Test {len(X_test)}")
