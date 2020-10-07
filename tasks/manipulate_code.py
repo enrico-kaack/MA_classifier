@@ -63,20 +63,17 @@ from models.random_forst import process_general_data
 from tasks.preprocessing import TaskVocabCreator
 from imblearn.under_sampling import RandomUnderSampler
 
-@d6tflow.inherits(TaskCodeManipulator, TaskVocabCreator)
 class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
     window_size = luigi.IntParameter(default=20)
     step_size = luigi.IntParameter(default=3)
     encode_type = luigi.BoolParameter(default=True)
-    vocab_input_directory = luigi.Parameter(default="second_large_dataset")
+    vocab_input_directory = luigi.Parameter(default="final_dataset")
+    test_input_directory = luigi.Parameter(default="final_validation")
     max_vocab_size = luigi.IntParameter(default=100000)
-
-    undersampling_enabled = luigi.BoolParameter(default=False)
-    undersampling_ratio = luigi.FloatParameter(default=0.5)
-
+    problem_type = luigi.EnumParameter(enum=ProblemType)
 
     def requires(self):
-        return {"data": self.clone(TaskCodeManipulator), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
+        return {"data": TaskCodeManipulator(problem_type=self.problem_type, input_src_path=self.test_input_directory), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
 
     def run(self):
         print(f"###Running {type(self).__name__}")
@@ -88,16 +85,12 @@ class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
         # prepare XY
         x,y = process_general_data(data, vocab, window_size=self.window_size, step_size=self.step_size, problem_type=self.problem_type.value, encode_type=self.encode_type)
 
-                #undersample
-        if self.undersampling_enabled:
-            undersample = RandomUnderSampler(sampling_strategy=self.undersampling_ratio, random_state=1)
-            x, y = undersample.fit_resample(x, y)
         print(f"Length dataset: {len(x)}")
 
         self.save((x,y))
 
 from utils.data_dumper import dump_json
-from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix
+from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix, evaluate_predictions
 from sklearn.metrics import confusion_matrix
 
 @d6tflow.inherits(TaskPrepareXYValidation)
@@ -119,21 +112,21 @@ class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
         rf_probs = self.model.predict_proba(x)[:, 1]
 
         #evaluate
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [],[], [], [], only_test=True)
+        metrics = {}
+        metrics.update(evaluate_predictions("manipulated", rf_predictions, rf_probs, y))
 
-
-        # Confusion matrix
+        #confusion matrix
         cm = confusion_matrix(y, rf_predictions)
-        cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
-                            title = 'Confusion Matrix', normalize=True)
+        cm_normalized = confusion_matrix(y, rf_predictions, normalize='all')
+
 
         #Write to file
-        results = {**metrics, **cm_values}
+        results = {**metrics,  "cm": cm, "cm_normalized": cm_normalized}
         parameter_dict = {k:v for (k,v) in self.__dict__["param_kwargs"].items() if k != "model"}
         dump_json(self.task_id, parameter_dict, results)
 
 from utils.data_dumper import dump_json
-from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix
+from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix, evaluate_predictions
 from sklearn.metrics import confusion_matrix
 
 @d6tflow.inherits(TaskPrepareXYValidation)
@@ -155,15 +148,15 @@ class TaskEvalKeras(d6tflow.tasks.TaskPickle):
         rf_probs = self.model.predict(x)
 
         #evaluate
-        metrics = evaluate_model(self.task_id, rf_predictions, rf_probs, y,  [], [], [],[], [], [], only_test=True)
+        metrics = {}
+        metrics.update(evaluate_predictions("manipulated", rf_predictions, rf_probs, y))
 
-
-        # Confusion matrix
+        #confusion matrix
         cm = confusion_matrix(y, rf_predictions)
-        cm_values = plot_confusion_matrix(self.task_id, cm, classes = ['0', '1'],
-                            title = 'Confusion Matrix', normalize=True)
+        cm_normalized = confusion_matrix(y, rf_predictions, normalize='all')
+
 
         #Write to file
-        results = {**metrics, **cm_values}
+        results = {**metrics,  "cm": cm, "cm_normalized": cm_normalized}
         parameter_dict = {k:v for (k,v) in self.__dict__["param_kwargs"].items() if k != "model"}
         dump_json(self.task_id, parameter_dict, results)
