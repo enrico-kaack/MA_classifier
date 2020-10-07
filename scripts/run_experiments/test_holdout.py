@@ -4,14 +4,14 @@ from tasks.gradient_boosting_classifier import TaskTrainGradientBoostingClassifi
 from tasks.svm import TaskTrainSVM
 from tasks.lstm import TaskTrainLstm
 from tasks.random_forest import TaskTrainRandomForest
-from tasks.manipulate_code import TaskEvalEnsemble, TaskEvalKeras
+from tasks.holdout_test import TaskEvalHoldoutKeras, TaskEvalHoldoutEnsemble
 import d6tflow
 
 def run_all_tasks(validation_source, workers):
     task_list_ensemble = []
     task_list_keras = []
 
-    for problem_type in enumerate([ProblemType.RETURN_NONE, ProblemType.CONDITION_COMPARISON_SIMPLE]):
+    for problem_type in ProblemType:
         t =[ 
             #Random Forest
             TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True),
@@ -70,7 +70,7 @@ def run_all_tasks(validation_source, workers):
         problem_type = model_task.problem_type
         if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
                 problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-        t = TaskEvalEnsemble(model=model, test_input_directory=validation_source, problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
+        t = TaskEvalHoldoutEnsemble(model=model, test_input_directory=validation_source, problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         d6tflow.run(t, workers=4)
 
     for model_task in task_list_keras:
@@ -78,7 +78,7 @@ def run_all_tasks(validation_source, workers):
         problem_type = model_task.problem_type
         if problem_type == ProblemType.CONDITION_COMPARISON_SIMPLE:
                 problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
-        t = TaskEvalKeras(model=model, test_input_directory=validation_source, problem_type=problem_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
+        t = TaskEvalHoldoutKeras(model=model, test_input_directory=validation_source, problem_type=problem_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         d6tflow.run(t, workers=1)
 
 
@@ -88,7 +88,7 @@ def run_all_tasks(validation_source, workers):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(prog='train_all_models.py', description="Run all tasks for given problem type")
-    parser.add_argument("source", help="src folder name", metavar="SOURCE")
+    parser.add_argument("source", help="src folder for validation data", metavar="SOURCE")
     parser.add_argument("-n", help="number of workers to use", metavar="WORKERS")
 
     if len(sys.argv)==1:

@@ -105,9 +105,12 @@ class TaskPrepareXY(d6tflow.tasks.TaskPickle):
     window_size = luigi.IntParameter(default=20)
     step_size = luigi.IntParameter(default=3)
     encode_type = luigi.BoolParameter(default=True)
+    vocab_directory = luigi.Parameter(default="final_dataset")
+    max_vocab_size = luigi.Parameter(default=100000)
+
 
     def requires(self):
-        return {"data": self.clone(TaskRuleProcessor), "vocab": self.clone(TaskVocabCreator)}
+        return {"data": self.clone(TaskRuleProcessor), "vocab": TaskVocabCreator(input_src_path=self.vocab_directory, max_vocab_size=self.max_vocab_size)}
 
     def run(self):
         print(f"###Running {type(self).__name__}")
@@ -144,7 +147,7 @@ class TaskTrainTestSplit(d6tflow.tasks.TaskPickle):
     def requires(self):
         return {
             "train": TaskPrepareXY(input_src_path=self.train_dir, problem_type=self.problem_type, window_size=self.window_size, step_size=self.step_size, encode_type=self.encode_type, max_vocab_size=self.max_vocab_size),
-            "test": TaskPrepareXY(input_src_path=self.test_dir, problem_type=self.problem_type, window_size=self.window_size, step_size=self.step_size, encode_type=self.encode_type, max_vocab_size=self.max_vocab_size)
+            "test": TaskPrepareXY(input_src_path=self.test_dir, vocab_directory=self.train_dir, problem_type=self.problem_type, window_size=self.window_size, step_size=self.step_size, encode_type=self.encode_type, max_vocab_size=self.max_vocab_size)
         }
 
     def run(self):
