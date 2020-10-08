@@ -62,8 +62,14 @@ def run_all_tasks(validation_source, workers):
             TaskTrainLstm(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2)
         ]
         task_list_keras.extend(t)
-
-
+    
+    #temporary fix
+    d6tflow.settings.check_dependencies=False
+    for task in [*task_list_ensemble, *task_list_keras]:
+        if not task.complete():
+            print(f"{task.task_id} not completed")
+    print("Completion Check done")
+    
     final_tasks = []
     for model_task in task_list_ensemble:
         model = model_task.outputLoad()
