@@ -3,6 +3,7 @@ import jinja2
 import pandas as pd
 import json
 import argparse
+import re
 
 latex_jinja_env = jinja2.Environment(
     block_start_string='\BLOCK{',
@@ -16,13 +17,18 @@ latex_jinja_env = jinja2.Environment(
     trim_blocks=True,
     autoescape=False)
 
-def process_data(results, model):
+def process_data(results_train_test, results_holdout, model):
+    #merge train/test and holdout by using the task_id with a replacement of train->Evaluate
+    results_holdout["task_id"] = results_holdout["task_id"].replace(r"Train", "Evaluate", regex=True)
+
+    results = results_train_test.merge(results_holdout, on="task_id", suffixes=("", "_Y"))
+
     results["ratio_after_oversampling"][results.oversampling_enabled == False] = "-"
     results["ratio_after_undersampling"][results.undersampling_enabled == False] = "-"
 
+
     #check for right dataset run
     results = results[results["max_vocab_size"] == 100000]
-    results = results[results["input_src_path"] == "final_dataset"]
 
     all_merge_columns = {"random forest": ['window_size', 'step_size', 'encode_type','oversampling_enabled', 'ratio_after_oversampling', 'undersampling_enabled', 'ratio_after_undersampling', 'n_trees_in_forest', 'max_features', 'class_weight', 'encode_type'],
 
@@ -49,17 +55,33 @@ def process_data(results, model):
 
     merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1"), how="outer").merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"), how="outer")
 
-    merged = merged.sort_values(by="f1_RN", ascending=False)
+    merged = merged.sort_values(by="test_f1_RN", ascending=False)
     return (model, merged)
 
-def read_data(input_dir):
+def read_train_test_data(input_dir):
     frames = []
     for root, dirs, files in os.walk(input_dir):
         for name in files:
             if name.endswith(".json"):
-                frame = pd.read_json(os.path.join(root, name), orient="record", lines=True)
-                frames.append(frame)
+                with open(os.path.join(root, name), "r") as data_file:
+                    data = json.load(data_file)
+                    frame = pd.json_normalize(data, sep=".")
+                    frames.append(frame)
     results = pd.concat(frames)
+    return results
+
+def read_holdout_data(input_dir):
+    frames = []
+    for root, dirs, files in os.walk(input_dir):
+        for name in files:
+            if name.endswith(".json"):
+                with open(os.path.join(root, name), "r") as data_file:
+                    data = json.load(data_file)
+                    frame = pd.json_normalize(data, sep=".")
+                    frames.append(frame)
+    results = pd.concat(frames)
+    results = results.drop(columns=["task_id", "window_size", "step_size", "encode_type", "vocab_input_directory", "test_input_directory", "max_vocab_size", "problem_type"])
+    results = results.rename(columns=lambda x: re.sub('training_parameter.','',x))
     return results
 
 def print_data(data, output_file, template_file):
@@ -78,8 +100,9 @@ if __name__ == "__main__":
     parser.add_argument('output', type=str, help='Output File path')
     args = parser.parse_args()
 
-    results = read_data(args.input)
+    results_train_test = read_train_test_data(args.input)
+    results_holdout = read_holdout_data("results/final_final_holdout_validation")
     data = []
-    for model in ["random forest", "gradient boosting classifier", "lstm", "svm"]:
-        data.append(process_data(results, model))
+    for model in ["random forest", "gradient boosting classifier", "lstm"]:# "svm"
+        data.append(process_data(results_train_test, results_holdout, model))
     print_data(data, args.output, args.template)
