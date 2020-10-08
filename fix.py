@@ -7,7 +7,7 @@ from tasks.random_forest import TaskTrainRandomForest
 from tasks.manipulate_code import TaskEvalEnsemble, TaskEvalKeras
 import d6tflow
 
-def run_all_tasks(validation_source, workers):
+def run_all_tasks():
     task_list = []
 
     for problem_type in ProblemType:
@@ -27,9 +27,10 @@ def run_all_tasks(validation_source, workers):
         task_list.extend(t)
 
     d6tflow.preview(task_list)
-    d6tflow.run(task_list, workers=workers)
+    d6tflow.run(task_list, workers=4)
 
-
+if __name__ == "__main__":
+    run_all_tasks()
 
 
 
