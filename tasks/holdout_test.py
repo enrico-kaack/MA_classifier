@@ -94,8 +94,9 @@ class TaskEvalHoldoutKeras(d6tflow.tasks.TaskPickle):
 
 
         #predict
-        rf_predictions = (self.model.predict(x) > 0.5).astype("int32")
-        rf_probs = self.model.predict(x)
+        pred_raw = self.model.predict(x, verbose=1)
+        rf_predictions = (pred_raw > 0.5).astype("int32")
+        rf_probs = pred_raw
 
         #evaluate
         metrics = {}
