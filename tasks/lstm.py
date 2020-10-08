@@ -113,13 +113,17 @@ class TaskEvaluateLstm(d6tflow.tasks.TaskPqPandas):
         print(f"Length Train: {len(X_train)}, length Test {len(X_test)}")
 
         # Training predictions
-        train_rf_predictions = (model.predict(X_train) > 0.5).astype("int32")
-        train_rf_probs = model.predict(X_train)
+        print("train pred")
+        raw_train_pred = model.predict(X_train, verbose=1)
+        train_rf_predictions = (raw_train_pred > 0.5).astype("int32")
+        train_rf_probs = raw_train_pred
 
 
         # Testing predictions (to determine performance)
-        rf_predictions = (model.predict(X_test) > 0.5).astype("int32")
-        rf_probs = model.predict(X_test)
+        print("test pred")
+        raw_test_pred = model.predict(X_test, verbose=1)
+        rf_predictions = (raw_test_pred > 0.5).astype("int32")
+        rf_probs = raw_test_pred
 
 
         # Plot formatting
