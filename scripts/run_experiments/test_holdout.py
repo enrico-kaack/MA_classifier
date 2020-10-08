@@ -76,14 +76,18 @@ def run_all_tasks(validation_source, workers):
         problem_type = model_task.problem_type
         t = TaskEvalHoldoutEnsemble(model=model, test_input_directory=validation_source, problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         final_tasks.append(t)
-
+    d6tflow.preview(final_tasks)
+    d6tflow.run(final_tasks, workers=workers)
+    
+    print("Running Keras tasks, only with one worker")
+    final_tasks = []
     for model_task in task_list_keras:
         model = model_task.outputLoad()
         problem_type = model_task.problem_type
         t = TaskEvalHoldoutKeras(model=model, test_input_directory=validation_source, problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         final_tasks.append(t)
     d6tflow.preview(final_tasks)
-    d6tflow.run(final_tasks, workers=workers)
+    d6tflow.run(final_tasks, workers=1)
 
 
 
