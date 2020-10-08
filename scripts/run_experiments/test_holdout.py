@@ -69,7 +69,7 @@ def run_all_tasks(validation_source, workers):
         if not task.complete():
             print(f"{task.task_id} not completed")
     print("Completion Check done")
-    
+
     final_tasks = []
     for model_task in task_list_ensemble:
         model = model_task.outputLoad()
@@ -82,7 +82,8 @@ def run_all_tasks(validation_source, workers):
         problem_type = model_task.problem_type
         t = TaskEvalHoldoutKeras(model=model, test_input_directory=validation_source, problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         final_tasks.append(t)
-    d6tflow.run(t, workers=workers)
+    d6tflow.preview(final_tasks)
+    d6tflow.run(final_tasks, workers=workers)
 
 
 

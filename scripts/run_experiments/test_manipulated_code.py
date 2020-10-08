@@ -80,7 +80,8 @@ def run_all_tasks(validation_source, workers):
                 problem_type = ProblemType.CONDITION_COMPARISON #using the trained model on simple to predict not simple stuff
         t = TaskEvalKeras(model=model, test_input_directory=validation_source, problem_type=problem_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
         final_tasks.append(t)
-    d6tflow.run(t, workers=workers)
+    d6tflow.preview(final_tasks)
+    d6tflow.run(final_tasks, workers=workers)
 
 
 
