@@ -23,7 +23,7 @@ class TaskPrepareXYHoldout(d6tflow.tasks.TaskPickle):
     problem_type = luigi.EnumParameter(enum=ProblemType)
 
     def requires(self):
-        return {"data": TaskRuleProcessor(problem_type=self.problem_type, input_src_path=self.test_input_directory), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
+        return {"data": TaskRuleProcessor(input_src_path=self.test_input_directory), "vocab": TaskVocabCreator(max_vocab_size=self.max_vocab_size, input_src_path=self.vocab_input_directory)}
 
     def run(self):
         print(f"###Running {type(self).__name__}")
