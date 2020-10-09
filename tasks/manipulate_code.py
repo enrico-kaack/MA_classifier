@@ -148,10 +148,9 @@ class TaskEvalKeras(d6tflow.tasks.TaskPqPandas):
 
         x,y = self.input().load()
 
-
         #predict
-        rf_predictions = (self.model.predict(x) > 0.5).astype("int32")
-        rf_probs = self.model.predict(x)
+        rf_probs = self.model.predict(x, verbose=1)
+        rf_predictions = (rf_probs > 0.5).astype("int32")
 
         #evaluate
         metrics = {}
