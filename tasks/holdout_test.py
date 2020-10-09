@@ -75,6 +75,9 @@ class TaskEvalHoldoutEnsemble(d6tflow.tasks.TaskPickle):
         parameter_dict = {k:v for (k,v) in self.__dict__["param_kwargs"].items() if k != "model"}
         dump_json(self.task_id, parameter_dict, results)
 
+        evaluation_results = pd.DataFrame(zip(x, y, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])
+        self.save(evaluation_results)
+
 from utils.data_dumper import dump_json
 from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix, evaluate_predictions
 from sklearn.metrics import confusion_matrix
@@ -111,3 +114,6 @@ class TaskEvalHoldoutKeras(d6tflow.tasks.TaskPickle):
         results = {**metrics,  "holdout_cm": cm, "holdout_cm_normalized": cm_normalized}
         parameter_dict = {k:v for (k,v) in self.__dict__["param_kwargs"].items() if k != "model"}
         dump_json(self.task_id, parameter_dict, results)
+
+        evaluation_results = pd.DataFrame(zip(x, y, rf_predictions, rf_probs), columns=["x", "ground_truth", "predicted", "probability"])
+        self.save(evaluation_results)
