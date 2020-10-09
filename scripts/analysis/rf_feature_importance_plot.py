@@ -13,7 +13,7 @@ def run():
         data_task = TaskPrepareXYHoldout(encode_type=True, problem_type=problem_type)
         x,y = data_task.outputLoad()
 
-        result = permutation_importance(model, x, y, n_repeats=10,
+        result = permutation_importance(model, x, y, n_repeats=10,scoring="f1",
                                         random_state=1, n_jobs=4)
         sorted_idx = result.importances_mean.argsort()
 
