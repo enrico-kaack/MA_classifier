@@ -95,13 +95,14 @@ def print_data(data, output_file, template_file):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Write tex table for all train data')
-    parser.add_argument('input', type=str, help='Input dir for dataset')
+    parser.add_argument('test', type=str, help='Input dir for test dataset')
+    parser.add_argument('holdout', type=str, help='Input dir for holdout dataset')
     parser.add_argument('template', type=str, help='File for tempalte')
     parser.add_argument('output', type=str, help='Output File path')
     args = parser.parse_args()
 
-    results_train_test = read_train_test_data(args.input)
-    results_holdout = read_holdout_data("results/final_final_holdout_validation")
+    results_train_test = read_train_test_data(args.test)
+    results_holdout = read_holdout_data(args.holdout)
     data = []
     for model in ["random forest", "gradient boosting classifier", "lstm"]:# "svm"
         data.append(process_data(results_train_test, results_holdout, model))

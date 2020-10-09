@@ -92,6 +92,7 @@ class TaskPrepareXYValidation(d6tflow.tasks.TaskPickle):
 from utils.data_dumper import dump_json
 from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix, evaluate_predictions
 from sklearn.metrics import confusion_matrix
+import pandas as pd
 
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
@@ -132,6 +133,7 @@ class TaskEvalEnsemble(d6tflow.tasks.TaskPickle):
 from utils.data_dumper import dump_json
 from utils.plotter import confusion_matrix, evaluate_model, plot_confusion_matrix, evaluate_predictions
 from sklearn.metrics import confusion_matrix
+import pandas as pd
 
 @d6tflow.inherits(TaskPrepareXYValidation)
 class TaskEvalKeras(d6tflow.tasks.TaskPqPandas):
