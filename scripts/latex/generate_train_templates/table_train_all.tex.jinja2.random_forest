@@ -1,7 +1,7 @@
 \begin{table}[]
 \tiny
 \tabcolsep=0.11cm
-\begin{tabularx}{\textwidth}{XXXXX|X|XXX|XXX|XXXX}
+\begin{tabularx}{\textwidth}{XXXXX|X|XXX|XXX|XXX}
 \toprule
 \multicolumn{5}{c}{Parameter} & \multicolumn{3}{c}{RN} & \multicolumn{3}{c}{CCS} & \multicolumn{3}{c}{CC} \\ \midrule
 over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & Train &  Test & Holdout & Train &  Test & Holdout & Train &  Test & Holdout \\ \midrule

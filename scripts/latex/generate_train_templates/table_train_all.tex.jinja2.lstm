@@ -1,7 +1,7 @@
 \begin{table}[]
 \tiny
 \tabcolsep=0.11cm
-\begin{tabularx}{\textwidth}{XXXXXXX|X|XXX|XXX|XXXX}
+\begin{tabularx}{\textwidth}{XXXXXXX|X|XXX|XXX|XXX}
 \toprule
 \multicolumn{7}{c}{Parameter} & \multicolumn{3}{c}{RN} & \multicolumn{3}{c}{CCS} & \multicolumn{3}{c}{CC} \\ \midrule
 over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & Train &  Test & Holdout & Train &  Test & Holdout & Train &  Test & Holdout \\ \midrule
