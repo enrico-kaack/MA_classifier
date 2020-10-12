@@ -49,14 +49,14 @@ def run_all_tasks(validation_source, workers):
         task_list_ensemble.extend(t)
         t= [            
             #LSTM
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=512, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False,  embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False,  embedding_vecor_length=32, epochs=3, batch_size=512, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=2, batch_size=512, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False,  embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False,  embedding_vecor_length=32, epochs=3, batch_size=512, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=32, epochs=3, batch_size=64, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
 
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=16, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
-            # TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=16, epochs=3, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=16, epochs=2, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
+            TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, embedding_vecor_length=16, epochs=3, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
 
             TaskTrainLstm(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False,num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2),
             TaskTrainLstm(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False,num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2)
