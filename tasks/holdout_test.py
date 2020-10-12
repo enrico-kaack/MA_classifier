@@ -7,7 +7,7 @@ from tqdm.autonotebook import tqdm
 import logging
 import random
 import re
-
+import pandas as pd
 
 from models.random_forst import process_general_data
 from tasks.preprocessing import TaskVocabCreator
