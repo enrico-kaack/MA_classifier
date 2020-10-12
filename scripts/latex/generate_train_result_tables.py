@@ -89,7 +89,7 @@ def read_holdout_data(input_dir):
 def print_data(data, output_file, template_file):
         rendered = []
         for model, d in data:
-                with open(f"{template_file}.{model.replace(' ', '_')}", "r") as f:
+                with open(f"generate_train_templates/{template_file}.{model.replace(' ', '_')}", "r") as f:
                     t = latex_jinja_env.from_string(f.read())
                     rendered.append(t.render(data=d.T.to_dict().values(), model=model))
         with open(output_file, "w") as o:
