@@ -14,36 +14,36 @@ def run_all_tasks(validation_source, workers):
     for problem_type in [ProblemType.RETURN_NONE, ProblemType.CONDITION_COMPARISON_SIMPLE]:
         t =[ 
             #Random Forest
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=False),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True, class_weight="balanced"),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=False, class_weight="balanced"),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=False),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True, class_weight="balanced"),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=False, class_weight="balanced"),
 
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=False),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True, class_weight="balanced"),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=1.0, undersampling_enabled=False, encode_type=False),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=1.0, undersampling_enabled=False, encode_type=True),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=False),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True, class_weight="balanced"),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=1.0, undersampling_enabled=False, encode_type=False),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=1.0, undersampling_enabled=False, encode_type=True),
 
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=False),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=True),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=True, class_weight="balanced"),
-            # TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.1, undersampling_enabled=True, encode_type=True),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=False),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=True),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.5, undersampling_enabled=True, encode_type=True, class_weight="balanced"),
+            TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, ratio_after_undersampling=0.1, undersampling_enabled=True, encode_type=True),
 
-            # # Gradient Boosting classifier
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=100, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=300, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=0.4),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=0.7),
+            # Gradient Boosting classifier
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=100, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=300, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=0.4),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=200, subsample=0.7),
             
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=200, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=100, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.1, n_estimators=100, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=200, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.2, n_estimators=100, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, learning_rate=0.1, n_estimators=100, subsample=1.0),
 
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.2, n_estimators=200, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.2, n_estimators=100, subsample=1.0),
-            # TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.1, n_estimators=100, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.2, n_estimators=200, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.2, n_estimators=100, subsample=1.0),
+            TaskTrainGradientBoostingClassifier(problem_type=problem_type, oversampling_enabled=True, undersampling_enabled=False, ratio_after_oversampling=0.5, learning_rate=0.1, n_estimators=100, subsample=1.0),
 
         ]
         task_list_ensemble.extend(t)
