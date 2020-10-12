@@ -19,10 +19,10 @@ latex_jinja_env = jinja2.Environment(
 
 def process_data(results_train_test, results_holdout, model):
     #merge train/test and holdout by using the task_id with a replacement of train->Evaluate
-    results_holdout["task_id"] = results_holdout["task_id"].replace(r"Train", "Evaluate", regex=True)
+    # results_holdout["task_id"] = results_holdout["task_id"].replace(r"Train", "Evaluate", regex=True)
 
-    results = results_train_test.merge(results_holdout, on="task_id", suffixes=("", "_Y"))
-
+    # results = results_train_test.merge(results_holdout, on="task_id", suffixes=("", "_Y"))
+    results = results_train_test
     results["ratio_after_oversampling"][results.oversampling_enabled == False] = "-"
     results["ratio_after_undersampling"][results.undersampling_enabled == False] = "-"
 
@@ -55,7 +55,9 @@ def process_data(results_train_test, results_holdout, model):
 
     merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1"), how="outer").merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"), how="outer")
 
-    merged = merged.sort_values(by="test_f1_RN", ascending=False)
+#    merged = merged.sort_values(by="test_f1_RN", ascending=False)
+    merged = merged.sort_values(by="f1_RN", ascending=False)
+
     return (model, merged)
 
 def read_train_test_data(input_dir):
@@ -101,9 +103,16 @@ if __name__ == "__main__":
     parser.add_argument('output', type=str, help='Output File path')
     args = parser.parse_args()
 
+    # results_train_test = read_train_test_data(args.test)
+    # results_holdout = read_holdout_data(args.holdout)
+    # data = []
+    # for model in ["random forest", "gradient boosting classifier", "lstm"]:# "svm"
+    #     data.append(process_data(results_train_test, results_holdout, model))
+    # print_data(data, args.output, args.template)
+
     results_train_test = read_train_test_data(args.test)
-    results_holdout = read_holdout_data(args.holdout)
+    results_holdout = pd.DataFrame([])
     data = []
-    for model in ["random forest", "gradient boosting classifier", "lstm"]:# "svm"
+    for model in ["svm"]:
         data.append(process_data(results_train_test, results_holdout, model))
     print_data(data, args.output, args.template)
