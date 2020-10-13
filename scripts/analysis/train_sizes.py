@@ -26,7 +26,7 @@ print("rm -r data/TaskPrepareXY data/TaskRuleProcessor data/TaskSourceFileToData
 
 print("Final dataset TRAIN")
 
-print_train_size(TaskTrainTestSplit(False, False)
-print_train_size(TaskTrainTestSplit(True, False)
-print_train_size(TaskTrainTestSplit(False, True)
+print_train_size(False, False)
+print_train_size(True, False)
+print_train_size(False, True)
 
