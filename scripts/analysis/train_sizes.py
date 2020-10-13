@@ -7,7 +7,7 @@ d6tflow.settings.log_level = 'WARNING' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'C
 def print_train_size(t):
     for problem_type in ProblemType:
         t.problem_type = problem_type
-        y = t.outputLoad("y_train")
+        y = t.output()["y_train"].load()
         c = Counter()
         c.update(y)
         lablel_0_value, label_0 = c.most_common()[0]
