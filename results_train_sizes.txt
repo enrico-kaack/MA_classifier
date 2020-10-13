@@ -1,0 +1,49 @@
+Welcome to d6tflow!
+Not invalidating datasets, please delete data/TaskPrepareXY and data/TaskRuleProcessor and data/TaskSourceFileToDataStructure
+rm -r data/TaskPrepareXY data/TaskRuleProcessor data/TaskSourceFileToDataStructure
+Final dataset TRAIN
+
+ ProblemType.RETURN_NONE Oversampling: False 0.5|Undersampling: False 0.5
+Label 0: 4939950
+Label 1: 10379
+Total length: 4950329
+
+ ProblemType.CONDITION_COMPARISON Oversampling: False 0.5|Undersampling: False 0.5
+Label 0: 4709339
+Label 1: 240990
+Total length: 4950329
+
+ ProblemType.CONDITION_COMPARISON_SIMPLE Oversampling: False 0.5|Undersampling: False 0.5
+Label 0: 4818761
+Label 1: 131568
+Total length: 4950329
+
+ ProblemType.RETURN_NONE Oversampling: True 0.5|Undersampling: False 0.5
+Label 0: 4939950
+Label 1: 2469975
+Total length: 7409925
+
+ ProblemType.CONDITION_COMPARISON Oversampling: True 0.5|Undersampling: False 0.5
+Label 0: 4709339
+Label 1: 2354669
+Total length: 7064008
+
+ ProblemType.CONDITION_COMPARISON_SIMPLE Oversampling: True 0.5|Undersampling: False 0.5
+Label 0: 4818761
+Label 1: 2409380
+Total length: 7228141
+
+ ProblemType.RETURN_NONE Oversampling: False 0.5|Undersampling: True 0.5
+Label 0: 20758
+Label 1: 10379
+Total length: 31137
+
+ ProblemType.CONDITION_COMPARISON Oversampling: False 0.5|Undersampling: True 0.5
+Label 0: 481980
+Label 1: 240990
+Total length: 722970
+
+ ProblemType.CONDITION_COMPARISON_SIMPLE Oversampling: False 0.5|Undersampling: True 0.5
+Label 0: 263136
+Label 1: 131568
+Total length: 394704
