@@ -6,7 +6,7 @@ d6tflow.settings.log_level = 'WARNING' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'C
 
 def print_train_size(oversampling, undersampling):
     for problem_type in ProblemType:
-        t.TaskTrainTestSplit(problem_type=problem_type, oversampling_enabled=oversampling, ratio_after_oversampling=0.5, undersampling_enabled=undersampling, ratio_after_undersampling=0.5,encode_type=True)
+        t = TaskTrainTestSplit(problem_type=problem_type, oversampling_enabled=oversampling, ratio_after_oversampling=0.5, undersampling_enabled=undersampling, ratio_after_undersampling=0.5,encode_type=True)
         y = t.output()["y_train"].load()
         c = Counter()
         c.update(y)
