@@ -4,6 +4,7 @@ from tasks.holdout_test import TaskPrepareXYHoldout
 from sklearn.inspection import permutation_importance
 import numpy as np
 import matplotlib.pyplot as plt
+import pickle
 
 def run():
     for problem_type in ProblemType:
@@ -17,12 +18,17 @@ def run():
                                         random_state=1, n_jobs=4)
         sorted_idx = result.importances_mean.argsort()
 
-        fig, ax = plt.subplots()
-        ax.boxplot(result.importances[sorted_idx].T,
-                vert=False, labels=sorted_idx)
-        ax.set_title("Permutation Importances (holdout set)")
-        fig.tight_layout()
-        plt.savefig(f"Importance_permuted{problem_type.value}.pdf")
+        with open(f"{problem_type}_rf_feature_importance.pickle", "wb") as out:
+            pickle.dump((result, sorted_idx), out)
+
+
+def print_graph(result, sorted_idx):
+    fig, ax = plt.subplots()
+    ax.boxplot(result.importances[sorted_idx].T,
+            vert=False, labels=sorted_idx)
+    ax.set_title("Permutation Importances (holdout set)")
+    fig.tight_layout()
+    plt.savefig(f"Importance_permuted{problem_type.value}.pdf")
 
 
 
