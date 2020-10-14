@@ -11,7 +11,7 @@ def run_all_tasks(validation_source, workers):
     task_list_ensemble = []
     task_list_keras = []
 
-    for problem_type in [ProblemType.RETURN_NONE, ProblemType.CONDITION_COMPARISON_SIMPLE]:
+    for problem_type in [ProblemType.RETURN_NONE, ProblemType.CONDITION_COMPARISON_SIMPLE, ProblemType.CONDITION_COMPARISON]:
         t =[ 
             #Random Forest
             TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=False, undersampling_enabled=False, encode_type=True),
