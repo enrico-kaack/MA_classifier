@@ -44,11 +44,14 @@ def process_data(results, model):
     random_forest_CC = results[(results["problem_type"] == "CONDITION_COMPARISON")  & (results[model_filter].notnull())]
     random_forest_CC.columns = random_forest_CC.columns.map(lambda a: a + "_CC" if a not in merge_columns else a)
 
+    random_forest_CCS = results[(results["problem_type"] == "CONDITION_COMPARISON_SIMPLE")  & (results[model_filter].notnull())]
+    random_forest_CCS.columns = random_forest_CCS.columns.map(lambda a: a + "_CCS" if a not in merge_columns else a)
 
 
-    merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1"), how="outer")
+    merged = random_forest_RN.merge(random_forest_CC, on=merge_columns, suffixes=("_LEFT1", "_RIGHT1"), how="outer").merge(random_forest_CCS, on=merge_columns, suffixes=("_LEFT2", "_RIGHT2"), how="outer")
 
     merged = merged.sort_values(by="manipulated_f1_RN", ascending=False)
+    print(list(merged.columns))
     return (model, merged)
 
 def read_results(input_dir):
@@ -61,7 +64,7 @@ def read_results(input_dir):
                     frame = pd.json_normalize(data, sep=".")
                     frames.append(frame)
     results = pd.concat(frames)
-    results = results.drop(columns=["task_id", "window_size", "step_size", "encode_type", "vocab_input_directory", "test_input_directory", "max_vocab_size", "training_parameter.problem_type"])
+    results = results.drop(columns=["task_id", "window_size", "step_size", "encode_type", "vocab_input_directory", "test_input_directory", "max_vocab_size", "problem_type"])
     results = results.rename(columns=lambda x: re.sub('training_parameter.','',x))
     return results
 

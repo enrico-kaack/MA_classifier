@@ -1,62 +1,62 @@
 \begin{table}[]
 \tiny
 \tabcolsep=0.11cm
-\begin{tabularx}{\textwidth}{XXXXX|X|X|X}
+\begin{tabularx}{\textwidth}{XXXXX|X|X|X|X}
 \toprule
-\multicolumn{5}{c}{Parameter} & & RN &  CC \\ \midrule
-over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & & \\ \midrule
-- & 0.5 & 100.0 & balanced & True & &  \\
-& & & & & \textit{F1} & 0.0539 & 0.7158        \\
-& & & & & \textit{Rec} &  0.3022 & 0.758    \\
-& & & & & \textit{Prec} & 0.0296 & 0.678  \\ \midrule
-- & 0.5 & 100.0 & None & False & &  \\
-& & & & & \textit{F1} & 0.0509 & 0.6829        \\
-& & & & & \textit{Rec} &  0.2099 & 0.6899    \\
-& & & & & \textit{Prec} & 0.0289 & 0.6761  \\ \midrule
-- & 0.5 & 100.0 & None & True & &  \\
-& & & & & \textit{F1} & 0.0507 & 0.7148        \\
-& & & & & \textit{Rec} &  0.3033 & 0.7626    \\
-& & & & & \textit{Prec} & 0.0277 & 0.6726  \\ \midrule
-- & 0.1 & 100.0 & None & True & &  \\
-& & & & & \textit{F1} & 0.0031 & 0.3411        \\
-& & & & & \textit{Rec} &  0.0038 & 0.21    \\
-& & & & & \textit{Prec} & 0.0027 & 0.9091  \\ \midrule
-0.5 & - & 100.0 & balanced & True & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0295        \\
-& & & & & \textit{Rec} &  0.0 & 0.015    \\
-& & & & & \textit{Prec} & 0.0 & 0.9019  \\ \midrule
-- & - & 100.0 & balanced & True & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0122        \\
-& & & & & \textit{Rec} &  0.0 & 0.0062    \\
-& & & & & \textit{Prec} & 0.0 & 0.8855  \\ \midrule
-1.0 & - & 100.0 & None & False & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0157        \\
-& & & & & \textit{Rec} &  0.0 & 0.0079    \\
-& & & & & \textit{Prec} & 0.0 & 0.8327  \\ \midrule
-- & - & 100.0 & None & False & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0036        \\
-& & & & & \textit{Rec} &  0.0 & 0.0018    \\
-& & & & & \textit{Prec} & 0.0 & 0.8095  \\ \midrule
-1.0 & - & 100.0 & None & True & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0509        \\
-& & & & & \textit{Rec} &  0.0 & 0.0261    \\
-& & & & & \textit{Prec} & 0.0 & 0.9295  \\ \midrule
-0.5 & - & 100.0 & None & True & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0317        \\
-& & & & & \textit{Rec} &  0.0 & 0.0161    \\
-& & & & & \textit{Prec} & 0.0 & 0.895  \\ \midrule
-- & - & 100.0 & None & True & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0103        \\
-& & & & & \textit{Rec} &  0.0 & 0.0052    \\
-& & & & & \textit{Prec} & 0.0 & 0.8567  \\ \midrule
-- & - & 100.0 & balanced & False & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0039        \\
-& & & & & \textit{Rec} &  0.0 & 0.0019    \\
-& & & & & \textit{Prec} & 0.0 & 0.8527  \\ \midrule
-0.5 & - & 100.0 & None & False & &  \\
-& & & & & \textit{F1} & 0.0 & 0.0141        \\
-& & & & & \textit{Rec} &  0.0 & 0.0071    \\
-& & & & & \textit{Prec} & 0.0 & 0.883  \\ \midrule
+\multicolumn{5}{c}{Parameter} & & RN &  CC & Base CC\\ \midrule
+over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & & &\\ \midrule
+- & 0.5 & 100.0 & balanced & True & & & \\
+& & & & & \textit{F1} & 0.0539 & 0.7158    & 0.8186    \\
+& & & & & \textit{Rec} &  0.3022 & 0.758 & 0.9782   \\
+& & & & & \textit{Prec} & 0.0296 & 0.678 & 0.7038 \\ \midrule
+- & 0.5 & 100.0 & None & False & & & \\
+& & & & & \textit{F1} & 0.0509 & 0.6829    & 0.8221    \\
+& & & & & \textit{Rec} &  0.2099 & 0.6899 & 0.9783   \\
+& & & & & \textit{Prec} & 0.0289 & 0.6761 & 0.709 \\ \midrule
+- & 0.5 & 100.0 & None & True & & & \\
+& & & & & \textit{F1} & 0.0507 & 0.7148    & 0.812    \\
+& & & & & \textit{Rec} &  0.3033 & 0.7626 & 0.9796   \\
+& & & & & \textit{Prec} & 0.0277 & 0.6726 & 0.6933 \\ \midrule
+- & 0.1 & 100.0 & None & True & & & \\
+& & & & & \textit{F1} & 0.0031 & 0.3411    & 0.9419    \\
+& & & & & \textit{Rec} &  0.0038 & 0.21 & 0.9207   \\
+& & & & & \textit{Prec} & 0.0027 & 0.9091 & 0.9641 \\ \midrule
+0.5 & - & 100.0 & balanced & True & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0295    & 0.9415    \\
+& & & & & \textit{Rec} &  0.0 & 0.015 & 0.9072   \\
+& & & & & \textit{Prec} & 0.0 & 0.9019 & 0.9784 \\ \midrule
+- & - & 100.0 & balanced & True & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0122    & 0.8954    \\
+& & & & & \textit{Rec} &  0.0 & 0.0062 & 0.8165   \\
+& & & & & \textit{Prec} & 0.0 & 0.8855 & 0.9911 \\ \midrule
+1.0 & - & 100.0 & None & False & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0157    & 0.8855    \\
+& & & & & \textit{Rec} &  0.0 & 0.0079 & 0.8059   \\
+& & & & & \textit{Prec} & 0.0 & 0.8327 & 0.9825 \\ \midrule
+- & - & 100.0 & None & False & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0036    & 0.8709    \\
+& & & & & \textit{Rec} &  0.0 & 0.0018 & 0.7754   \\
+& & & & & \textit{Prec} & 0.0 & 0.8095 & 0.9931 \\ \midrule
+1.0 & - & 100.0 & None & True & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0509    & 0.9355    \\
+& & & & & \textit{Rec} &  0.0 & 0.0261 & 0.8947   \\
+& & & & & \textit{Prec} & 0.0 & 0.9295 & 0.9802 \\ \midrule
+0.5 & - & 100.0 & None & True & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0317    & 0.9453    \\
+& & & & & \textit{Rec} &  0.0 & 0.0161 & 0.9124   \\
+& & & & & \textit{Prec} & 0.0 & 0.895 & 0.9806 \\ \midrule
+- & - & 100.0 & None & True & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0103    & 0.9341    \\
+& & & & & \textit{Rec} &  0.0 & 0.0052 & 0.8858   \\
+& & & & & \textit{Prec} & 0.0 & 0.8567 & 0.9879 \\ \midrule
+- & - & 100.0 & balanced & False & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0039    & 0.7969    \\
+& & & & & \textit{Rec} &  0.0 & 0.0019 & 0.665   \\
+& & & & & \textit{Prec} & 0.0 & 0.8527 & 0.9942 \\ \midrule
+0.5 & - & 100.0 & None & False & & & \\
+& & & & & \textit{F1} & 0.0 & 0.0141    & 0.8984    \\
+& & & & & \textit{Rec} &  0.0 & 0.0071 & 0.8266   \\
+& & & & & \textit{Prec} & 0.0 & 0.883 & 0.9838 \\ \midrule
 \end{tabularx}
 \caption{Manipulated code for random forest}
 \label{tab:rq3_random_forest}
@@ -65,54 +65,54 @@ over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & en
 \begin{table}[]
 \tiny
 \tabcolsep=0.11cm
-\begin{tabularx}{\textwidth}{XXXXXX|X|X|X}
+\begin{tabularx}{\textwidth}{XXXXXX|X|X|X|X}
 \toprule
-\multicolumn{6}{c}{Parameter} & & RN &  CC \\ \midrule
-over-\newline samp. & under-\newline samp. & stages &learn-\newline rate & sub-\newline sample & encode\newline type & & &  \\ \midrule
-0.5 & - & 200 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.24 & 0.83        \\
-& & & & & & \textit{Rec} &  0.7676 & 0.978    \\
-& & & & & & \textit{Prec} & 0.1422 & 0.7209  \\ \midrule
-- & 0.5 & 200 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.2309 & 0.8291        \\
-& & & & & & \textit{Rec} &  0.8196 & 0.9773    \\
-& & & & & & \textit{Prec} & 0.1344 & 0.7199  \\ \midrule
-- & - & 100 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.15 & 0.5254        \\
-& & & & & & \textit{Rec} &  0.0891 & 0.3629    \\
-& & & & & & \textit{Prec} & 0.4729 & 0.9513  \\ \midrule
-0.5 & - & 100 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.1488 & 0.7314        \\
-& & & & & & \textit{Rec} &  0.8706 & 0.9781    \\
-& & & & & & \textit{Prec} & 0.0814 & 0.5841  \\ \midrule
-- & 0.5 & 100 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.1435 & 0.7303        \\
-& & & & & & \textit{Rec} &  0.9055 & 0.9783    \\
-& & & & & & \textit{Prec} & 0.0779 & 0.5827  \\ \midrule
-0.5 & - & 100 & 0.1 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.1063 & 0.6377        \\
-& & & & & & \textit{Rec} &  0.891 & 0.9758    \\
-& & & & & & \textit{Prec} & 0.0565 & 0.4736  \\ \midrule
-- & 0.5 & 100 & 0.1 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.0993 & 0.6454        \\
-& & & & & & \textit{Rec} &  0.9077 & 0.9786    \\
-& & & & & & \textit{Prec} & 0.0525 & 0.4815  \\ \midrule
-- & - & 200 & 0.2 & 0.4 &True & & &  \\
-& & & & & & \textit{F1} & 0.0963 & 0.3292        \\
-& & & & & & \textit{Rec} &  0.0558 & 0.1995    \\
-& & & & & & \textit{Prec} & 0.349 & 0.9406  \\ \midrule
-- & - & 200 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.0963 & 0.3292        \\
-& & & & & & \textit{Rec} &  0.0558 & 0.1995    \\
-& & & & & & \textit{Prec} & 0.349 & 0.9406  \\ \midrule
-- & - & 200 & 0.2 & 0.7 &True & & &  \\
-& & & & & & \textit{F1} & 0.0963 & 0.3292        \\
-& & & & & & \textit{Rec} &  0.0558 & 0.1995    \\
-& & & & & & \textit{Prec} & 0.349 & 0.9406  \\ \midrule
-- & - & 300 & 0.2 & 1.0 &True & & &  \\
-& & & & & & \textit{F1} & 0.0563 & 0.2333        \\
-& & & & & & \textit{Rec} &  0.0322 & 0.1331    \\
-& & & & & & \textit{Prec} & 0.2222 & 0.942  \\ \midrule
+\multicolumn{6}{c}{Parameter} & & RN &  CC & Base CC \\ \midrule
+over-\newline samp. & under-\newline samp. & stages &learn-\newline rate & sub-\newline sample & encode\newline type & & & & \\ \midrule
+0.5 & - & 200 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.24 & 0.83   & 0.7519     \\
+& & & & & & \textit{Rec} &  0.7676 & 0.978 & 0.9854   \\
+& & & & & & \textit{Prec} & 0.1422 & 0.7209 & 0.6078 \\ \midrule
+- & 0.5 & 200 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.2309 & 0.8291   & 0.7466     \\
+& & & & & & \textit{Rec} &  0.8196 & 0.9773 & 0.9853   \\
+& & & & & & \textit{Prec} & 0.1344 & 0.7199 & 0.601 \\ \midrule
+- & - & 100 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.15 & 0.5254   & 0.8648     \\
+& & & & & & \textit{Rec} &  0.0891 & 0.3629 & 0.8225   \\
+& & & & & & \textit{Prec} & 0.4729 & 0.9513 & 0.9117 \\ \midrule
+0.5 & - & 100 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.1488 & 0.7314   & 0.6883     \\
+& & & & & & \textit{Rec} &  0.8706 & 0.9781 & 0.9789   \\
+& & & & & & \textit{Prec} & 0.0814 & 0.5841 & 0.5307 \\ \midrule
+- & 0.5 & 100 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.1435 & 0.7303   & 0.6874     \\
+& & & & & & \textit{Rec} &  0.9055 & 0.9783 & 0.9817   \\
+& & & & & & \textit{Prec} & 0.0779 & 0.5827 & 0.5288 \\ \midrule
+0.5 & - & 100 & 0.1 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.1063 & 0.6377   & 0.5957     \\
+& & & & & & \textit{Rec} &  0.891 & 0.9758 & 0.977   \\
+& & & & & & \textit{Prec} & 0.0565 & 0.4736 & 0.4285 \\ \midrule
+- & 0.5 & 100 & 0.1 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.0993 & 0.6454   & 0.607     \\
+& & & & & & \textit{Rec} &  0.9077 & 0.9786 & 0.9769   \\
+& & & & & & \textit{Prec} & 0.0525 & 0.4815 & 0.4402 \\ \midrule
+- & - & 200 & 0.2 & 0.4 &True & & & & \\
+& & & & & & \textit{F1} & 0.0963 & 0.3292   & 0.8948     \\
+& & & & & & \textit{Rec} &  0.0558 & 0.1995 & 0.8805   \\
+& & & & & & \textit{Prec} & 0.349 & 0.9406 & 0.9096 \\ \midrule
+- & - & 200 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.0963 & 0.3292   & 0.8948     \\
+& & & & & & \textit{Rec} &  0.0558 & 0.1995 & 0.8805   \\
+& & & & & & \textit{Prec} & 0.349 & 0.9406 & 0.9096 \\ \midrule
+- & - & 200 & 0.2 & 0.7 &True & & & & \\
+& & & & & & \textit{F1} & 0.0963 & 0.3292   & 0.8948     \\
+& & & & & & \textit{Rec} &  0.0558 & 0.1995 & 0.8805   \\
+& & & & & & \textit{Prec} & 0.349 & 0.9406 & 0.9096 \\ \midrule
+- & - & 300 & 0.2 & 1.0 &True & & & & \\
+& & & & & & \textit{F1} & 0.0563 & 0.2333   & 0.9174     \\
+& & & & & & \textit{Rec} &  0.0322 & 0.1331 & 0.9105   \\
+& & & & & & \textit{Prec} & 0.2222 & 0.942 & 0.9243 \\ \midrule
 \end{tabularx}
 \caption{Manipulated code gradient boosting classifier}
 \label{tab:rq3_gradient_boosting_classifier}
@@ -121,46 +121,46 @@ over-\newline samp. & under-\newline samp. & stages &learn-\newline rate & sub-\
 \begin{table}[]
 \tiny
 \tabcolsep=0.11cm
-\begin{tabularx}{\textwidth}{XXXXXXX|X|X|X}
+\begin{tabularx}{\textwidth}{XXXXXXX|X|X|X|X}
 \toprule
-\multicolumn{7}{c}{Parameter} & & RN & CC \\ \midrule
-over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & & \\ \midrule
-- & 0.5 & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.3895 & 0.6568        \\
-& & & & & & & \textit{Rec} &  0.847 & 0.5009    \\
-& & & & & & & \textit{Prec} & 0.2529 & 0.9534  \\ \midrule
-- & - & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.0451        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.0231    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9645  \\ \midrule
-- & - & 16 & 2 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.5738        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.4036    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9925  \\ \midrule
-- & - & 32 & 3 & 64 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.0857        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.0448    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9742  \\ \midrule
-- & - & 32 & 2 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.1898        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.1049    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9938  \\ \midrule
-- & - & 32 & 3 & 512 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.0037        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.0019    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.7047  \\ \midrule
-- & - & 32 & 2 & 512 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.3195        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.1902    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9968  \\ \midrule
-0.5 & - & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.119        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.0633    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9851  \\ \midrule
-- & - & 16 & 3 & 256 &10.0 & 0.2|0.2 & & & \\
-& & & & & & & \textit{F1} & 0.0 & 0.2831        \\
-& & & & & & & \textit{Rec} &  0.0 & 0.165    \\
-& & & & & & & \textit{Prec} & 0.0 & 0.9956  \\ \midrule
+\multicolumn{7}{c}{Parameter} & & RN & CC & Base CC \\ \midrule
+over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & & & \\ \midrule
+- & 0.5 & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.3895 & 0.6568 & 0.9502       \\
+& & & & & & & \textit{Rec} &  0.847 & 0.5009  & 0.996  \\
+& & & & & & & \textit{Prec} & 0.2529 & 0.9534 & 0.9085 \\ \midrule
+- & - & 32 & 3 & 512 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.0037 & 0.9714       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.0019  & 0.9929  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.7047 & 0.9508 \\ \midrule
+- & - & 32 & 2 & 512 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.3195 & 0.9694       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.1902  & 0.9931  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9968 & 0.9467 \\ \midrule
+- & - & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.0451 & 0.9711       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.0231  & 0.9937  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9645 & 0.9494 \\ \midrule
+- & - & 16 & 2 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.5738 & 0.972       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.4036  & 0.9676  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9925 & 0.9765 \\ \midrule
+- & - & 16 & 3 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.2831 & 0.9698       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.165  & 0.9737  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9956 & 0.9659 \\ \midrule
+- & - & 32 & 2 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.1898 & 0.9728       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.1049  & 0.988  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9938 & 0.958 \\ \midrule
+0.5 & - & 32 & 3 & 256 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.119 & 0.9692       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.0633  & 0.9947  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9851 & 0.945 \\ \midrule
+- & - & 32 & 3 & 64 &10.0 & 0.2|0.2 & & & & \\
+& & & & & & & \textit{F1} & 0.0 & 0.0857 & 0.9721       \\
+& & & & & & & \textit{Rec} &  0.0 & 0.0448  & 0.9788  \\
+& & & & & & & \textit{Prec} & 0.0 & 0.9742 & 0.9655 \\ \midrule
 \end{tabularx}
 \caption{Manipulated code lstm}
 \label{tab:rq3_lstm}
