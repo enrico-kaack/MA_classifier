@@ -22,13 +22,16 @@ def run():
             pickle.dump((result, sorted_idx), out)
 
 
-def print_graph(result, sorted_idx):
+def print_graph(name, result, sorted_idx):
     fig, ax = plt.subplots()
     ax.boxplot(result.importances[sorted_idx].T,
             vert=False, labels=sorted_idx)
-    ax.set_title("Permutation Importances (holdout set)")
-    fig.tight_layout()
-    plt.savefig(f"Importance_permuted{problem_type.value}.pdf")
+    ax.set_title("Permutation Importances")
+    #fig.tight_layout()
+    ax.set_xlabel("Decrease in f1 score")
+    ax.set_ylabel("Label")
+
+    plt.savefig(f"Importance_permuted{name}.pdf")
 
 
 
@@ -36,4 +39,7 @@ def print_graph(result, sorted_idx):
 
 
 if __name__ == "__main__":
-    run()
+    for v in ["RETURN_NULL", "CONDITION_COMPARISON_SIMPLE", "CONDITION_COMPARISON"]:
+        with open(f"results/FINAL/rf_feature_importance/{v}_rf_feature_importance.pickle", "rb") as p:
+            data, sorted_idx = pickle.load(p)
+            print_graph(v, data, sorted_idx)
