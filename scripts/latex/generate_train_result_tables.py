@@ -109,3 +109,5 @@ if __name__ == "__main__":
     for model in ["random forest", "gradient boosting classifier", "lstm"]:# "svm"
         data.append(process_data(results_train_test, results_holdout, model))
     print_data(data, args.output, args.template)
+#scripts/latex/generate_train_result_tables.py results/FINAL/test results/FINAL/holdout_validation  scripts/latex/generate_train_templates/table_train_all.tex.jinja2 output.tex
+# or with results/FINAL/svm_tmp
