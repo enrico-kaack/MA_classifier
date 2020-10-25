@@ -1,0 +1,15 @@
+No resampling: Type: RETURN_NULL: Size: 4950329
+Oversampling: 0.5: Type: RETURN_NULL: Size: 7409925
+Oversampling: 1.0: Type: RETURN_NULL: Size: 9879900
+Undersampling: 0.1: Type: RETURN_NULL: Size: 114169
+Undersampling: 0.5: Type: RETURN_NULL: Size: 31137
+No resampling: Type: CONDITION_COMPARISON_SIMPLE: Size: 4950329
+Oversampling: 0.5: Type: CONDITION_COMPARISON_SIMPLE: Size: 7228141
+Oversampling: 1.0: Type: CONDITION_COMPARISON_SIMPLE: Size: 9637522
+Undersampling: 0.1: Type: CONDITION_COMPARISON_SIMPLE: Size: 1447248
+Undersampling: 0.5: Type: CONDITION_COMPARISON_SIMPLE: Size: 394704
+No resampling: Type: CONDITION_COMPARISON: Size: 4950329
+Oversampling: 0.5: Type: CONDITION_COMPARISON: Size: 7064008
+Oversampling: 1.0: Type: CONDITION_COMPARISON: Size: 9418678
+Undersampling: 0.1: Type: CONDITION_COMPARISON: Size: 2650890
+Undersampling: 0.5: Type: CONDITION_COMPARISON: Size: 722970
