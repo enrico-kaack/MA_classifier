@@ -1,0 +1,462 @@
+TP
+( self ) : 
+          <UNKNOWN> 
+ if self . <UNKNOWN> is not none : 
+              return self
+OP,NAME,OP,OP,NEWLINE,INDENT,STRING,NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME
+########################
+json [ <UNKNOWN> ] 
+ ] 
+ if json [ <UNKNOWN> ] != <UNKNOWN> : 
+              forecast [ attr_forecast_temp
+NAME,OP,STRING,OP,NL,OP,NEWLINE,NAME,NAME,OP,STRING,OP,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+, testobj ) : 
+              if user . username == 'test2' : 
+                  return true 
+  elif
+OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,NAME
+########################
+== 1 : 
+              return self . y 
+  elif index == 2 : 
+              return self
+OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NEWLINE,DEDENT,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME
+########################
+in self . graph . nodes : 
+              if node . op == 'placeholder' : 
+                  result =
+NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP
+########################
+. get ( attr_brightness ) 
+ 
+ if brightness is not none : 
+              self . _brightness = brightness
+OP,NAME,OP,NAME,OP,NEWLINE,NL,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME
+########################
+) 
+ 
+ if os . path . splitext ( target ) [ - 1 ] == '.sql' : 
+
+OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,OP,NUMBER,OP,OP,STRING,OP,NEWLINE
+########################
+
+ if len ( <UNKNOWN> ) < 1 : return none 
+ if <UNKNOWN> > .2 : 
+              <UNKNOWN>
+NL,NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NAME,NAME,NEWLINE,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME
+########################
+
+ if speed == state_off : 
+              self . turn_off ( ) 
+  else : 
+              self
+NEWLINE,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,OP,NEWLINE,DEDENT,NAME,OP,NEWLINE,INDENT,NAME
+########################
+. <UNKNOWN> ( var ) 
+  elif type_ == dat . timedelta : 
+              return datetime . timedelta
+OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME
+########################
+if chain_path is not none : 
+              path [ <UNKNOWN> ] = self . parser . find_dir ( 
+
+NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,OP,NAME,OP,NAME,OP,NAME,OP,NL
+########################
+self . <UNKNOWN> . values ( ) : 
+              if stat . <UNKNOWN> < self . <UNKNOWN> : 
+
+NAME,OP,NAME,OP,NAME,OP,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+none , 
+ ) -> str : 
+          if <UNKNOWN> is not none : 
+              assert count is
+NAME,OP,NL,OP,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME
+########################
+= device 
+ self . output_type = "stdout" 
+ if mode == "both" : 
+              self . requires_grad =
+OP,NAME,NEWLINE,NAME,OP,NAME,OP,STRING,NEWLINE,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+res . json ( ) 
+ if "error" in response : 
+              if ( 
+ "message" in response [
+NAME,OP,NAME,OP,OP,NEWLINE,NAME,STRING,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NL,STRING,NAME,NAME,OP
+########################
+
+          if self . _hosts_cache is none : 
+              self . _hosts_cache = self . <UNKNOWN> ( )
+NL,INDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP
+########################
+
+ 
+ if dt is nat : 
+              assert result is nat 
+  else : 
+              expected
+NEWLINE,NL,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,NEWLINE,DEDENT,NAME,OP,NEWLINE,INDENT,NAME
+########################
+] 
+ ws . <UNKNOWN> ( op_def . serializetostring ( ) ) 
+ if i in <UNKNOWN> : 
+             
+OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,OP,NEWLINE,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT
+########################
+return_indices ) 
+   if stride is none : 
+          stride = torch . jit . annotate (
+NAME,OP,NEWLINE,DEDENT,DEDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+ if a [ 'subnetid' ] == subnet_id : 
+                  if <UNKNOWN> [ <UNKNOWN> ] == <UNKNOWN> : 
+
+DEDENT,NAME,NAME,OP,STRING,OP,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,OP,NAME,OP,NEWLINE
+########################
+FP
+  if self . char_swing is not none : 
+              oscillating = new_state . attributes . get (
+DEDENT,DEDENT,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+
+ if self . _play_context . become ^ play_context . become : 
+              self . <UNKNOWN> ( play_context )
+NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP
+########################
+if cls . databases == '__all__' : 
+              return frozenset ( connections ) 
+  for alias in cls
+NAME,NAME,OP,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME,NAME,NAME,NAME
+########################
+if service . service == <UNKNOWN> : 
+              async_dispatcher_send ( hass , <UNKNOWN> , params ) 
+  if
+NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME
+########################
+ if input . dim ( ) == 0 : 
+          raise runtimeerror ( <UNKNOWN> ) 
+  return
+DEDENT,NAME,NAME,OP,NAME,OP,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,DEDENT,NAME
+########################
+== 1 or ndim == 3 : 
+          ret = 0 
+  else : 
+          ret =
+OP,NUMBER,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NUMBER,NEWLINE,DEDENT,NAME,OP,NEWLINE,INDENT,NAME,OP
+########################
+
+  result = self . _data . unique ( ) 
+ if dropna and self . hasnans : 
+
+NL,DEDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,NAME,NAME,NAME,NAME,OP,NAME,OP,NEWLINE
+########################
+test_database_name ) 
+  if autoclobber or confirm == 'yes' : 
+                      try : 
+                          if verbosity >=
+NAME,OP,NEWLINE,DEDENT,NAME,NAME,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+if hs_color is not none : 
+              self . _white = 0 
+ self . _hs_color = hs_color 
+
+NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NUMBER,NEWLINE,NAME,OP,NAME,OP,NAME,NEWLINE
+########################
+if order == "nhwc" : 
+              x = utils . nchw2nhwc ( x ) 
+ 
+  net =
+NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,DEDENT,NAME,OP
+########################
+( "firstname" ) 
+ last = member . get ( "lastname" ) 
+ if first and last : 
+                     
+OP,STRING,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,STRING,OP,NEWLINE,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT
+########################
+features = state . attributes . get ( attr_supported_features , 0 ) 
+ 
+ if features & support_direction : 
+
+NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NEWLINE
+########################
+ if text in _num_words : 
+          return true 
+  return false 
+ 
+ 
+  lex_attrs =
+DEDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,NAME,NAME,NEWLINE,NL,NL,DEDENT,NAME,OP
+########################
+             if use_proxy and <UNKNOWN> : 
+                  <UNKNOWN> = <UNKNOWN> ( urlparse ( <UNKNOWN> ) ) 
+ port =
+INDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,NAME,OP
+########################
+ if eps != 1e-10 : 
+          warnings . warn ( <UNKNOWN> ) 
+ 
+  <UNKNOWN> = -
+DEDENT,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,STRING,OP,NEWLINE,NL,DEDENT,NAME,OP,OP
+########################
+
+  if stderr or status > 1 : 
+              raise subprocesserror ( cmd = cmd , status =
+NL,DEDENT,NAME,NAME,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+  if self . token is none : 
+                  raise ansibleerror ( <UNKNOWN> ) 
+ 
+  if
+DEDENT,DEDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,NL,DEDENT,NAME
+########################
+if devices is not none : 
+          assert len ( modules ) == len ( devices ) 
+ 
+NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,OP,NAME,OP,NAME,OP,NEWLINE,DEDENT
+########################
+if field_value is none : 
+          return none 
+  model = field . remote_field . model 
+ default_manager
+NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,NAME,OP,NAME,OP,NAME,OP,NAME,NEWLINE,NAME
+########################
+if condition == "device" : 
+          config = cv . <UNKNOWN> ( config ) 
+ platform = await async_get_device_automation_platform
+NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,OP,NAME,NAME
+########################
+TN
+ def <UNKNOWN> ( self ) : 
+ 
+ <UNKNOWN> 
+          if self . <UNKNOWN> : 
+              <UNKNOWN>
+DEDENT,NAME,NAME,OP,NAME,OP,OP,NEWLINE,NL,COMMENT,NL,INDENT,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME
+########################
+<UNKNOWN> 
+ response = self . client . get ( <UNKNOWN> ) 
+ self . assertredirects ( response , <UNKNOWN>
+COMMENT,NL,NAME,OP,NAME,OP,NAME,OP,NAME,OP,STRING,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,STRING
+########################
+[ ] 
+ for dtype , <UNKNOWN> in grouper : 
+ 
+          values , placement = <UNKNOWN> ( list
+OP,OP,NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,OP,NEWLINE,NL,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+<UNKNOWN> 
+ await component_data . data_update_coordinator . async_refresh ( ) 
+ component_data . data_update_coordinator . api . info . return_value
+NAME,NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+= [ 
+ const . command_class_sensor_multilevel , 
+ const . command_class_meter , 
+ ] 
+ ) 
+ value = mockvalue
+OP,OP,NL,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP,NL,OP,NL,OP,NEWLINE,NAME,OP,NAME
+########################
+. copy ( ) 
+ left . loc [ <UNKNOWN> , <UNKNOWN> ] = rhs 
+ tm . assert_frame_equal (
+OP,NAME,OP,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NAME,NEWLINE,NAME,OP,NAME,OP
+########################
+
+  else : 
+          result = torch . _c . _nn . leaky_relu ( input , negative_slope )
+NEWLINE,DEDENT,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+<UNKNOWN> ( self ) : 
+ <UNKNOWN> 
+          didx = date_range ( start = <UNKNOWN> , freq = "s"
+NAME,OP,NAME,OP,OP,NEWLINE,COMMENT,NL,INDENT,NAME,OP,NAME,OP,NAME,OP,STRING,OP,NAME,OP,STRING
+########################
+) 
+ if ( encoding and <UNKNOWN> ( cursor , encoding ) != <UNKNOWN> [ <UNKNOWN> ] ) : 
+
+OP,NEWLINE,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NAME,OP,STRING,OP,OP,OP,NEWLINE
+########################
+) 
+ self . schedule_update_ha_state ( ) 
+ 
+  def <UNKNOWN> ( self , connection_status ) : 
+         
+OP,NEWLINE,NAME,OP,NAME,OP,OP,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT
+########################
+) -> none : 
+ 
+          super ( ) . __init__ ( ** kwargs ) 
+ 
+ self .
+OP,OP,NAME,OP,NEWLINE,NL,INDENT,NAME,OP,OP,OP,NAME,OP,OP,NAME,OP,NEWLINE,NL,NAME,OP
+########################
+config_entries . flow . async_init ( 
+ domain , context = { "source" : "import" } , data = <UNKNOWN>
+NAME,OP,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP,OP,STRING,OP,STRING,OP,OP,NAME,OP,NAME
+########################
+= true , 
+ sensorid = none , 
+ camera = false , 
+ events = 2 , 
+ temperature
+OP,NAME,OP,NL,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP,NL,NAME,OP,NUMBER,OP,NL,NAME
+########################
+self . asserttrue ( res ) 
+ 
+  @ mock . patch ( <UNKNOWN> ) 
+ def <UNKNOWN> (
+NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,DEDENT,OP,NAME,OP,NAME,OP,STRING,OP,NEWLINE,NAME,NAME,OP
+########################
+random ( size = ( 10 , 2 ) ) , columns = [ "a" , "b" ] ) 
+
+NAME,OP,NAME,OP,OP,NUMBER,OP,NUMBER,OP,OP,OP,NAME,OP,OP,STRING,OP,STRING,OP,OP,NEWLINE
+########################
+<UNKNOWN> 
+ <UNKNOWN> = <UNKNOWN> 
+ 
+ <UNKNOWN> = 0.125 
+ 
+ <UNKNOWN> = "up" 
+ <UNKNOWN> = "down" 
+
+STRING,NEWLINE,NAME,OP,STRING,NEWLINE,NL,NAME,OP,NUMBER,NEWLINE,NL,NAME,OP,STRING,NEWLINE,NAME,OP,STRING,NEWLINE
+########################
+'.' ) [ 0 ] , 
+ ) 
+ 
+  if self . <UNKNOWN> : 
+              self .
+STRING,OP,OP,NUMBER,OP,OP,NL,OP,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP
+########################
+( <UNKNOWN> ) 
+ self . assertnotcontains ( response2 , <UNKNOWN> ) 
+ self . assertcontains ( response2 , <UNKNOWN>
+OP,NAME,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,STRING,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,STRING
+########################
+ct . fit ( x ) 
+ assert ct . get_feature_names ( ) == [ <UNKNOWN> , <UNKNOWN> ] 
+
+NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,NAME,OP,NAME,OP,OP,OP,OP,STRING,OP,STRING,OP,NEWLINE
+########################
+( result ) ) if isinstance ( result , dt ) else result 
+ ) 
+ 
+ <UNKNOWN> = hass
+OP,NAME,OP,OP,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,NAME,NL,OP,NEWLINE,NL,NAME,OP,NAME
+########################
+FN
+ elif target == "b" : 
+          return source in { "b" , "h" , "t" , "s" ,
+DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,NAME,NAME,OP,STRING,OP,STRING,OP,STRING,OP,STRING,OP
+########################
+err : 
+              if "duplicate" not in str ( err ) . lower ( ) : 
+                  raise
+NAME,OP,NEWLINE,INDENT,NAME,STRING,NAME,NAME,NAME,OP,NAME,OP,OP,NAME,OP,OP,OP,NEWLINE,INDENT,NAME
+########################
+if self . <UNKNOWN> == - 1 : <UNKNOWN> 
+              return false 
+  for stat in self .
+NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,COMMENT,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,NAME,NAME,NAME,NAME,OP
+########################
+else : # pragma: nocover 
+ <UNKNOWN> 
+                  raise valueerror 
+ 
+   if p < 0 : 
+ <UNKNOWN>
+NAME,OP,COMMENT,NEWLINE,COMMENT,NL,INDENT,NAME,NAME,NEWLINE,NL,DEDENT,DEDENT,NAME,NAME,OP,NUMBER,OP,NEWLINE,COMMENT
+########################
+                 return 2 
+  if <UNKNOWN> in x . split ( '/' ) : 
+                  return 3 
+
+INDENT,NAME,NUMBER,NEWLINE,DEDENT,NAME,STRING,NAME,NAME,OP,NAME,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,NUMBER,NEWLINE
+########################
+element [ <UNKNOWN> ] 
+ == <UNKNOWN> [ <UNKNOWN> ] 
+ ) : 
+                              if "interface" in <UNKNOWN> .
+NAME,OP,STRING,OP,NL,OP,NAME,OP,STRING,OP,NL,OP,OP,NEWLINE,INDENT,NAME,STRING,NAME,NAME,OP
+########################
+dtype = torch . quint8 ) : 
+      <UNKNOWN> # noqa: e501 
+ if padding_mode != 'zeros' : 
+          raise
+NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,STRING,COMMENT,NEWLINE,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME
+########################
+ elif dev . <UNKNOWN> in ( <UNKNOWN> . relay , <UNKNOWN> . dimmer ) : 
+              comps [
+DEDENT,NAME,NAME,OP,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP
+########################
+ elif config . get ( 'plugin' ) not in valid_names : 
+ <UNKNOWN> 
+              raise ansibleparsererror ( <UNKNOWN>
+DEDENT,NAME,NAME,OP,NAME,OP,STRING,OP,NAME,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,NAME,OP,STRING
+########################
+( ) 
+ if internal_type in ( <UNKNOWN> , <UNKNOWN> , <UNKNOWN> , <UNKNOWN> ) : 
+ <UNKNOWN> 
+ <UNKNOWN>
+OP,OP,NEWLINE,NAME,NAME,NAME,OP,STRING,OP,STRING,OP,STRING,OP,STRING,OP,OP,NEWLINE,COMMENT,NL,COMMENT
+########################
+
+  elif follow_redirects in [ 'no' , 'none' , false ] : 
+                  raise urllib_error . httperror (
+NL,DEDENT,NAME,NAME,NAME,OP,STRING,OP,STRING,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP
+########################
+         if "duplicate" not in str ( err ) . lower ( ) : 
+              raise 
+ 
+ 
+INDENT,NAME,STRING,NAME,NAME,NAME,OP,NAME,OP,OP,NAME,OP,OP,OP,NEWLINE,INDENT,NAME,NEWLINE,NL,DEDENT
+########################
+. extend ( <UNKNOWN> ) 
+ 
+  if len ( <UNKNOWN> [ <UNKNOWN> ] ) > 0 : 
+
+OP,NAME,OP,NAME,OP,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,OP,STRING,OP,OP,OP,NUMBER,OP,NEWLINE
+########################
+if self . _media_content_id in self . <UNKNOWN> : 
+              store = self . <UNKNOWN> [ self . _media_content_id
+NAME,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+if _num_samples ( y ) == 0 : 
+              return np . array ( [ ] ) 
+ 
+
+NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,OP,OP,OP,NEWLINE,NL
+########################
+
+          return 
+ 
+ <UNKNOWN> 
+  if pid == os . getpid ( ) : 
+          return
+NL,INDENT,NAME,NEWLINE,NL,COMMENT,NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,OP,OP,NEWLINE,INDENT,NAME
+########################
+_play . hosts ) : 
+                      if host . name not in self . _tqm . _unreachable_hosts : 
+
+NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+if mode == 'reflect' : 
+                  return torch . _c . _nn . <UNKNOWN> ( input , pad )
+NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+( self , value , dim ) : 
+          <UNKNOWN> = 10000 
+ if dim == 1 : 
+
+OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NUMBER,NEWLINE,NAME,NAME,OP,NUMBER,OP,NEWLINE
+########################
+         <UNKNOWN> = false 
+ try : 
+              if self . process_group != <UNKNOWN> ( ) : 
+                 
+INDENT,NAME,OP,NAME,NEWLINE,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,OP,OP,NEWLINE,INDENT
+########################

@@ -5,20 +5,27 @@ pd.set_option('display.max_colwidth', None)
 
 from models.random_forst import decode_vector
 from tasks.gradient_boosting_classifier import TaskEvaluateGradientBoostingClassifier
+from tasks.random_forest import TaskEvaluateRandomForest
+from tasks.lstm import TaskEvaluateLstm
 from tasks.preprocessing import ProblemType, TaskVocabCreator
 
-data = TaskEvaluateGradientBoostingClassifier(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=300, subsample=1.0).outputLoad()
+#data = TaskEvaluateGradientBoostingClassifier(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, learning_rate=0.2, n_estimators=300, subsample=1.0).outputLoad()
+#data = TaskEvaluateRandomForest(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True, class_weight=None).outputLoad()
+#encode_type = True
+data = TaskEvaluateLstm(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, epochs=2, batch_size=256,num_lstm_cells=10, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2).outputLoad()
+encode_type = False
+
+
 vocab = TaskVocabCreator().outputLoad()
 
 #reverse vocab
 reverse_vocab = {value:key for key, value in vocab.items()} 
-encode_type = True
 
 
 def decode(row):
-    unformated =  decode_vector(row["x"], reverse_vocab)
+    unformated =  decode_vector(row["x"], reverse_vocab, encode_type)
     values = [v for i,v in enumerate(unformated) if not i % 2]
-    types = [v for i,v in enumerate(unformated) if i % 2] if encode_type else None
+    types = [v for i,v in enumerate(unformated) if i % 2] if encode_type else []
     return [values, types]
 
 def get_decoded_data(data):
@@ -44,7 +51,7 @@ def get_true_negative(data):
 
 
 
-with open("output.txt", "w") as output:
+with open("best_lstm.txt", "w") as output:
 
     values = {"tp": get_true_positive(data.copy()).sample(20)["decoded"].values, "fp": get_false_positive(data.copy()).sample(20)["decoded"].values, "tn": get_true_negative(data.copy()).sample(20)["decoded"].values, "fn": get_false_negative(data.copy()).sample(20)["decoded"].values}
 
