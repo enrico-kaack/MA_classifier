@@ -1,0 +1,482 @@
+TP
+. _optimizer = none 
+ 
+ <UNKNOWN> 
+ if init_tok2vec is not none : 
+          components = <UNKNOWN> (
+OP,NAME,OP,NAME,NEWLINE,NL,COMMENT,NL,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+{ } 
+ if 'class' in attrs : 
+                      attrs [ 'class' ] += ' ' + self . form
+OP,OP,NEWLINE,NAME,STRING,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,OP,STRING,OP,NAME,OP,NAME
+########################
+             if interface not in interfaces : 
+                  _logger . error ( 
+ <UNKNOWN> , interface 
+ ) 
+
+INDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NL,STRING,OP,NAME,NL,OP,NEWLINE
+########################
+
+  elif orient == "values" : 
+              self . obj = dataframe ( 
+ loads ( json ,
+NEWLINE,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP
+########################
+[ <UNKNOWN> % password ] 
+  if host : 
+              if '/' in host : 
+                  args
+OP,STRING,OP,NAME,OP,NEWLINE,DEDENT,NAME,NAME,OP,NEWLINE,INDENT,NAME,STRING,NAME,NAME,OP,NEWLINE,INDENT,NAME
+########################
+
+ 
+ <UNKNOWN> 
+ <UNKNOWN> 
+  if <UNKNOWN> in o [ 'name' ] : 
+          return false 
+
+NEWLINE,NL,COMMENT,NL,COMMENT,NL,DEDENT,NAME,STRING,NAME,NAME,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE
+########################
+strftime ( "%h:%m:%s.%f" ) [ : - 3 ] 
+  elif s != 0 : 
+                      xp =
+NAME,OP,STRING,OP,OP,OP,OP,NUMBER,OP,NEWLINE,DEDENT,NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP
+########################
+( end_date ) 
+ 
+ <UNKNOWN> 
+ if 'start_date' in self . default_args : 
+              self . default_args [
+OP,NAME,OP,NEWLINE,NL,COMMENT,NL,NAME,STRING,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+
+ if ext == ".py" : 
+          path = fname 
+ 
+  if os . path . basename
+NEWLINE,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME
+########################
+
+ global <UNKNOWN> 
+ global <UNKNOWN> 
+ 
+ if group == groupmember . <UNKNOWN> : 
+          return 
+ 
+
+NEWLINE,NAME,NAME,NEWLINE,NAME,NAME,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NEWLINE,NL
+########################
+         <UNKNOWN> 
+ result = dict ( ) 
+ if '.' not in remainder : 
+              result [ remainder
+INDENT,STRING,NEWLINE,NAME,OP,NAME,OP,OP,NEWLINE,NAME,STRING,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+, <UNKNOWN> ) 
+ 
+  if owner is not none : 
+                  module . <UNKNOWN> ( <UNKNOWN> ,
+OP,NAME,OP,NEWLINE,NL,DEDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP
+########################
+
+ if result [ 'exitcode' ] != 0 : 
+              result [ 'failed' ] = true 
+ result [
+NEWLINE,NAME,NAME,OP,STRING,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,OP,NAME,NEWLINE,NAME,OP
+########################
+field_name = field_name [ 1 : ] 
+  if field_name == 'pk' : 
+                  return [ ] 
+
+NAME,OP,NAME,OP,NUMBER,OP,OP,NEWLINE,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,OP,NEWLINE
+########################
+: _t ) -> bool : 
+          if self . freq is none : 
+              return false 
+
+OP,NAME,OP,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE
+########################
+) 
+ return 
+ 
+  if <UNKNOWN> . play in self . <UNKNOWN> : 
+              await self .
+OP,NEWLINE,NAME,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+
+      <UNKNOWN> 
+ 
+ try : 
+          if content is none : 
+              with open ( path
+NEWLINE,INDENT,STRING,NEWLINE,NL,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME
+########################
+= state . pop ( <UNKNOWN> , <UNKNOWN> ) 
+ if <UNKNOWN> != __version__ : 
+                  warnings . warn
+OP,NAME,OP,NAME,OP,STRING,OP,STRING,OP,NEWLINE,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+result , expected ) 
+ 
+ <UNKNOWN> 
+ if op in [ "+" , "*" ] : 
+              result
+NAME,OP,NAME,OP,NEWLINE,NL,COMMENT,NL,NAME,NAME,NAME,OP,STRING,OP,STRING,OP,OP,NEWLINE,INDENT,NAME
+########################
+] 
+ ) 
+ if order == "nchw" : 
+              inputs [ "data" ] = np . random .
+OP,NL,OP,NEWLINE,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,OP,NAME,OP,NAME,OP
+########################
+FP
+
+ ) or end == 0 : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN> 
+
+NL,OP,NAME,NAME,OP,NUMBER,OP,NEWLINE,COMMENT,NL,COMMENT,NL,COMMENT,NL,COMMENT,NL,COMMENT,NL,COMMENT,NL
+########################
+) 
+ if self . required and not value : 
+              raise validationerror ( self . error_messages [ 'required'
+OP,NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,STRING
+########################
+
+                  raise valueerror ( <UNKNOWN> ) 
+    if dim_out % group : 
+          raise valueerror
+NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,DEDENT,DEDENT,DEDENT,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME
+########################
+if not count and i : 
+                      return i 
+    return i 
+ 
+  def
+NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,DEDENT,DEDENT,NAME,NAME,NEWLINE,NL,DEDENT,NAME
+########################
+) or getattr ( key , "ndim" , none ) == 2 : 
+              self . <UNKNOWN> ( key
+OP,NAME,NAME,OP,NAME,OP,STRING,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME
+########################
+         if co . <UNKNOWN> & inspect . <UNKNOWN> : 
+              args . append ( <UNKNOWN> ( '*' +
+INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,STRING,OP
+########################
+if obj is none : 
+              return self . <UNKNOWN> ( request , opts , object_id ) 
+ 
+
+NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL
+########################
+) 
+ 
+ if base_model and not <UNKNOWN> : 
+ <UNKNOWN> 
+          optimizer = nlp . <UNKNOWN> ( device
+OP,NEWLINE,NL,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+) 
+ 
+ if not response [ 'responsemetadata' ] [ 'httpstatuscode' ] == 200 : 
+              raise airflowexception (
+OP,NEWLINE,NL,NAME,NAME,NAME,OP,STRING,OP,OP,STRING,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+  if user_input is not none : 
+              self . region = user_input [ conf_region ] 
+ self
+DEDENT,DEDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME
+########################
+if self . _current_tado_hvac_mode == const_mode_smart_schedule : 
+              _logger . debug ( 
+ <UNKNOWN> , 
+ self . zone_name
+NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NL,STRING,OP,NL,NAME,OP,NAME
+########################
+if initial_split_keys is none : 
+              initial_split_keys = [ ] 
+  table = table ( table_id , instance
+NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,OP,OP,NEWLINE,DEDENT,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+if len ( keys ) > 1 : 
+          raise optionerror ( <UNKNOWN> ) 
+  key = keys
+NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,DEDENT,NAME,OP,NAME
+########################
+( self ) : 
+          while self . retries > 0 : 
+              self . module . cli
+OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME
+########################
+if scales is none : 
+              scales = sym_help . <UNKNOWN> ( g , input , output_size , dim
+NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+if len ( unique_check ) == 1 : 
+              return gettext ( <UNKNOWN> ) % { 
+ "field" :
+NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,OP,OP,NL,STRING,OP
+########################
+0 ] , threshold = 0.001 ) 
+ 
+ if training_mode : 
+              if use_bias and compute_dx : 
+
+NUMBER,OP,OP,NAME,OP,NUMBER,OP,NEWLINE,NL,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,OP,NEWLINE
+########################
+: 
+          <UNKNOWN> 
+ if self . required and not value : 
+              raise validationerror ( self .
+OP,NEWLINE,INDENT,STRING,NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP
+########################
+ if time_object is not none : 
+                      times . append ( time_object ) 
+  elif errors ==
+DEDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME,NAME,OP
+########################
+is not none and self . net . input_record ( ) is not none : 
+              idx = self
+NAME,NAME,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+TN
+2 , 1 , 2 ] , "c" : [ none , none , 3 , 4 ] } ,
+NUMBER,OP,NUMBER,OP,NUMBER,OP,OP,STRING,OP,OP,NAME,OP,NAME,OP,NUMBER,OP,NUMBER,OP,OP,OP
+########################
+
+ await hass . services . async_call ( 
+ domain , service_stop_cover , { attr_entity_id : <UNKNOWN> } , blocking
+NL,NAME,NAME,OP,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP,OP,NAME,OP,NAME,OP,OP,NAME
+########################
+, false 
+ 
+   def <UNKNOWN> ( self ) : 
+          try : 
+              try :
+OP,NAME,NEWLINE,NL,DEDENT,DEDENT,NAME,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NEWLINE,INDENT,NAME,OP
+########################
+_device . battery , 
+ <UNKNOWN> : self . _device . <UNKNOWN> , 
+ } 
+    <UNKNOWN>
+NAME,OP,NAME,OP,NL,STRING,OP,NAME,OP,NAME,OP,NAME,OP,NL,OP,NEWLINE,DEDENT,DEDENT,ENDMARKER,<UNKNOWN>
+########################
+table import clusterstate , table 
+ from google . cloud . <UNKNOWN> import enums 
+ 
+ from airflow . providers
+NAME,NAME,NAME,OP,NAME,NEWLINE,NAME,NAME,OP,NAME,OP,NAME,NAME,NAME,NEWLINE,NL,NAME,NAME,OP,NAME
+########################
+. transform ( x ) 
+ assert_array_equal ( x_r , iris . data ) 
+ 
+ <UNKNOWN> = rfecv (
+OP,NAME,OP,NAME,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,NAME,OP,NAME,OP
+########################
+"measures" : [ 
+ { 
+ "@id" : <UNKNOWN> , 
+ "label" : <UNKNOWN> , 
+ <UNKNOWN> : "stage" ,
+STRING,OP,OP,NL,OP,NL,STRING,OP,STRING,OP,NL,STRING,OP,STRING,OP,NL,STRING,OP,STRING,OP
+########################
+context . cliargs [ <UNKNOWN> ] , 
+ create_new_password = true ) 
+ 
+ if len ( vault_secrets ) >
+NAME,OP,NAME,OP,STRING,OP,OP,NL,NAME,OP,NAME,OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,OP
+########################
+. <UNKNOWN> ( ) >= 5 
+ or <UNKNOWN> in metadata 
+ and offset >= metadata [ <UNKNOWN> ] 
+
+OP,NAME,OP,OP,OP,NUMBER,NL,NAME,STRING,NAME,NAME,NL,NAME,NAME,OP,NAME,OP,STRING,OP,NL
+########################
+media 
+ 
+  if add : 
+              title = _ ( <UNKNOWN> ) 
+  elif self .
+NAME,NEWLINE,NL,DEDENT,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,STRING,OP,NEWLINE,DEDENT,NAME,NAME,OP
+########################
+
+ images = [ imread ( filename ) for filename in filenames ] 
+ 
+ return bunch ( images =
+NL,NAME,OP,OP,NAME,OP,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP
+########################
+( loop . iter ( ) ) as inner : 
+                  val = ops . add ( [ outer
+OP,NAME,OP,NAME,OP,OP,OP,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,OP,NAME
+########################
+. __init__ ( values , placement = placement , ndim = ndim ) 
+ 
+  @ property 
+ def
+OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,DEDENT,OP,NAME,NEWLINE,NAME
+########################
+. <UNKNOWN> ) , 
+ ) ) 
+ 
+ 
+   class <UNKNOWN> ( object ) : 
+     
+OP,NAME,OP,OP,NL,OP,OP,NEWLINE,NL,NL,DEDENT,DEDENT,NAME,NAME,OP,NAME,OP,OP,NEWLINE,INDENT
+########################
+: 
+              operation . database_backwards ( app_label , editor , new_state , project_state ) 
+  self . asserttablenotexists
+OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME,OP,NAME
+########################
+. distance is not none : 
+              return round ( self . distance , 1 ) 
+  return
+OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,DEDENT,NAME
+########################
+hass . async_block_till_done ( ) 
+ assert len ( calls ) == 1 
+ 
+ <UNKNOWN> 
+  now =
+NAME,OP,NAME,OP,OP,NEWLINE,NAME,NAME,OP,NAME,OP,OP,NUMBER,NEWLINE,NL,COMMENT,NL,DEDENT,NAME,OP
+########################
+
+  def runandsaverng ( self , func , inputs , kwargs = none ) : 
+          kwargs =
+NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP
+########################
+import series , dataframe 
+ types . append ( ( series , dataframe ) ) 
+  except importerror :
+NAME,NAME,OP,NAME,NEWLINE,NAME,OP,NAME,OP,OP,NAME,OP,NAME,OP,OP,NEWLINE,DEDENT,NAME,NAME,OP
+########################
+w_0 = workspace . fetchblob ( <UNKNOWN> . format ( device_prefix ) ) 
+ b_0 = workspace . fetchblob (
+NAME,OP,NAME,OP,NAME,OP,STRING,OP,NAME,OP,NAME,OP,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP
+########################
+FN
+if verbose > 1 : 
+          print ( <UNKNOWN> % ( <UNKNOWN> + 1 , n_trees ) ) 
+
+NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,OP,NAME,OP,NUMBER,OP,NAME,OP,OP,NEWLINE
+########################
+. cuda . get_device_capability ( d ) [ 0 ] 
+ if ( major < 6 ) : 
+             
+OP,NAME,OP,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,NAME,OP,NAME,OP,NUMBER,OP,OP,NEWLINE,INDENT
+########################
+
+ if redirect_to == self . request . path : 
+                  raise valueerror ( 
+ <UNKNOWN> 
+ <UNKNOWN> 
+
+NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NL,STRING,NL,STRING,NL
+########################
+if bases == ( <UNKNOWN> , ) : 
+              return new_class 
+ 
+  opts = new_class . _meta
+NAME,NAME,OP,OP,NAME,OP,OP,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,NL,DEDENT,NAME,OP,NAME,OP,NAME
+########################
+<UNKNOWN> : 
+              state = state_alarm_armed_home 
+  elif status == self . _client . triggered : 
+             
+NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT
+########################
+if <UNKNOWN> <= <UNKNOWN> < <UNKNOWN> : 
+          return <UNKNOWN> 
+  if <UNKNOWN> <= <UNKNOWN> < <UNKNOWN> :
+NAME,NUMBER,OP,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,STRING,NEWLINE,DEDENT,NAME,NUMBER,OP,NAME,OP,NUMBER,OP
+########################
+) : 
+                  if <UNKNOWN> > tmp [ <UNKNOWN> ] : 
+                      <UNKNOWN> = i <UNKNOWN> 
+ 
+OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,COMMENT,NEWLINE,DEDENT
+########################
+: 
+              if <UNKNOWN> . <UNKNOWN> in self . <UNKNOWN> : 
+                  features |= support_pause | support_play 
+
+OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,NEWLINE
+########################
+
+ <UNKNOWN> 
+  if ( num_filters != <UNKNOWN> ) : 
+              <UNKNOWN> = brew . conv ( 
+
+NL,COMMENT,NL,DEDENT,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NL
+########################
+ elif params is not none and name in params : 
+              if value is not none : 
+
+DEDENT,NAME,NAME,NAME,NAME,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE
+########################
+if <UNKNOWN> == <UNKNOWN> : 
+              <UNKNOWN> = <UNKNOWN> . get ( <UNKNOWN> , '' ) 
+ <UNKNOWN> =
+NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,STRING,OP,STRING,OP,NEWLINE,NAME,OP
+########################
+tz ) 
+  elif <UNKNOWN> in ( "timedelta" , "td" , "m8[ns]" ) : 
+          values = (
+NAME,OP,NEWLINE,DEDENT,NAME,NAME,NAME,OP,STRING,OP,STRING,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,OP,OP
+########################
+none 
+  if timestamp > clock ( ) + 31 * 86400 : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN>
+NAME,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,OP,OP,NUMBER,OP,NUMBER,OP,NEWLINE,COMMENT,NL,COMMENT,NL,COMMENT
+########################
+
+                      if i >= len ( ax ) : 
+                          raise indexerror ( <UNKNOWN> ) 
+  
+NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,DEDENT,DEDENT
+########################
+if rc == 0 : 
+          return true 
+ 
+  return false 
+ 
+ 
+  def <UNKNOWN>
+NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,NL,DEDENT,NAME,NAME,NEWLINE,NL,NL,DEDENT,NAME,NAME
+########################
+== 1 : 
+          if self . size ( 0 ) > 2 * <UNKNOWN> . <UNKNOWN> : 
+
+OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NUMBER,OP,OP,NUMBER,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+
+ if none in ( start , end , entity ) : 
+              return web . response ( status
+NEWLINE,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME
+########################
+= none , using = none ) : 
+              if <UNKNOWN> == [ <UNKNOWN> ] : 
+                  return
+OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,OP,STRING,OP,OP,NEWLINE,INDENT,NAME
+########################
+
+ if <UNKNOWN> in candidate : 
+ <UNKNOWN> 
+                  candidate . remove ( <UNKNOWN> ) 
+ 
+ <UNKNOWN> 
+
+NL,NAME,NAME,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,COMMENT,NL
+########################
+if <UNKNOWN> <= threshold ** 2 : 
+              ( self . n_samples_ , self . <UNKNOWN> , self .
+NAME,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,INDENT,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################

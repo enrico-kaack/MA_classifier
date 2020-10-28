@@ -16,17 +16,18 @@ from tasks.manipulate_code import TaskEvalEnsemble, TaskEvalKeras
 #data = TaskEvaluateRandomForest(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True, class_weight=None).outputLoad()
 #data = TaskEvaluateRandomForest(problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, ratio_after_oversampling=0.5, undersampling_enabled=True, ratio_after_undersampling=0.5, encode_type=True, class_weight=None).outputLoad()
 #encode_type = True
-data = TaskEvaluateLstm(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, epochs=2, batch_size=256,num_lstm_cells=10, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2).outputLoad()
+#data = TaskEvaluateLstm(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, epochs=2, batch_size=256,num_lstm_cells=10, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2).outputLoad()
 encode_type = False
 
-"""
-model_task = TaskTrainLstm(problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False,num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2)
+
+model_task = TaskTrainLstm(problem_type=ProblemType.CONDITION_COMPARISON_SIMPLE, oversampling_enabled=False, undersampling_enabled=False, epochs=2, batch_size=256,num_lstm_cells=10, encode_type=False, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2)
 model = model_task.outputLoad()
 problem_type = model_task.problem_type
-t = TaskEvalKeras(model=model, test_input_directory="final_validation", problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
+t = TaskEvalHoldoutKeras(model=model, test_input_directory="final_validation", problem_type=problem_type, encode_type=model_task.encode_type, training_parameter={**model_task.__dict__["param_kwargs"], "task_id": model_task.task_id})
 d6tflow.run(t)
 data = t.outputLoad()
-"""
+
+
 vocab = TaskVocabCreator().outputLoad()
 
 #reverse vocab
@@ -62,7 +63,7 @@ def get_true_negative(data):
 
 
 
-with open("best_lstm_CCS.txt", "w") as output:
+with open("best_lstm_CCS_holdout.txt", "w") as output:
 
     values = {"tp": get_true_positive(data.copy()).sample(20)["decoded"].values, "fp": get_false_positive(data.copy()).sample(20)["decoded"].values, "tn": get_true_negative(data.copy()).sample(20)["decoded"].values, "fn": get_false_negative(data.copy()).sample(20)["decoded"].values}
 

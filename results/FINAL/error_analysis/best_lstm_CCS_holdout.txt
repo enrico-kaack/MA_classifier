@@ -1,0 +1,471 @@
+TP
+<UNKNOWN> 
+ if stream . socket is not none : 
+              self . address_family = stream . socket .
+
+########################
+
+                  continue 
+ 
+  if info . key in <UNKNOWN> : 
+ <UNKNOWN> 
+                  <UNKNOWN> . pop
+
+########################
+
+  if transition is not none : 
+                  service_data [ attr_transition ] = transition 
+  await hass
+
+########################
+if source : 
+                  if ',' not in source : 
+                      source = unfrackpath ( source , follow
+
+########################
+result ) 
+ return 
+  if <UNKNOWN> == 0 : 
+          try : 
+              return result [
+
+########################
+data . get ( condition ) 
+ if condition : 
+                  if self . type == symbol : 
+
+
+########################
+, fname ) 
+ return res 
+ 
+ <UNKNOWN> 
+   if <UNKNOWN> in fname : 
+              _logger
+
+########################
+
+ <UNKNOWN> 
+ <UNKNOWN> 
+ <UNKNOWN> 
+              if op . type == 'recurrentnetwork' : 
+                  for arg in
+
+########################
+else : 
+              self . deprecated_base_url = <UNKNOWN> 
+ 
+  if port is not none : 
+             
+
+########################
+
+ if user_input is not none : 
+              self . _username = user_input [ conf_username ] 
+ self .
+
+########################
+     <UNKNOWN> 
+ if a is none : 
+          return b 
+  if is_sparse ( a ) :
+
+########################
+<UNKNOWN> = model_helper . <UNKNOWN> 
+ if <UNKNOWN> in [ 18 , 34 ] : 
+          num_features = 512
+
+########################
+) 
+ <UNKNOWN> 
+ input_tensor . resize_ ( <UNKNOWN> ) 
+ <UNKNOWN> 
+ if my_rank == dst : 
+         
+
+########################
+ elif accum_func == np . minimum . accumulate : 
+ <UNKNOWN> 
+              nz = ( ~ np .
+
+########################
+) 
+  if attr in self . _attributes : 
+              return getattr ( self . groupby , attr
+
+########################
+
+          return "se" 
+  if <UNKNOWN> <= <UNKNOWN> < <UNKNOWN> : 
+          return "sse" 
+  if
+
+########################
+( words , current_if , ips ) 
+  elif words [ 0 ] == 'lladdr' : 
+                      self
+
+########################
+, phase ) 
+ if value == <UNKNOWN> : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+                  if os . path .
+
+########################
+  if len ( <UNKNOWN> ) > 0 : 
+                  <UNKNOWN> = ', ' . join ( str (
+
+########################
+) : 
+          """set preset mode.""" 
+ if preset_mode == preset_away : 
+              await self . _api . device .
+
+########################
+FP
+if user_input is not none : 
+              self . <UNKNOWN> . update ( user_input ) 
+ return await self
+
+########################
+if self . _type == <UNKNOWN> : 
+              return <UNKNOWN> . <UNKNOWN> 
+ 
+  return none 
+ 
+
+
+########################
+if data_format == 'channels_first' : 
+              inputs = np . random . rand ( num_samples , <UNKNOWN> , 
+
+
+########################
+
+ if ( f1 . find ( first_line ) < 0 ) : 
+              docs = first_line + description
+
+########################
+if average is not none : 
+          assert average != 'binary' or len ( precision ) == 1 
+
+
+########################
+  if <UNKNOWN> . <UNKNOWN> is not none : 
+              self . <UNKNOWN> = <UNKNOWN> . <UNKNOWN> 
+
+
+########################
+
+ if action . __name__ in <UNKNOWN> 
+ ] 
+ if <UNKNOWN> : 
+              msg = ( <UNKNOWN> 
+
+
+########################
+
+ if '{' not in component 
+ ] 
+ 
+ if <UNKNOWN> ( action ) : 
+ <UNKNOWN> 
+             
+
+########################
+if sys . version_info >= ( 3 , 4 ) : 
+ # noinspection pyunresolvedreferences 
+          import importlib . util 
+
+
+########################
+if col != 0 : 
+                  raise indexerror ( <UNKNOWN> ) 
+  return self . values 
+ 
+
+
+########################
+if "base" not in errors : 
+                  await self . async_set_unique_id ( info [ <UNKNOWN> ] ) 
+ self
+
+########################
+if self . <UNKNOWN> is not none : 
+              return self . <UNKNOWN> 
+ 
+  return self .
+
+########################
+if entry . domain != domain : 
+              continue 
+ 
+  state = hass . states . get
+
+########################
+in <UNKNOWN> . items ( ) : 
+          if torch . _jit_internal . <UNKNOWN> ( ann ) : 
+
+
+########################
+ elif c in ( <UNKNOWN> , 'g' ) : 
+ <UNKNOWN> 
+            nxt = count - 1 
+
+
+########################
+if string in lookup : 
+              return lookup [ string ] 
+   return <UNKNOWN> ( string )
+
+########################
+if decimal_pos is not none : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+              cutoff = decimal ( <UNKNOWN> + '1' .
+
+########################
+if mod is none : 
+          qualified_name = name 
+  else : 
+          qualified_name = "{}.{}" .
+
+########################
+if type ( self ) != type ( other ) : 
+              return false 
+  return self .
+
+########################
+if <UNKNOWN> in body : 
+                  _logger . error ( <UNKNOWN> ) 
+  else : 
+                  _logger
+
+########################
+TN
+. <UNKNOWN> [ 0 ] [ 0 ] == [ "manufacturer" ] 
+ assert zha_device . available is false 
+
+
+########################
+<UNKNOWN> ( ) : 
+      lookups = lookups ( ) 
+ lookups . add_table ( "table1" , { "foo"
+
+########################
+0.5 ) ( x ) , x ) 
+ 
+  def test_full ( self ) : 
+          x
+
+########################
+min ( leaf_weights ) >= 
+ total_weight * est . min_weight_fraction_leaf ) , ( 
+ <UNKNOWN> . format ( 
+
+
+########################
+( self ) : 
+          config_data = build_config ( 
+ services = [ { 
+ 'name' : 'web' ,
+
+########################
+, "world" ) 
+ await hass . async_block_till_done ( ) 
+ assert len ( calls ) == 0 
+ 
+
+
+########################
+with override_settings ( static_root = static_dir ) : 
+                  call_command ( 'collectstatic' , interactive = true , stdout =
+
+########################
+host , port ) , elapsed = elapsed . seconds ) 
+  else : 
+                      module . fail_json
+
+########################
+) 
+ 
+  def <UNKNOWN> ( self ) : 
+          msg = ( 
+ <UNKNOWN> 
+ <UNKNOWN> 
+
+
+########################
+import numpy as np 
+ import pytest 
+ 
+ from pandas import float64index , index , int64index , uint64index 
+
+
+########################
+
+ ) 
+ 
+ _logger = logging . getlogger ( __name__ ) 
+ 
+ 
+ async def async_setup_entry ( hass
+
+########################
+( assertionerror , msg % 'base.html' ) : 
+              self . asserttemplatenotused ( response , 'base.html' ) 
+ 
+
+########################
+= query 
+  else : 
+              self . _query = query . replace ( ";" , <UNKNOWN> )
+
+########################
+entry . data , conf_refresh_token : token . refresh_token } 
+ ) 
+ 
+ <UNKNOWN> 
+ devices = await api
+
+########################
+, x ) 
+ out1 = torch . nn . functional . interpolate ( x , mode = <UNKNOWN> ,
+
+########################
+instance_id = instance_id , 
+ ) 
+ <UNKNOWN> 
+ self . assertfalse ( <UNKNOWN> . poke ( none ) )
+
+########################
+low = - 0.5 * self . stddev , 
+ high = 0.5 * self . stddev , 
+ size
+
+########################
+datetime . utcnow ( ) + <UNKNOWN> 
+  else : 
+          expire = datetime . utcnow ( )
+
+########################
+, 
+ } , 
+ "name" : "q" , 
+ "in" : "query" , 
+ } 
+ ] , 
+
+
+########################
+. shape ) == 2 and x . shape == ( m , n ) , ( x . shape
+
+########################
+FN
+if tokens . pop ( conf_username , none ) != config [ domain ] [ conf_username ] : 
+ <UNKNOWN>
+
+########################
+if <UNKNOWN> == [ "" ] : 
+              return [ ] 
+ 
+  return <UNKNOWN> 
+ 
+ 
+
+########################
+if import_name in <UNKNOWN> : 
+              for <UNKNOWN> in sorted ( <UNKNOWN> ) : 
+                  if <UNKNOWN> .
+
+########################
+if op_str is not none : 
+          <UNKNOWN> = <UNKNOWN> and <UNKNOWN> ( op_str , a , b )
+
+########################
+if len ( key ) != self . ndim : 
+              return false 
+ 
+  for i ,
+
+########################
+if conf_scan_interval not in entry . options : 
+          options [ conf_scan_interval ] = entry . data . get
+
+########################
+if <UNKNOWN> in <UNKNOWN> . <UNKNOWN> ( ) : 
+                  <UNKNOWN> [ <UNKNOWN> ] = <UNKNOWN> . <UNKNOWN> (
+
+########################
+if v not in ( value , 'disabled' ) : 
+                          changed = true 
+   else :
+
+########################
+if files is none : 
+          files = [ ] 
+ 
+  mail = mail ( ) 
+
+
+########################
+<UNKNOWN> ) ) ) 
+ if ( 
+ <UNKNOWN> [ packet . stream ] is none 
+ ) : <UNKNOWN>
+
+########################
+if max_gradient_norm is not none : 
+          <UNKNOWN> = <UNKNOWN> ( 
+ model , 
+ params , 
+ <UNKNOWN>
+
+########################
+if builtin is not none : 
+              schemas = torch . _c . <UNKNOWN> ( builtin ) 
+ for
+
+########################
+if dt_util . now ( ) >= dt_util . parse_datetime ( <UNKNOWN> ) : 
+              await self . <UNKNOWN>
+
+########################
+if backend == backend . <UNKNOWN> : 
+              pg = processgroupgloo ( 
+ <UNKNOWN> , 
+ rank , 
+
+
+########################
+if request . method == "post" : 
+          username = request . form [ "username" ] 
+ password =
+
+########################
+if value is none : 
+              value = self . get_cookie ( name ) 
+  if value is
+
+########################
+if representation == 'dense' : 
+              data = <UNKNOWN> ( n_samples = 1000000 , n_features = 100 ) 
+
+
+########################
+ elif item == <UNKNOWN> : 
+                      source . data = dict ( x = [ 100 , 200
+
+########################
+if contig == 'all' : 
+              self . input = ( q_input , q_input ) 
+  elif contig
+
+########################
+if group is groupmember . world : 
+          raise runtimeerror ( <UNKNOWN> 
+ <UNKNOWN> ) 
+  if group
+
+########################

@@ -1,0 +1,473 @@
+TP
+: 
+          <UNKNOWN> 
+ if subset is none : 
+              subset = self 
+  elif subset .
+OP,NEWLINE,INDENT,STRING,NEWLINE,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,DEDENT,NAME,NAME,OP
+########################
+max_width 
+ if delim : 
+                          delim = <UNKNOWN> 
+   if width >= w : 
+                     
+NAME,NEWLINE,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,DEDENT,DEDENT,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT
+########################
+, key , value ) : 
+          if key in self . _session : 
+              return self .
+OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+: i ] ) ) ) 
+  if p not in cursor : 
+              cursor [ p ]
+OP,NAME,OP,OP,OP,OP,NEWLINE,DEDENT,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+newaxis , : ] 
+  elif shrinkage == <UNKNOWN> : 
+              s = empirical_covariance ( x ) 
+
+NAME,OP,OP,OP,NEWLINE,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+
+  else : 
+                  if self . _username in self . <UNKNOWN> : 
+                      errors [ "base"
+NEWLINE,DEDENT,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,STRING
+########################
+= <UNKNOWN> . get ( word ) 
+ if <UNKNOWN> is not none : 
+ <UNKNOWN> 
+          embedding_matrix [
+OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,OP
+########################
+filenotfounderror : 
+                  pass 
+ 
+   elif action == <UNKNOWN> : 
+              helper . <UNKNOWN> (
+NAME,OP,NEWLINE,INDENT,NAME,NEWLINE,NL,DEDENT,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+, errors = errors ) 
+ 
+ if errors == "raise" : 
+          msg = "out of bounds nanosecond timestamp" 
+ 
+ with
+OP,NAME,OP,NAME,OP,NEWLINE,NL,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,STRING,NEWLINE,NL,NAME
+########################
+, file = sys . stderr ) 
+ 
+ 
+   if __name__ == '__main__' : 
+ 
+     
+OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,NL,DEDENT,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,NL,INDENT
+########################
+args , ** kwargs ) : 
+          if signal == mocknetwork . signal_value_added : 
+              mock_receivers . append
+NAME,OP,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+
+ 
+ if len ( matches ) == 1 : 
+          return matches [ 0 ] 
+  elif
+NEWLINE,NL,NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME,NAME,OP,NUMBER,OP,NEWLINE,DEDENT,NAME
+########################
+
+   if phase == "test" : 
+              <UNKNOWN> = "large" if "cuda" not in self . <UNKNOWN>
+NEWLINE,DEDENT,DEDENT,NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,STRING,NAME,STRING,NAME,NAME,NAME,OP,NAME
+########################
+. _staged_raw_predict ( x ) : 
+              if <UNKNOWN> . shape [ 0 ] == 1 : 
+                 
+OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NUMBER,OP,OP,NUMBER,OP,NEWLINE,INDENT
+########################
+density ) 
+ if self . char_quality . value != air_quality : 
+                  self . char_quality . set_value (
+NAME,OP,NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP
+########################
+
+                  if data [ "text" ] [ 0 ] == "/" : 
+                      pieces = data [ "text"
+NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,OP,NUMBER,OP,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,STRING
+########################
+{ } 
+ 
+ if user_input is not none : 
+              try : 
+                  with async_timeout . timeout
+OP,OP,NEWLINE,NL,NAME,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME
+########################
+
+                      if model_list is none : 
+                          models . extend ( app_config . get_models ( ) ) 
+
+NEWLINE,INDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,OP,NEWLINE
+########################
+sure_type , spc ) ) 
+ 
+  if sure_type == sureproductid . pet : 
+              entity = pet
+NAME,OP,NAME,OP,OP,NEWLINE,NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+) -> frameorseriesunion : 
+          <UNKNOWN> 
+ if subset is none : 
+              subset = self 
+ 
+OP,OP,NAME,OP,NEWLINE,INDENT,STRING,NEWLINE,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,DEDENT
+########################
+FP
+ if self . _supported_features & support_color : 
+              self . _hs_color = ( 
+ <UNKNOWN> ( self .
+DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,OP,NL,NAME,OP,NAME,OP
+########################
+
+ if self . state is not none and self . _sensor_type [ 0 ] == "battery" : 
+             
+NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NAME,NAME,NAME,OP,NAME,OP,NUMBER,OP,OP,STRING,OP,NEWLINE,INDENT
+########################
+         if isinstance ( <UNKNOWN> , datetimearray ) and <UNKNOWN> . tz is not none : 
+              pytest .
+INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,NAME,OP,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP
+########################
+% cluster_name ) 
+   elif esxi_host_name : 
+                  if isinstance ( esxi_host_name , str ) : 
+
+OP,NAME,OP,NEWLINE,DEDENT,DEDENT,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE
+########################
+
+ 
+  if not read_only : 
+ <UNKNOWN> 
+          for service in <UNKNOWN> : 
+              hass .
+NEWLINE,NL,DEDENT,NAME,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP
+########################
+initial if initial is not none else '' 
+ data_value = data if data is not none else '' 
+
+NAME,NAME,NAME,NAME,NAME,NAME,NAME,STRING,NEWLINE,NAME,OP,NAME,NAME,NAME,NAME,NAME,NAME,NAME,STRING,NEWLINE
+########################
+. get_text ( ) ) 
+ if len ( rs ) : 
+                  assert xp == rs 
+ 
+
+OP,NAME,OP,OP,OP,NEWLINE,NAME,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,NEWLINE,NL
+########################
+if dtype . kind == 'f' ] ) 
+ assert <UNKNOWN> == n_categories 
+ assert <UNKNOWN> == <UNKNOWN> 
+ 
+
+NAME,NAME,OP,NAME,OP,STRING,OP,OP,NEWLINE,NAME,NAME,OP,NAME,NEWLINE,NAME,NAME,OP,NAME,NEWLINE,NL
+########################
+0 or co . <UNKNOWN> & <UNKNOWN> : 
+          if co . <UNKNOWN> & inspect . <UNKNOWN> : 
+
+NUMBER,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+  if self . _unit and self . _unit in <UNKNOWN> : 
+              unit = <UNKNOWN> [ self
+DEDENT,DEDENT,NAME,NAME,OP,NAME,NAME,NAME,OP,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME
+########################
+2 if bidirectional else 1 
+ 
+ if initial_state : 
+                  h0 = torch . randn ( directions *
+NUMBER,NAME,NAME,NAME,NUMBER,NEWLINE,NL,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP
+########################
+self ) : 
+          if self . <UNKNOWN> : 
+              return { 'content-encoding' : 'gzip' } 
+ 
+NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,STRING,OP,NEWLINE,DEDENT
+########################
+if self . last_epoch > 0 : 
+              return [ group [ 'lr' ] * lmbda ( self .
+NAME,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,STRING,OP,OP,NAME,OP,NAME,OP
+########################
+. append ( p ) 
+   for d in paths : 
+          if not d : 
+
+OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,DEDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,NAME,OP,NEWLINE
+########################
+: 
+              if len ( line ) < 1 or ':' not in line : 
+                  continue 
+
+OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,OP,NUMBER,NAME,STRING,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NEWLINE
+########################
+
+ i = 0 
+ for hyperparameter in self . hyperparameters : 
+              if hyperparameter . fixed : 
+
+NEWLINE,NAME,OP,NUMBER,NEWLINE,NAME,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NEWLINE
+########################
+ if not ( 2 <= self . max_bins <= 255 ) : 
+              raise valueerror ( <UNKNOWN> 
+
+DEDENT,NAME,NAME,OP,NUMBER,OP,NAME,OP,NAME,OP,NUMBER,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,NL
+########################
+<UNKNOWN> 
+                      if self . request . query : 
+                          uri += "?" + self . request .
+COMMENT,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,STRING,OP,NAME,OP,NAME,OP
+########################
+image ) 
+ 
+ if new_state != self . _state or img != self . _entity_picture : 
+                          self
+NAME,OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME
+########################
+reshape ( ( - 1 , ) + <UNKNOWN> ) 
+ 
+ if pack and ind == 0 : 
+
+NAME,OP,OP,OP,NUMBER,OP,OP,OP,NAME,OP,NEWLINE,NL,NAME,NAME,NAME,NAME,OP,NUMBER,OP,NEWLINE
+########################
+TN
+) 
+ target_gpus = list ( map ( lambda x : _get_device_index ( x , true ) , target_gpus )
+OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NAME,OP
+########################
+, role ) : 
+          self . roles [ role . name ] = role 
+ 
+  def
+OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NAME,NEWLINE,NL,DEDENT,NAME
+########################
+outbox [ 0 ] . subject , <UNKNOWN> ) 
+ self . assertequal ( mail . outbox [ 0 ]
+NAME,OP,NUMBER,OP,OP,NAME,OP,STRING,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NUMBER,OP
+########################
+
+ kernel = 2 , 
+ device_option = dc [ 0 ] 
+ ) 
+ conv = core . createoperator
+NL,NAME,OP,NUMBER,OP,NL,NAME,OP,NAME,OP,NUMBER,OP,NL,OP,NEWLINE,NAME,OP,NAME,OP,NAME
+########################
+
+ from fastapi . dependencies . utils import <UNKNOWN> , <UNKNOWN> 
+ from fastapi . encoders import jsonable_encoder 
+ from
+NEWLINE,NAME,NAME,OP,NAME,OP,NAME,NAME,NAME,OP,NAME,NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NEWLINE,NAME
+########################
+<UNKNOWN> ) == "off" 
+ with pytest . raises ( vol . invalid ) : 
+          await common .
+STRING,OP,OP,STRING,NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+  except invalidindexerror : 
+ <UNKNOWN> 
+                  if not isinstance ( labels , abcmultiindex ) : 
+                     
+DEDENT,DEDENT,NAME,NAME,OP,NEWLINE,COMMENT,NL,INDENT,NAME,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT
+########################
+ax = ax ) 
+ ax = high . plot ( secondary_y = true , ax = ax ) 
+
+NAME,OP,NAME,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE
+########################
+, 
+ } 
+ <UNKNOWN> = { 
+ 'jobid' : <UNKNOWN> , 
+ 'labels' : { 'some' : 'labels' }
+OP,NL,OP,NEWLINE,NAME,OP,OP,NL,STRING,OP,STRING,OP,NL,STRING,OP,OP,STRING,OP,STRING,OP
+########################
+) 
+ 
+ tm . assert_frame_equal ( df1 . append ( df2 ) , exp ) 
+ tm . assert_frame_equal
+OP,NEWLINE,NL,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NAME,OP,NEWLINE,NAME,OP,NAME
+########################
+
+ 
+    return ' ' . join ( sorted ( result ) ) 
+ 
+ 
+  if
+NEWLINE,NL,DEDENT,DEDENT,DEDENT,NAME,STRING,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,NL,NL,DEDENT,NAME
+########################
+<UNKNOWN> , 
+ "original_name" : none , 
+ <UNKNOWN> : none , 
+ "capabilities" : none , 
+ "unique_id" :
+STRING,OP,NL,STRING,OP,NAME,OP,NL,STRING,OP,NAME,OP,NL,STRING,OP,NAME,OP,NL,STRING,OP
+########################
+0 , 0 , tzinfo = dt_util . utc ) 
+ with patch ( "homeassistant.util.dt.utcnow" , return_value = now )
+NUMBER,OP,NUMBER,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,NAME,OP,STRING,OP,NAME,OP,NAME,OP
+########################
+
+ ] 
+ 
+  @ property 
+ def urls ( self ) : 
+          return self . get_urls
+NL,OP,NEWLINE,NL,DEDENT,OP,NAME,NEWLINE,NAME,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME
+########################
+hass , "persistent_notification" , { } ) 
+ result = await hass . config_entries . flow . async_init ( 
+
+NAME,OP,STRING,OP,OP,OP,OP,NEWLINE,NAME,OP,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NL
+########################
+context ) : 
+          hook = <UNKNOWN> ( 
+ gcp_conn_id = self . <UNKNOWN> , 
+ delegate_to = self
+NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NL,NAME,OP,NAME,OP,NAME,OP,NL,NAME,OP,NAME
+########################
+data = config 
+ ) 
+ 
+ assert result [ "type" ] == data_entry_flow . result_type_create_entry 
+ assert result [
+NAME,OP,NAME,NL,OP,NEWLINE,NL,NAME,NAME,OP,STRING,OP,OP,NAME,OP,NAME,NEWLINE,NAME,NAME,OP
+########################
+importlib . import_module ( package ) 
+ if not hasattr ( module , "__path__" ) : 
+          return [
+NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,NAME,NAME,OP,NAME,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,OP
+########################
+, "type" : "integer" , "default" : 0 } , 
+ "name" : "skip" , 
+ "in" : "query" ,
+OP,STRING,OP,STRING,OP,STRING,OP,NUMBER,OP,OP,NL,STRING,OP,STRING,OP,NL,STRING,OP,STRING,OP
+########################
+<UNKNOWN> , age = 35 ) 
+ cls . a3 = author . objects . create ( name = <UNKNOWN>
+STRING,OP,NAME,OP,NUMBER,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,STRING
+########################
+FN
+. <UNKNOWN> ( self . t_ ) 
+ 
+ if self . <UNKNOWN> > self . n_iter_no_change : 
+ <UNKNOWN>
+OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,COMMENT
+########################
+if 'filename' not in kwargs : 
+              raise valueerror ( <UNKNOWN> ) 
+  src_path = kwargs [ 'filename'
+NAME,STRING,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,STRING,OP,NEWLINE,DEDENT,NAME,OP,NAME,OP,STRING
+########################
+. data 
+ y = iris . target 
+  elif name in <UNKNOWN> : 
+          x = x_reg
+OP,NAME,NEWLINE,NAME,OP,NAME,OP,NAME,NEWLINE,DEDENT,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME
+########################
+items ( ) : 
+              key = prefix + name 
+ if key in state_dict : 
+                  <UNKNOWN>
+NAME,OP,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,NEWLINE,NAME,NAME,NAME,NAME,OP,NEWLINE,INDENT,NAME
+########################
+'mock ; python_version < "3.3"' ) 
+  elif 'bdist_wheel' in sys . argv [ 1 : ] : 
+      raise runtimeerror (
+STRING,OP,NEWLINE,DEDENT,NAME,STRING,NAME,NAME,OP,NAME,OP,NUMBER,OP,OP,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+close ( fd ) 
+ <UNKNOWN> 
+  if err . errno != errno . eacces : 
+                  raise
+NAME,OP,NAME,OP,NEWLINE,COMMENT,NL,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME
+########################
+1 ) 
+  elif self . type == <UNKNOWN> : 
+              self . _state = int ( round
+NUMBER,OP,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME
+########################
+[ conf_password ] 
+ scan_interval = config [ conf_scan_interval ] 
+ if email in configured_instances ( hass ) : 
+
+OP,NAME,OP,NEWLINE,NAME,OP,NAME,OP,NAME,OP,NEWLINE,NAME,NAME,NAME,NAME,OP,NAME,OP,OP,NEWLINE
+########################
+encrypt_secret [ 1 ] 
+ 
+  if action in [ <UNKNOWN> ] : 
+              encrypt_vault_id = context .
+NAME,OP,NUMBER,OP,NEWLINE,NL,DEDENT,NAME,NAME,NAME,OP,STRING,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,OP
+########################
+append ( spec ) 
+ if <UNKNOWN> > len ( lookup_params ) : 
+                      <UNKNOWN> = true 
+ 
+
+NAME,OP,NAME,OP,NEWLINE,NAME,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,INDENT,NAME,OP,NAME,NEWLINE,NL
+########################
+append ( torch . inttensor ( seq_lengths ) ) 
+  if len ( inputs ) == 1 : 
+
+NAME,OP,NAME,OP,NAME,OP,NAME,OP,OP,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE
+########################
+value == string_series [ idx ] 
+  elif idx in object_series . index : 
+                  assert value ==
+NAME,OP,NAME,OP,NAME,OP,NEWLINE,DEDENT,NAME,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP
+########################
+if <UNKNOWN> > 1 : 
+              col = data . columns . _get_level_values ( 0 ) 
+ values =
+NAME,NAME,OP,NUMBER,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NUMBER,OP,NEWLINE,NAME,OP
+########################
+: 
+          return false 
+  elif to_native ( path ) == 'nope' : 
+          return false 
+
+OP,NEWLINE,INDENT,NAME,NAME,NEWLINE,DEDENT,NAME,NAME,OP,NAME,OP,OP,STRING,OP,NEWLINE,INDENT,NAME,NAME,NEWLINE
+########################
+
+              if entity_info [ conf_scs_id ] in scsgate . devices : 
+                  continue 
+ 
+  name =
+NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT,NAME,NEWLINE,NL,DEDENT,NAME,OP
+########################
+. test_configs ( ) : 
+ <UNKNOWN> 
+              if len ( <UNKNOWN> ) > 1 : 
+                  continue
+OP,NAME,OP,OP,OP,NEWLINE,COMMENT,NL,INDENT,NAME,NAME,OP,NAME,OP,OP,NUMBER,OP,NEWLINE,INDENT,NAME
+########################
+
+ from keras . models import sequential 
+ 
+ 
+ if k . backend ( ) == 'cntk' : 
+
+NEWLINE,NAME,NAME,OP,NAME,NAME,NAME,NEWLINE,NL,NL,NAME,NAME,OP,NAME,OP,OP,OP,STRING,OP,NEWLINE
+########################
+update_callback , ** kwargs 
+ ) : 
+          <UNKNOWN> 
+ if <UNKNOWN> in self . _data_classes : 
+             
+NAME,OP,OP,NAME,NL,OP,OP,NEWLINE,INDENT,STRING,NEWLINE,NAME,NAME,NAME,NAME,OP,NAME,OP,NEWLINE,INDENT
+########################
+) 
+ 
+ if config [ conf_type ] in <UNKNOWN> : 
+          if config [ conf_type ] == "opened"
+OP,NEWLINE,NL,NAME,NAME,OP,NAME,OP,NAME,NAME,OP,NEWLINE,INDENT,NAME,NAME,OP,NAME,OP,OP,STRING
+########################
+if persistent_connection == "network_cli" : 
+              provider = self . _task . args . get ( "provider" , {
+NAME,NAME,OP,STRING,OP,NEWLINE,INDENT,NAME,OP,NAME,OP,NAME,OP,NAME,OP,NAME,OP,STRING,OP,OP
+########################
