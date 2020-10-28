@@ -1,336 +1,473 @@
 TP
-
-
-,->,[,],
-,    ,len,blocks,==,:
-########################
-
-a,'main',:,                ,
-,if,[,],subnet_id,
+, index ] : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ 
+      if index is none : 
+          index =
 
 ########################
 
-n_components,.,(,),
-,n_components,not,:,        ,model
+          if self . padding_mode != 'zeros' : 
+              return f . conv1d ( f . pad (
+
+########################
+, return_inverse = <UNKNOWN> ) , 
+ ) 
+ 
+   if __name__ == "__main__" : 
+      import
+
+########################
+) 
+ self . _ptr = ptr 
+ if srid is not none : 
+                  self . srid =
+
+########################
+fail_json ( msg = <UNKNOWN> % name ) 
+ 
+  if 'choices' in attr : 
+                  if value
+
+########################
+_offset ) / self . _scale 
+ ) 
+ if target_temperature is none : 
+              return 
+  byte_string
+
+########################
+index 
+ if 0 not in s : 
+                      exp = index ( s . index . tolist (
+
+########################
+def <UNKNOWN> ( i , arg ) : 
+      if i == 0 : 
+          return 
+ 
+
 ########################
 
-mod_list,
-,=,.,(,,,),if,is,:
+ method = method . upper ( ) 
+ 
+ if headers is none : 
+              headers = {
+
 ########################
 
-valueerror,<UNKNOWN>,other,
-,,<UNKNOWN>,in,.,(,:
+ <UNKNOWN> 
+ if code in ( 307 , 308 ) : 
+ <UNKNOWN> 
+                  headers = req .
+
+########################
+options . get ( 'order_with_respect_to' ) 
+ if order_with_respect_to == operation . name_lower : 
+                      del options [ 'order_with_respect_to'
+
+########################
+= quantizer . <UNKNOWN> [ node . name ] 
+ if node . op == 'call_module' : 
+              module
+
 ########################
 
-,,),
-,data,cache,subset,
-,elif,==,:
+  idx = device . index 
+ if idx is none : 
+          idx = current_device ( )
+
 ########################
 
-"",),
-,<UNKNOWN>,if,==,:,            ,media_id,none
+ 
+ dbstate = states ( entity_id = entity_id ) 
+ 
+ <UNKNOWN> 
+ if state is none : 
+
+
+########################
+def <UNKNOWN> ( ** kwargs ) : 
+      if kwargs [ 'setting' ] == 'time_zone' : 
+ <UNKNOWN> 
+
+
+########################
+"outer" , "inner" ] ) , 
+ ) 
+ if nm is not none : 
+          result = pd
+
+########################
+debug ( <UNKNOWN> , data ) 
+ 
+ if self . <UNKNOWN> != secret : 
+              _logger . error
+
+########################
+simpledag : 
+          <UNKNOWN> 
+ if dag_id not in self . <UNKNOWN> : 
+              raise airflowexception ( <UNKNOWN>
+
 ########################
 
-                ,values,ndim,1,
-,result,np,apply_along_axis,calc,self
+  elif "datetime" in <UNKNOWN> : 
+          return np . dtype ( "m8[ns]" ) , np . datetime64
+
 ########################
+, exp_values ) 
+ 
+ if join_type in ( "outer" , "inner" ) : 
+          <UNKNOWN> , <UNKNOWN> ,
 
-if,is,:,        ,
-,,(,[,(,)
-########################
-
-(,,,),,<UNKNOWN>,not,:,                ,=,.
-########################
-
-),
-,
-,if,==,:,<UNKNOWN>,            ,<UNKNOWN>,field_name
-########################
-
-,0,p,1,
-,raise,(,
-,),
-########################
-
-.,(,.,),
-,cur_state,none,
-,_logger,warning
-########################
-
-in,"invert","class",:,                ,_key,sens,
-,_logger,warning
-########################
-
-<UNKNOWN>,
-,if,(,),len,applications,:,            ,(
-########################
-
-:,            ,<UNKNOWN>,n,'name',:,                ,.,.,(
-########################
-
-vhs,
-,if,.,==,[,],
-,<UNKNOWN>,realpath
-########################
-
-(,
-,=,.,(,
-,group,<UNKNOWN>,
-,raise
-########################
-
-
-,def,(,),
-,if,==,:,                ,<UNKNOWN>
-########################
-
-,,kwargs,:,    ,app_configs,none,
-,models,apps,get_models
 ########################
 FP
+if <UNKNOWN> is not none : 
+                  if isatty ( <UNKNOWN> ) : 
+ <UNKNOWN> 
+                      try :
 
-,dim,none,
-,dim,<UNKNOWN>,'softmin',input,dim,)
 ########################
-
-if,.,is,none,
-,write,<UNKNOWN>,str,proc,returncode
-########################
-
-if,(,,,.,,,),none,
-,raise,(
-########################
-
-if,.,.,(,!=,:,                        ,httpresponsenotallowed,method_name,
+if command in [ 'installed' , <UNKNOWN> , 'available' ] : 
+              results = [ 
+ self . <UNKNOWN>
 
 ########################
 
-:,},
-,
-,,,},supported_modes,assert,
-,:
-########################
-
-if,==,:,            ,=,.,(,),,quantile
-########################
-
-if,not,<UNKNOWN>,configuration,
-,logger,warning,<UNKNOWN>,<UNKNOWN>,full_path
-########################
-
-,attr_transition,kwargs,
-,message,"transition",=,[,],
+ test_scores , durations ) in clfs : 
+          print ( <UNKNOWN> % name ) 
+ clf_type = type
 
 ########################
-
-if,in,:,                            ,.,(,),,:,                            
-########################
-
-,,'add_host',<UNKNOWN>,
-,
-,<UNKNOWN>,<UNKNOWN>,get,'add_host'
-########################
-
-if,.,is,:,        ,=,.,(,),
+if text . count ( "/" ) == 1 : 
+          num , denom = text . split (
 
 ########################
+if centers is none : 
+              centers = 3 
+ 
+  if isinstance ( centers , numbers .
 
-if,in,:,            ,.,(,[,],
-,
 ########################
+if default is not none : 
+                      ret . append ( default ) 
+  else : 
+                     
 
-if,==,:,        ,=,.,(,),platform,await
 ########################
+ if y_type in ( "binary" , "multiclass" ) : 
+          y = column_or_1d ( y ) 
+ 
 
-if,is,none,
-,connection,send_error,msg,"id",,,error
+
 ########################
+if db == 'other' : 
+              return model_name == <UNKNOWN> 
+  else : 
+              return model_name !=
 
-if,is,none,
-,self,_headers,headers,,hasattr,request
 ########################
+, "value" : { <UNKNOWN> : <UNKNOWN> } } 
+ ] 
+ } , 
+ } in presets 
+ 
 
-.,(,,,,,<UNKNOWN>,false,),1,
-,<UNKNOWN>
+
 ########################
+if response is none : 
+              request . _cache_update_cache = true 
+ return none <UNKNOWN> 
+ 
+ <UNKNOWN> 
 
-if,is,:,            ,=,.,(,
-,url,reverse
+
 ########################
+if <UNKNOWN> is not none : 
+          assert <UNKNOWN> . size ( 0 ) == bsz * num_heads 
 
-if,[,],in,[,],
-,self,_module,fail_json
+
 ########################
+ if attr_transition in kwargs : 
+              message [ "transition" ] = kwargs [ attr_transition ] 
+ 
+ 
 
-,input,dim,),0,
-,raise,(,),
 ########################
+) 
+ sunrise = <UNKNOWN> 
+ 
+  if today > dt_util . as_local ( 
+ cast ( datetime ,
 
-if,is,:,        ,.,(,
-,
-,
-,)
+########################
+  if self . token is none : 
+                  raise ansibleerror ( <UNKNOWN> ) 
+ 
+  if
+
+########################
+ elif output_type == "multilabel-indicator" : 
+          return y 
+ 
+  else : 
+          raise valueerror (
+
+########################
+if attn_mask . dim ( ) != 3 : 
+                  raise runtimeerror ( <UNKNOWN> ) 
+  if (
+
+########################
+if fields is not none : 
+              fields = set ( fields ) 
+ deferred_fields = self . get_deferred_fields
+
+########################
+   if devs == [ ] : 
+          _logger . error ( 
+ <UNKNOWN> 
+ <UNKNOWN> 
+
+
+########################
+if self . _white_value is not none : 
+                  try : 
+                      self . _white_value = int (
+
+########################
+   if 'add_host' in <UNKNOWN> : 
+ <UNKNOWN> 
+                          <UNKNOWN> = <UNKNOWN> . get ( 'add_host' ,
+
 ########################
 TN
+module . params [ 'username' ] 
+ password = module . params [ 'password' ] 
+ <UNKNOWN> = module .
 
-.,(,),changelist_url,reverse,<UNKNOWN>,
-,=,.,.
 ########################
+, 4 ] 
+ dims2 = [ 1 , 1 ] 
+ <UNKNOWN> ( dims1 , dims2 , true ,
 
-dataframe,{,:,1,2,3,},
-,=,.
 ########################
-
-
-,{,:,1,2,,,:,4,5,}
-########################
-
-),dict,
-,"""return the state attributes.""",return,.,
-,,property,def
-########################
-
-
-,.,(,,,(,),
-,.,(,,
-########################
-
-
-,=,),,if,(,.,(,==,.
-########################
-
-.,=,
-,,runshell,self,parameters,:,        ,notimplementederror
-########################
-
-(,.,,,),
-,
-,.,(,,,)
-########################
-
-field,<UNKNOWN>,
-,
-,=,'level','ad',<UNKNOWN>,<UNKNOWN>,
+class <UNKNOWN> ( serializers . listserializer ) : 
+              child = basicmodelserializer ( ) 
+ 
+  data =
 
 ########################
 
-"mode",
-,:,(,,,),(,,,),,
+ <UNKNOWN> , 
+ <UNKNOWN> , 
+ <UNKNOWN> , 
+ ] , 
+ tz = tz , 
+ ) 
+
+
+########################
+<UNKNOWN> , <UNKNOWN> ) 
+ 
+  @ provide_session 
+ def <UNKNOWN> ( self , session ) : 
+         
+
+########################
+( 1 ) 
+ 
+  now = dt_util . utcnow ( ) 
+ <UNKNOWN> = now + timedelta (
+
+########################
+return <UNKNOWN> ( texts ) 
+ 
+  def __radd__ ( self , other ) : 
+      texts =
+
+########################
+<UNKNOWN> ( ) ) 
+ post_data . pop ( <UNKNOWN> ) 
+ 
+ <UNKNOWN> 
+ post_data [ <UNKNOWN> ] =
+
+########################
+'cpu' ] 
+ for dev in device_options : 
+              <UNKNOWN> = torch . rand ( 1024 , dtype =
+
+########################
+<UNKNOWN> ) 
+ 
+ <UNKNOWN> 
+ <UNKNOWN> 
+ model . predict_generator ( <UNKNOWN> ( ) , 
+ steps = steps
+
+########################
+false 
+ res = self . <UNKNOWN> . create_instance ( 
+ project_id = 'new-project' , 
+ instance_id = <UNKNOWN> ,
+
+########################
+<UNKNOWN> 
+ with self . settings ( use_thousand_separator = true , use_l10n = true ) : 
+              self .
+
+########################
+) . hex , "complete" : false } 
+ self . items . append ( item ) 
+ self .
+
+########################
+ def <UNKNOWN> ( self ) : 
+ # given 
+          hook = <UNKNOWN> ( conn_id = <UNKNOWN> , env_vars
+
+########################
+<UNKNOWN> ( 
+ mysql_conn_id = 'airflow_db' , 
+ task_id = <UNKNOWN> , 
+ sql = <UNKNOWN> , 
+ mysql_table =
+
+########################
+) , fusion_group ) 
+ 
+  @ unittest . skipif ( not run_cuda , "requires cuda" ) 
+ @ unittest
+
 ########################
 
-data,config,options,{,:,},),entry,add_to_hass,hass
-########################
+ 
+ object_url = self . live_server_url + reverse ( <UNKNOWN> , args = ( item . id , )
 
-.,(,(,),[,],
-,books,book,objects
 ########################
+] 
+ 
+ self . asserttrue ( self . mock_context [ 'ti' ] . method_calls == context_calls , <UNKNOWN> )
 
-false,for,in,:,        ,=,(,=,,,=
 ########################
+. testing . _internal . common_quantized import override_qengines , <UNKNOWN> 
+ 
+ class testserialization ( testcase ) : 
+     
 
-airflowsensortimeout,from,.,.,import,
-,airflow,providers,apache,hive
 ########################
+) : 
+                              feat . __getitem__ ( 'invalid' ) 
+ 
+       def <UNKNOWN>
 
-(,),form,<UNKNOWN>,data,{,:,},initial,{
-########################
-
-_value,2,
-,,def,(,),
-,<UNKNOWN>,platform
-########################
-
-.,(,),
-,await,.,(,,,),# assert
-########################
-
-=,),return,.,(,),
-,def,(,,
-########################
-
-),
-,def,(,,,,,=,,,=,,
-########################
-
-(,
-,external_input,net,op,0,.,[,],ws
 ########################
 FN
-
-http_error,response,status_code,==,.,.,# pylint: disable=no-member,),
-,_logger
-########################
-
-if,.,==,:,        ,.,(,<UNKNOWN>,action,"store_true"
-########################
-
-if,.,is,none,
-,data,attr_signal_strength,=,.,
+if '*' in <UNKNOWN> : 
+ <UNKNOWN> 
+ <UNKNOWN> 
+              raise certificateerror ( 
+ <UNKNOWN> 
+ <UNKNOWN> % repr
 
 ########################
-
-if,!=,:,            ,[,,,,,,,],0
-########################
-
-if,(,),1,
-,raise,(,),
-,if
-########################
-
-if,is,:,            ,integrationnotfound,domain,
-,,if,is
-########################
-
-if,(,),len,blk,mgr_locs,:,                    ,.,(
-########################
-
-setting_changed,
-,<UNKNOWN>,**,),
-,if,[,],{
-########################
-
-if,.,==,:,        ,<UNKNOWN>,values,return_inverse,return_inverse,
+if len ( r ) == 1 : 
+          return '' , r [ 0 ] 
+  else
 
 ########################
+if int_or_evt is _undef : 
+              raise integrationnotfound ( domain ) 
+ 
+   if int_or_evt is not
 
-if,is,none,
-,<UNKNOWN>,<UNKNOWN>,.,(,),<UNKNOWN>
 ########################
+if self . timeout < 1 : 
+              raise valueerror ( <UNKNOWN> ) 
+ 
+   def <UNKNOWN>
 
-if,is,:,            ,=,(,
-,,=,(
 ########################
+if self . _pending_results > 0 : 
+                  time . sleep ( c . <UNKNOWN> ) 
+ 
+ 
 
-if,.,[,],1,
-,msg,<UNKNOWN>,,valueerror
 ########################
+. get_field ( cls . username_field ) . unique : 
+          if ( settings . authentication_backends == 
+ [
 
-if,(,.,.,(,,,),<,:,<UNKNOWN>
 ########################
+if key is not none : 
+ <UNKNOWN> 
+                  self . <UNKNOWN> . key = key 
+ <UNKNOWN> =
 
-if,.,==,:,            ,true,,:,            ,.
 ########################
+if n_clusters > n_leaves : 
+          raise valueerror ( <UNKNOWN> 
+ <UNKNOWN> 
+ % ( n_clusters , n_leaves )
 
-if,.,==,:,        ,.,=,(,=,0
 ########################
-
-if,.,.,(,),-,],'.sql',
-,flags
-########################
-
-if,(,),2,
-,self,<UNKNOWN>,<UNKNOWN>,1,
+ elif field in context [ formset ] . forms [ <UNKNOWN> ] . fields : 
+                          self .
 
 ########################
 
-if,
-,.,.,
-,requests,codes,unauthorized,
-,:
-########################
+ if 0 < self . <UNKNOWN> < ( 
+ timezone . utcnow ( ) - self . <UNKNOWN> )
 
-if,.,!=,:,                    ,.,(,<UNKNOWN>,request,status
 ########################
+if code in ( 307 , 308 ) : 
+ <UNKNOWN> 
+                  headers = req . headers 
+ 
 
-if,.,==,:,        ,pytest,raises,stopiteration,:,            
+########################
+if os . name == 'nt' : 
+          with pytest . raises ( stopiteration ) : 
+              model
+
+########################
+if self . <UNKNOWN> >= done : 
+              return 
+  self . <UNKNOWN> = done 
+ cr =
+
+########################
+if self . _level != 0 : 
+                  self . <UNKNOWN> = self . _level 
+  self .
+
+########################
+if ( mask [ i ] . size ( 2 ) - length ) > 0 : 
+                      mask
+
+########################
+[ node . name ] 
+ if type ( self . bn ) in [ torch . nn . intrinsic
+
+########################
+if self . _attribute == <UNKNOWN> : 
+              return icon_for_battery_level ( 
+ battery_level = vehicle_state . <UNKNOWN> , charging
+
+########################
+if sensor == "holiday" : 
+          assert <UNKNOWN> . attributes . get ( "id" ) == <UNKNOWN> 
+ assert
+
+########################
+if len ( <UNKNOWN> ) == len ( blk . mgr_locs ) : 
+                      <UNKNOWN> . append ( <UNKNOWN>
+
+########################
+if type ( self . bn ) in [ torch . nn . intrinsic . bnrelu2d , 
+ torch .
+
 ########################
