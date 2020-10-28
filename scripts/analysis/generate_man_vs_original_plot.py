@@ -7,7 +7,6 @@ import re
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-"""
 matplotlib.use("pgf")
 matplotlib.rcParams.update({
     "pgf.texsystem": "pdflatex",
@@ -15,7 +14,7 @@ matplotlib.rcParams.update({
     'text.usetex': True,
     'pgf.rcfonts': False,
 })
-"""
+
 
 
 def process_data(results, model):
@@ -90,6 +89,10 @@ def print_data(data):
         p1 = ax[index].bar(ind, baseline, width, bottom=0)
         p2 = ax[index].bar(ind + width, ccs_values, width, bottom=0)
         p3 = ax[index].bar(ind + 2*width, rn_values, width, bottom=0)
+        #p1 = ax[index].plot(baseline)
+        #p2 = ax[index].plot(ccs_values)
+        #p3 = ax[index].plot(rn_values)
+
         p.extend([p1, p2, p3])
         #if index == 0:
         #    ax[index].legend((p1[0], p2[0], p3[0]), ('Baseline', 'manipulated CCS', 'manipulated RN'), loc=1)
@@ -98,16 +101,18 @@ def print_data(data):
 
         ax[index].set_xticks(ind + width + width / 2)
         ax[index].set_xticklabels(ind)
+        ax[index].set_ylabel("F1")
+        ax[index].set_yticks([0,0.5,1])
 
 
         index += 1
     
-    fig.legend(p, ['Baseline', 'manipulated CCS', 'manipulated RN'], loc='upper right')
+    fig.legend(p, ['Baseline for CCS', 'Manipulated CCS', 'Manipulated RN'],  bbox_to_anchor=(0.5, -0.01), loc='lower center')
 
-    plt.subplots_adjust(hspace=0.5, bottom=0.05)
-    plt.show()
+    plt.subplots_adjust(hspace=0.7, bottom=0.2)
+    #plt.show()
 
-    #plt.savefig(f"rq3_performance_comparison.pgf")
+    plt.savefig(f"rq3_performance_comparison.pgf")
 
 
 
