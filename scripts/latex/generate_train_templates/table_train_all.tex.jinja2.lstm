@@ -4,7 +4,7 @@
 \begin{tabularx}{\textwidth}{XXXXXXX|X|XXX|XXX|XXX}
 \toprule
 \multicolumn{7}{c}{Parameter} & \multicolumn{3}{c}{RN} & \multicolumn{3}{c}{CCS} & \multicolumn{3}{c}{CC} \\ \midrule
-over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & Train &  Test & Holdout & Train &  Test & Holdout & Train &  Test & Holdout \\ \midrule
+over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & Train &  Validation & Holdout & Train &  Validation & Holdout & Train &  Validation & Holdout \\ \midrule
 \BLOCK{for d in data}
 \VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.embedding_vecor_length | int} & \VAR{d.epochs | int} & \VAR{d.batch_size | int} &\VAR{d.num_lstm_cells} & \VAR{d.dropout_emb_lstm}|\VAR{d.dropout_lstm_dense} & & & & & & & & & \\
 & & & & & & & \textit{F1} & \VAR{d.train_f1_RN | round(4)} & \VAR{d.test_f1_RN | round(4)} & \VAR{d.holdout_f1_RN | round(4)} & \VAR{d.train_f1_CCS | round(4)} & \VAR{d.test_f1_CCS | round(4)}        & \VAR{d.holdout_f1_CCS | round(4)}        & \VAR{d.train_f1_CC | round(4)}        & \VAR{d.test_f1_CC | round(4)}        & \VAR{d.holdout_f1_CC | round(4)}        \\

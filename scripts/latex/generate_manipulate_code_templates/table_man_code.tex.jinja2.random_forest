@@ -3,7 +3,7 @@
 \tabcolsep=0.11cm
 \begin{tabularx}{\textwidth}{XXXXX|X|X|X|X}
 \toprule
-\multicolumn{5}{c}{Parameter} & & RN &  CC & Base CC\\ \midrule
+\multicolumn{5}{c}{Parameter} & & RN &  CCS & Base CC\\ \midrule
 over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & & &\\ \midrule
 \BLOCK{for d in data}
 \VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.n_trees_in_forest} & \VAR{d.class_weight} & \VAR{d.encode_type} & & & \\

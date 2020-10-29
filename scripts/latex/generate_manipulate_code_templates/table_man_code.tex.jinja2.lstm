@@ -3,7 +3,7 @@
 \tabcolsep=0.11cm
 \begin{tabularx}{\textwidth}{XXXXXXX|X|X|X|X}
 \toprule
-\multicolumn{7}{c}{Parameter} & & RN & CC & Base CC \\ \midrule
+\multicolumn{7}{c}{Parameter} & & RN & CCS & Base CC \\ \midrule
 over-\newline samp. & under-\newline samp. & emb-\newline size & epochs &batch-\newline size & \#lstm-\newline cells & dropout & & & & \\ \midrule
 \BLOCK{for d in data}
 \VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.embedding_vecor_length | int} & \VAR{d.epochs | int} & \VAR{d.batch_size | int} &\VAR{d.num_lstm_cells} & \VAR{d.dropout_emb_lstm}|\VAR{d.dropout_lstm_dense} & & & & \\

@@ -4,7 +4,7 @@
 \begin{tabularx}{\textwidth}{XXXXX|X|XXX|XXX|XXX}
 \toprule
 \multicolumn{5}{c}{Parameter} & \multicolumn{3}{c}{RN} & \multicolumn{3}{c}{CCS} & \multicolumn{3}{c}{CC} \\ \midrule
-over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & Train &  Test & Holdout & Train &  Test & Holdout & Train &  Test & Holdout \\ \midrule
+over-\newline samp. & under-\newline samp. & \#trees & class\newline weight & encode\newline type  & & Train &  Validation & Holdout & Train &  Validation & Holdout & Train &  Validation & Holdout \\ \midrule
 \BLOCK{for d in data}
 \VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.n_trees_in_forest} & \VAR{d.class_weight} & \VAR{d.encode_type}& & & & & & & & & \\
 & & & & & \textit{F1} & \VAR{d.train_f1_RN | round(4)} & \VAR{d.test_f1_RN | round(4)} & \VAR{d.holdout_f1_RN | round(4)} & \VAR{d.train_f1_CCS | round(4)} & \VAR{d.test_f1_CCS | round(4)}        & \VAR{d.holdout_f1_CCS | round(4)}        & \VAR{d.train_f1_CC | round(4)}        & \VAR{d.test_f1_CC | round(4)}        & \VAR{d.holdout_f1_CC | round(4)}        \\

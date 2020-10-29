@@ -3,7 +3,7 @@
 \tabcolsep=0.11cm
 \begin{tabularx}{\textwidth}{XXXXXX|X|X|X|X}
 \toprule
-\multicolumn{6}{c}{Parameter} & & RN &  CC & Base CC \\ \midrule
+\multicolumn{6}{c}{Parameter} & & RN &  CCS & Base CC \\ \midrule
 over-\newline samp. & under-\newline samp. & stages &learn-\newline rate & sub-\newline sample & encode\newline type & & & & \\ \midrule
 \BLOCK{for d in data}
 \VAR{d.ratio_after_oversampling} & \VAR{d.ratio_after_undersampling} & \VAR{d.n_estimators | int} & \VAR{d.learning_rate | default(-1) | round(2)} & \VAR{d.subsample | default(-1) | round(2)} &\VAR{d.encode_type} & & & & \\
