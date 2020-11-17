@@ -1,0 +1,7 @@
+data/*
+cache_dir/*
+artifacts/*
+final_dataset/*
+final_test/*
+final_validation/*
+results/*
