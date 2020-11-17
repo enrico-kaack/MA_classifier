@@ -110,3 +110,4 @@ if __name__ == "__main__":
     run_all_tasks(source, workers)
 
 #python -m scripts.run_experiments.test_holdout final_dataset -n 4
+#Evaluates the performance on the holdout (test) dataset
