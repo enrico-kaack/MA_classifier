@@ -9,7 +9,7 @@ import random
 import re
 import pandas as pd
 
-from models.random_forst import process_general_data
+from preprocessing.helper import process_general_data
 from tasks.preprocessing import TaskVocabCreator
 from imblearn.under_sampling import RandomUnderSampler
 

@@ -97,7 +97,7 @@ class TaskVocabCreator(d6tflow.tasks.TaskPickle):
         self.save(vocab_dict)
 
 
-from models.random_forst import process_general_data
+from preprocessing.helper import process_general_data
 
 @d6tflow.inherits(TaskRuleProcessor, TaskVocabCreator)
 class TaskPrepareXY(d6tflow.tasks.TaskPickle):

@@ -14,7 +14,7 @@ matplotlib.rcParams.update({
 
 pd.set_option('display.max_colwidth', None)
 
-from models.random_forst import decode_vector
+from preprocessing.helper import decode_vector
 from tasks.gradient_boosting_classifier import TaskEvaluateGradientBoostingClassifier
 from tasks.random_forest import TaskEvaluateRandomForest
 from tasks.lstm import TaskEvaluateLstm, TaskTrainLstm

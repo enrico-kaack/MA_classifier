@@ -59,7 +59,7 @@ class TaskCodeManipulator(d6tflow.tasks.TaskPickle):
         self.save(data)
 
 
-from models.random_forst import process_general_data
+from preprocessing.helper import process_general_data
 from tasks.preprocessing import TaskVocabCreator
 from imblearn.under_sampling import RandomUnderSampler
 

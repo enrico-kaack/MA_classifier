@@ -1,4 +1,4 @@
-from models.random_forst import process_general_data
+from preprocessing.helper import process_general_data
 from tasks.preprocessing import TaskRuleProcessor, ProblemType
 import d6tflow
 import luigi
