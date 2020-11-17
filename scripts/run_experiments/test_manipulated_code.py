@@ -89,8 +89,8 @@ def run_all_tasks(validation_source, workers):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog='train_all_models.py', description="Run all tasks for given problem type")
-    parser.add_argument("source", help="src folder name", metavar="SOURCE")
+    parser = argparse.ArgumentParser(prog='test_manipulated_code.py', description="Evaluate the models on manipulated code")
+    parser.add_argument("source", help="src folder name of validation set", metavar="SOURCE")
     parser.add_argument("-n", help="number of workers to use", metavar="WORKERS")
 
     if len(sys.argv)==1:
@@ -102,4 +102,4 @@ if __name__ == "__main__":
     workers = args.n
     run_all_tasks(source, workers)
 
-#python -m scripts.run_experiments.train_all_models final_dataset -n 4
+#python -m scripts.run_experiments.test_manipulated_code final_validation -n 4
