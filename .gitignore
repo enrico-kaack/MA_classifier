@@ -168,6 +168,7 @@ raw_data
 second_large_dataset/
 final_dataset
 final_test
+final_validation/
 *.pkl
 *.joblib
 data/
