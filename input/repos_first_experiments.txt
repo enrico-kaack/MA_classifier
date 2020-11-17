@@ -1,7 +1,0 @@
-scikit-learn/scikit-learn/master
-pytorch/pytorch/master
-ansible/ansible/devel
-django/django/master
-pallets/flask/master
-keras-team/keras/master
-jakubroztocil/httpie/master
