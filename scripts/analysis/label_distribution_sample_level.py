@@ -4,6 +4,7 @@ from collections import Counter
 
 d6tflow.settings.log_level = 'WARNING' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
 
+#print the class/label distribution per dataset
 def print_dataset_class_distribution(problem_type, src_path):
     t = TaskPrepareXY(input_src_path=src_path, problem_type=problem_type)
     d6tflow.run(t)

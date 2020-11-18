@@ -4,6 +4,7 @@ from collections import Counter
 
 d6tflow.settings.log_level = 'WARNING' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
 
+#print the training sizes when using 0.5 under or oversampling
 def print_train_size(oversampling, undersampling):
     for problem_type in ProblemType:
         t = TaskTrainTestSplit(problem_type=problem_type, oversampling_enabled=oversampling, ratio_after_oversampling=0.5, undersampling_enabled=undersampling, ratio_after_undersampling=0.5,encode_type=True)

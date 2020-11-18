@@ -21,6 +21,8 @@ from tasks.lstm import TaskEvaluateLstm, TaskTrainLstm
 from tasks.preprocessing import ProblemType, TaskVocabCreator
 from tasks.holdout_test import TaskEvalHoldoutKeras
 
+#print the confidence histogram in the thesis.
+#directly access the pickle file in its folder and print the figure
 """
 model_task = TaskTrainLstm(problem_type=ProblemType.RETURN_NONE, oversampling_enabled=False, undersampling_enabled=True, ratio_after_undersampling=0.5, embedding_vecor_length=32, epochs=3, batch_size=256, encode_type=False, num_lstm_cells=10, dropout_emb_lstm=0.2, dropout_lstm_dense=0.2)
 

@@ -15,6 +15,7 @@ matplotlib.rcParams.update({
     'pgf.rcfonts': False,
 })
 
+#generate plot for figure 4.2
 
 
 def process_data(results, model):
@@ -119,8 +120,8 @@ def print_data(data):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Write tex table for manipulate code results')
-    parser.add_argument('dir', type=str, help='Input dir results')
+    parser = argparse.ArgumentParser(description='genereate bar chart with sorted models and performance (see figure 4.2)')
+    parser.add_argument('dir', type=str, help='Input dir results for manipulated code experiment')
     args = parser.parse_args()
 
     results = read_results(args.dir)

@@ -3,6 +3,7 @@ from input.input_data_analysis import analyse_parsed_data, analyse_problems_per_
 import d6tflow
 d6tflow.settings.log_level = 'WARNING' # 'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'
 
+# analyse the different datasets (train, test, validation) with different metrics.
 print("final_dataset TRAIN")
 d6tflow.run(TaskRuleProcessor(input_src_path="final_dataset"))
 problems = TaskRuleProcessor(input_src_path="final_dataset").outputLoad()

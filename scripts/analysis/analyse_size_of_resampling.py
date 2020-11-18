@@ -1,6 +1,6 @@
 import pandas as pd
 import d6tflow
-
+# analyse the size of the training data with different resampling configurations
 pd.set_option('display.max_colwidth', None)
 
 from tasks.preprocessing import TaskTrainTestSplit, ProblemType

@@ -6,6 +6,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pickle
 
+#first, use the run funtion to generate the importance_permutation data
+#second, use the print_graph function to generate the plot
 def run():
     for problem_type in ProblemType:
         t = TaskTrainRandomForest(problem_type=problem_type, oversampling_enabled=True, ratio_after_oversampling=0.5, undersampling_enabled=False, encode_type=True)
